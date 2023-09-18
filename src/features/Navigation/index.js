@@ -14,6 +14,7 @@ import {
     SearchBoxInput
 } from "./styled";
 
+
 export const Navigation = () => (
     <Wrapper>
         <Nav>
@@ -29,13 +30,13 @@ export const Navigation = () => (
                 <List>
                     <ListItem>
                         <StyledNavLink
-                            to="#">
+                            to="/movies">
                             movies
                         </StyledNavLink>
                     </ListItem>
                     <ListItem>
                         <StyledNavLink
-                            to="#">
+                            to="/people">
                             people
                         </StyledNavLink>
                     </ListItem>
