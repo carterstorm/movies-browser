@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
 import search from "../../assets/svg/search.svg";
 
 export const Wrapper = styled.header`
@@ -19,33 +18,6 @@ export const Nav = styled.nav`
 
 export const NavContainerLeft = styled.div`
     display: flex;
-`;
-
-export const List = styled.ul`
-    display: flex;
-    list-style: none;
-    margin: 0 0 0 80px;
-    padding: 0;
-`;
-
-export const ListItem = styled.li`
-    margin-left: 16px;
-    display: flex;
-    align-items: center;
-`;
-
-export const StyledNavLink = styled(NavLink)`
-    display: flex;
-    align-items: center;
-    padding: 0 24px;
-    height: 48px;
-    border: 1px solid ${({ theme }) => theme.colors.white};
-    border-radius: 24px;
-    text-transform: uppercase;
-    color: ${({ theme }) => theme.colors.white};
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 14px;
 `;
 
 export const NavContainerRight = styled.div`

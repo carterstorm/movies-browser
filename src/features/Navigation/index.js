@@ -1,8 +1,6 @@
+import { NavigationList } from "./NavigationList";
 import { PageTitle } from "./PageTitle";
 import {
-    StyledNavLink,
-    ListItem,
-    List,
     NavContainerRight,
     NavContainerLeft,
     Nav,
@@ -18,20 +16,7 @@ export const Navigation = () => (
         <Nav>
             <NavContainerLeft>
                 <PageTitle />
-                <List>
-                    <ListItem>
-                        <StyledNavLink
-                            to="/movies">
-                            movies
-                        </StyledNavLink>
-                    </ListItem>
-                    <ListItem>
-                        <StyledNavLink
-                            to="/people">
-                            people
-                        </StyledNavLink>
-                    </ListItem>
-                </List>
+                <NavigationList />
             </NavContainerLeft>
             <NavContainerRight>
                 <SearchBox>
