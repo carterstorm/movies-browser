@@ -1,10 +1,8 @@
-import video from "../../assets/svg/video.svg";
+import { PageTitle } from "./PageTitle";
 import {
     StyledNavLink,
     ListItem,
     List,
-    Logo,
-    PageTitle,
     NavContainerRight,
     NavContainerLeft,
     Nav,
@@ -19,14 +17,7 @@ export const Navigation = () => (
     <Wrapper>
         <Nav>
             <NavContainerLeft>
-                <PageTitle
-                    to="/movies">
-                    <Logo
-                        src={video}
-                        alt="Page title video logo"
-                    />
-                    movies browser
-                </PageTitle>
+                <PageTitle />
                 <List>
                     <ListItem>
                         <StyledNavLink
