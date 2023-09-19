@@ -1,15 +1,12 @@
 import { NavigationList } from "./NavigationList";
 import { PageTitle } from "./PageTitle";
+import { Search } from "./Search";
 import {
     NavContainerRight,
     NavContainerLeft,
     Nav,
     Wrapper,
-    SearchBox,
-    SearchBoxButton,
-    SearchBoxInput
 } from "./styled";
-
 
 export const Navigation = () => (
     <Wrapper>
@@ -19,12 +16,7 @@ export const Navigation = () => (
                 <NavigationList />
             </NavContainerLeft>
             <NavContainerRight>
-                <SearchBox>
-                    <SearchBoxButton />
-                    <SearchBoxInput
-                        placeholder="Search for movies..."
-                    />
-                </SearchBox>
+                <Search />
             </NavContainerRight>
         </Nav>
     </Wrapper>
