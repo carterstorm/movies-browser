@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/movies-browser/static/css/main.58462fbc.css",
+    "main.js": "/movies-browser/static/js/main.f760e237.js",
+    "index.html": "/movies-browser/index.html",
+    "static/media/video.svg": "/movies-browser/static/media/video.431749ca51e30bd407fb3048053159a9.svg",
+    "static/media/search.svg": "/movies-browser/static/media/search.7920afd0b926ba1235785f5b4ddff2ab.svg",
+    "main.58462fbc.css.map": "/movies-browser/static/css/main.58462fbc.css.map",
+    "main.f760e237.js.map": "/movies-browser/static/js/main.f760e237.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.58462fbc.css",
+    "static/js/main.f760e237.js"
+  ]
+}
