@@ -20,7 +20,7 @@ export const Navigation = () => (
         <Nav>
             <NavContainerLeft>
                 <PageTitle
-                    to="#">
+                    to="/movies">
                     <Logo
                         src={video}
                         alt="Page title video logo"
