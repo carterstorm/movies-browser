@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
+import star from "../../../assets/svg/star.svg";
+
 import {
     fetchPopularMovies,
 } from "./moviesSlice";
@@ -21,7 +23,7 @@ import {
     StarImage,
     Vote,
     VoteAverage,
-    VoteCount
+    VoteCount,
 } from "./styled";
 
 export const MoviesPage = () => {
@@ -36,28 +38,41 @@ export const MoviesPage = () => {
             <Heading>Popular movies</Heading>
             <Tiles>
                 <Tile>
-                    <TileLink>
+                    <TileLink to="#">
                         <Poster />
                         <Description>
                             <Info>
                                 <Name>
-
+                                    Mulan
                                 </Name>
-                                <Year></Year>
+                                <Year>
+                                    2020
+                                </Year>
                             </Info>
                             <Tags>
                                 <Tag>
-                                    <TagName></TagName>
+                                    <TagName>Action</TagName>
+                                </Tag>
+                                <Tag>
+                                    <TagName>Adventure</TagName>
+                                </Tag>
+                                <Tag>
+                                    <TagName>Drama</TagName>
                                 </Tag>
                             </Tags>
                         </Description>
                         <Rating>
-                            <StarImage />
+                            <StarImage
+                                src={star}
+                                alt="star"
+                            />
                             <Vote>
                                 <VoteAverage>
-
+                                    7,8
                                 </VoteAverage>
-                                <VoteCount></VoteCount>
+                                <VoteCount>
+                                    35 votes
+                                </VoteCount>
                             </Vote>
                         </Rating>
                     </TileLink>
