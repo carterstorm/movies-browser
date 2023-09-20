@@ -1,14 +1,30 @@
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
     fetchPopularMovies,
-    selectArePopularMoviesLoading,
-    selectPopularMovies
 } from "./moviesSlice";
+import {
+    Main,
+    Heading,
+    Tiles,
+    Tile,
+    TileLink,
+    Poster,
+    Description,
+    Info,
+    Name,
+    Year,
+    Tags,
+    Tag,
+    TagName,
+    Rating,
+    StarImage,
+    Vote,
+    VoteAverage,
+    VoteCount
+} from "./styled";
 
 export const MoviesPage = () => {
-    const popularMovies = useSelector(selectPopularMovies);
-    const areLoading = useSelector(selectArePopularMoviesLoading);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -16,15 +32,37 @@ export const MoviesPage = () => {
     }, [dispatch])
 
     return (
-        <>
-            <p>Movies page</p>
-            <div>
-                {areLoading
-                    ? "loading"
-                    : popularMovies.map(movie => <p key={movie.id}>{movie.title}</p>)
-                }
-            </div>
-        </>
+        <Main>
+            <Heading>Popular movies</Heading>
+            <Tiles>
+                <Tile>
+                    <TileLink>
+                        <Poster />
+                        <Description>
+                            <Info>
+                                <Name>
 
+                                </Name>
+                                <Year></Year>
+                            </Info>
+                            <Tags>
+                                <Tag>
+                                    <TagName></TagName>
+                                </Tag>
+                            </Tags>
+                        </Description>
+                        <Rating>
+                            <StarImage />
+                            <Vote>
+                                <VoteAverage>
+
+                                </VoteAverage>
+                                <VoteCount></VoteCount>
+                            </Vote>
+                        </Rating>
+                    </TileLink>
+                </Tile>
+            </Tiles>
+        </Main>
     );
 };
