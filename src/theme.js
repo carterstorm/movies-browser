@@ -3,6 +3,7 @@ export const theme = {
         black: "#000000",
         white: "#FFFFFF",
         waterloo: "#7E839A",
+        mystic: "#E4E6F0",
     },
     breakpoints: {
         mobile: 480,
