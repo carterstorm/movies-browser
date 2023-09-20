@@ -1,5 +1,5 @@
 import video from "../../../assets/svg/video.svg";
-import { Logo, Title } from "./styled"
+import { Heading, Logo, Title } from "./styled"
 
 export const PageTitle = () => (
     <Title
@@ -8,6 +8,8 @@ export const PageTitle = () => (
             src={video}
             alt="Page title video logo"
         />
-        movies browser
+        <Heading>
+            movies browser
+        </Heading>
     </Title>
 );
