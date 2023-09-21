@@ -8,14 +8,9 @@ export const Nav = styled.nav`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: ${({ theme }) => theme.breakpoints.desktop}px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 15px;
-    
-    @media(max-width: 1020px) {
-        flex-wrap: wrap;
-        justify-content: center;
-    };
 `;
 
 export const NavContainerLeft = styled.div`
