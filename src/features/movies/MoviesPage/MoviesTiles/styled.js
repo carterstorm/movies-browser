@@ -7,11 +7,21 @@ export const TilesSection = styled.section`
 
 export const Tiles = styled.ul`
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 324px);
     grid-gap: 24px;
     margin: 0;
     padding: 0;
     list-style: none;
+    
+    @media(max-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+        grid-template-columns: repeat(3, 324px);
+        justify-content: center;
+    };
+
+    @media(max-width: 1020px) {
+        grid-template-columns: repeat(2, 324px);
+        justify-content: center;
+    };
 `;
 
 export const Tile = styled.li`
