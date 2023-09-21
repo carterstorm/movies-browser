@@ -1,27 +1,18 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import start from "../../../../assets/svg/star.svg";
 import { selectPopularMovies, fetchPopularMovies } from "../moviesSlice";
+import { Rating } from "./Rating";
+import { Tags } from "./Tags";
 
 import {
     Description,
-    Info,
-    Name,
     Poster,
-    Rating,
-    StarImage,
-    Tag,
-    TagName,
-    Tags,
     Tile,
     TileLink,
     Tiles,
     TilesSection,
-    Vote,
-    VoteAverage,
-    VoteCount,
-    Year
 } from "./styled";
+import { MovieInfo } from "./MovieInfo";
 
 export const MoviesTiles = () => {
     const dispatch = useDispatch();
@@ -43,40 +34,16 @@ export const MoviesTiles = () => {
                                 alt={`Poster: ${title}`}
                             />
                             <Description>
-                                <Info>
-                                    <Name>
-                                        {title}
-                                    </Name>
-                                    <Year>
-                                        {release_date}
-                                    </Year>
-                                </Info>
-                                <Tags>
-                                    <Tag>
-                                        <TagName>Action</TagName>
-                                    </Tag>
-                                    <Tag>
-                                        <TagName>Adventure</TagName>
-                                    </Tag>
-                                    <Tag>
-                                        <TagName>Drama</TagName>
-                                    </Tag>
-                                </Tags>
-                            </Description>
-                            <Rating>
-                                <StarImage
-                                    src={start}
-                                    alt="star"
+                                <MovieInfo
+                                    title={title}
+                                    releaseDate={release_date}
                                 />
-                                <Vote>
-                                    <VoteAverage>
-                                        {vote_average}
-                                    </VoteAverage>
-                                    <VoteCount>
-                                        {vote_count} votes
-                                    </VoteCount>
-                                </Vote>
-                            </Rating>
+                                <Tags />
+                            </Description>
+                            <Rating
+                                voteAverage={vote_average}
+                                voteCount={vote_count}
+                            />
                         </TileLink>
                     </Tile>
                 ))}
