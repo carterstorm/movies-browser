@@ -6,6 +6,7 @@ import { Tags } from "./Tags";
 
 import {
     Description,
+    MovieDetails,
     Poster,
     Tile,
     TileLink,
@@ -33,17 +34,19 @@ export const MoviesTiles = () => {
                                 src={`${posterImageLink}${poster_path}`}
                                 alt={`Poster: ${title}`}
                             />
-                            <Description>
-                                <MovieInfo
-                                    title={title}
-                                    releaseDate={release_date}
+                            <MovieDetails>
+                                <Description>
+                                    <MovieInfo
+                                        title={title}
+                                        releaseDate={release_date.substring(0, 4)}
+                                    />
+                                    <Tags />
+                                </Description>
+                                <Rating
+                                    voteAverage={vote_average}
+                                    voteCount={vote_count}
                                 />
-                                <Tags />
-                            </Description>
-                            <Rating
-                                voteAverage={vote_average}
-                                voteCount={vote_count}
-                            />
+                            </MovieDetails>
                         </TileLink>
                     </Tile>
                 ))}

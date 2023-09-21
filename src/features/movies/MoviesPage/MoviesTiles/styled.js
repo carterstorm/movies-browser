@@ -34,4 +34,11 @@ export const Poster = styled.img`
     border-radius: 5px;
 `;
 
+export const MovieDetails = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px;
+`;
+
 export const Description = styled.div``;
