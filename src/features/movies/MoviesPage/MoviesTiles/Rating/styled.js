@@ -16,7 +16,7 @@ export const VoteElements = styled.div`
     margin-left: 12px;
 `;
 
-export const VoteAverage = styled.p`
+export const VoteAverage = styled.span`
     margin: 0 12px 0 0;
     font-weight: 600;
 `;
