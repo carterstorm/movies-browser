@@ -18,4 +18,5 @@ export const Tag = styled.div`
 export const TagName = styled.span`
     font-size: 14px;
     font-weight: 400;
+    line-height: 140%;
 `;
