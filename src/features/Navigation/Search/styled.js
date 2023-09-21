@@ -16,12 +16,19 @@ export const SearchBoxButton = styled.button`
     background-size: 24px;
     background-repeat: none;
     background-position: center;
+    background-color: transparent;
     border: none;
     cursor: pointer;
+    
+    @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+        width: 18px;
+        height: 18px;
+        background-size: 18px;
+    };
 `;
 
 export const SearchBoxInput = styled.input`
-    width: 432px;
+    width: 400px;
     height: 48px;
     background-color: ${({ theme }) => theme.colors.white};
     border: none;
@@ -36,5 +43,10 @@ export const SearchBoxInput = styled.input`
     &::placeholder {
         color: ${({ theme }) => theme.colors.waterloo};
         font-weight: 300;
+    };
+    
+    @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+        height: 30px;
+        font-size: 12px;
     };
 `;

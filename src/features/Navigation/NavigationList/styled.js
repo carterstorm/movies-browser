@@ -12,6 +12,13 @@ export const ListItem = styled.li`
     margin-right: 16px;
     display: flex;
     align-items: center;
+
+    @media(max-width: 1020px) {
+        &:nth-last-child(1) {
+        margin-right: 0;
+        };
+    };
+
 `;
 
 export const StyledNavLink = styled(NavLink)`
@@ -26,4 +33,9 @@ export const StyledNavLink = styled(NavLink)`
     text-decoration: none;
     font-weight: 600;
     font-size: 14px;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+        font-size: 12px;
+        height: 30px;
+    };
 `;
