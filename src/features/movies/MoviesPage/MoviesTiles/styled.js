@@ -2,26 +2,17 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const TilesSection = styled.section`
-    margin-top: 24px;
+    padding: 0 16px;
 `;
 
 export const Tiles = styled.ul`
     display: grid;
-    grid-template-columns: repeat(4, 324px);
+    grid-template-columns: repeat(auto-fill, 324px);
+    justify-content: center;
     grid-gap: 24px;
     margin: 0;
     padding: 0;
     list-style: none;
-    
-    @media(max-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-        grid-template-columns: repeat(3, 324px);
-        justify-content: center;
-    };
-
-    @media(max-width: 1020px) {
-        grid-template-columns: repeat(2, 324px);
-        justify-content: center;
-    };
 `;
 
 export const Tile = styled.li`
