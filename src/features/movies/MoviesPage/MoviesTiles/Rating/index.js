@@ -3,9 +3,9 @@ import start from "../../../../../assets/svg/star.svg";
 import {
     RatingElement,
     StarImage,
-    Vote,
     VoteAverage,
-    VoteCount
+    VoteCount,
+    VoteElements
 } from "./styled";
 
 export const Rating = ({ voteAverage, voteCount }) => (
@@ -14,13 +14,13 @@ export const Rating = ({ voteAverage, voteCount }) => (
             src={start}
             alt="star"
         />
-        <Vote>
+        <VoteElements>
             <VoteAverage>
                 {voteAverage}
             </VoteAverage>
             <VoteCount>
                 {voteCount} votes
             </VoteCount>
-        </Vote>
+        </VoteElements>
     </RatingElement>
 );
