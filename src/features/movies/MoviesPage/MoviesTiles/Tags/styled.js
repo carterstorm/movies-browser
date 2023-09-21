@@ -2,11 +2,12 @@ import styled from "styled-components";
 
 export const TagsContainer = styled.div`
     display: flex;
+    flex-wrap: wrap;
 `;
 
 export const Tag = styled.div`
     padding: 8px 16px;
-    margin-right: 8px;
+    margin: 0 8px 4px 0;
     border-radius: 5px;
     background-color: ${({ theme }) => theme.colors.mystic};
 
