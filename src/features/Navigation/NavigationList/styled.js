@@ -9,7 +9,7 @@ export const List = styled.ul`
 `;
 
 export const ListItem = styled.li`
-    margin-left: 16px;
+    margin-right: 16px;
     display: flex;
     align-items: center;
 `;
