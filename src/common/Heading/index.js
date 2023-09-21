@@ -1,7 +1,7 @@
 import { HeadingElement } from "./styled";
 
-export const Heading = () => (
+export const Heading = ({ title }) => (
     <HeadingElement>
-        Popular movies
+        {title}
     </HeadingElement>
 );
