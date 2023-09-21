@@ -14,10 +14,18 @@ export const Tag = styled.div`
     &:nth-last-child(1) {
         margin-right: 0;
     };
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+        padding: 6px 12px;
+    };
 `;
 
 export const TagName = styled.span`
     font-size: 14px;
     font-weight: 400;
     line-height: 140%;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+        font-size: 12px;
+    };
 `;

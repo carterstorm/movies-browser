@@ -3,6 +3,9 @@ import styled from "styled-components";
 export const RatingElement = styled.div`
     display: flex;
 
+    @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+        margin-top: 8px;
+    };
 `;
 
 export const StarImage = styled.img`

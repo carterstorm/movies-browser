@@ -13,6 +13,10 @@ export const Tiles = styled.ul`
     margin: 0;
     padding: 0;
     list-style: none;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+        grid-template-columns: repeat(1, 1fr);
+    };
 `;
 
 export const Tile = styled.li`
@@ -25,6 +29,10 @@ export const Tile = styled.li`
 export const TileLink = styled(Link)`
     text-decoration: none;
     color: ${({ theme }) => theme.colors.black};
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+        display: flex;
+    };
 `;
 
 export const Poster = styled.img`
@@ -33,6 +41,13 @@ export const Poster = styled.img`
     background-color: ${({ theme }) => theme.colors.black};;
     margin-bottom: 16px;
     border-radius: 5px;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+        height: 230px;
+        width: auto;
+        margin-bottom: 0;
+        margin-right: 20px;
+    };
 `;
 
 export const MovieDetails = styled.div`
@@ -40,6 +55,10 @@ export const MovieDetails = styled.div`
     flex-direction: column;
     justify-content: space-between;
     height: 175px;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+        justify-content: flex-start;
+    };
 `;
 
 export const Description = styled.div``;
