@@ -38,7 +38,7 @@ export const MovieDetails = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 200px;
+    height: 175px;
 `;
 
 export const Description = styled.div``;
