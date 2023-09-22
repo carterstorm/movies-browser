@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const TilesSection = styled.section`
-    padding: 0 16px;
+    padding: 0 16px 20px;
 `;
 
 export const Tiles = styled.ul`
