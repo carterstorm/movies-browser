@@ -44,6 +44,10 @@ export const SearchBoxInput = styled.input`
         color: ${({ theme }) => theme.colors.waterloo};
         font-weight: 300;
     };
+
+    @media(max-width: 1020px) {
+        width: 100%;
+    };
     
     @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
         height: 30px;

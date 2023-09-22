@@ -6,6 +6,10 @@ export const List = styled.ul`
     list-style: none;
     margin: 0 0 0 80px;
     padding: 0;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        margin-left: 0;
+    };
 `;
 
 export const ListItem = styled.li`
@@ -13,12 +17,15 @@ export const ListItem = styled.li`
     display: flex;
     align-items: center;
 
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        margin-right: 12px;
+    };
+
     @media(max-width: 1020px) {
         &:nth-last-child(1) {
         margin-right: 0;
         };
     };
-
 `;
 
 export const StyledNavLink = styled(NavLink)`
@@ -37,5 +44,9 @@ export const StyledNavLink = styled(NavLink)`
     @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
         font-size: 12px;
         height: 30px;
+    };
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        padding: 0 12px;
     };
 `;

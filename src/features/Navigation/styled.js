@@ -21,6 +21,12 @@ export const NavContainerLeft = styled.div`
     display: flex;
     padding: 23px 0;
 
+    @media(max-width: 1020px) {
+        width: 100%;
+        justify-content: space-between;
+        padding: 14px 0;
+    };
+
     @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
         padding: 16px 0;
     };
@@ -28,6 +34,11 @@ export const NavContainerLeft = styled.div`
 
 export const NavContainerRight = styled.div`
     padding: 23px 0;
+
+    @media(max-width: 1020px) {
+        width: 100%;
+        padding: 0 0 14px 0;
+    };
 
     @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
         padding: 0 0 16px 0;

@@ -19,6 +19,12 @@ export const Logo = styled.img`
         width: 28px;
         height: 28px;
     };
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        width: 17px;
+        height: 17px;
+        margin-right: 8px;
+    };
 `;
 
 export const Heading = styled.h1`
@@ -28,5 +34,9 @@ export const Heading = styled.h1`
 
     @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
         font-size: 16px;
+    };
+    
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        font-size: 13px;
     };
 `;
