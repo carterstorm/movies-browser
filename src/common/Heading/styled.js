@@ -8,6 +8,10 @@ export const HeadingElement = styled.h2`
 
     @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
         font-size: 24px;
-        margin: 42px 0 18px;
+        margin: 36px 0 18px;
+    };
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        margin: 24px 0 12px;
     };
 `;
