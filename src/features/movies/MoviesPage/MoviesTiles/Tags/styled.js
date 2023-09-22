@@ -6,6 +6,7 @@ export const TagsContainer = styled.div`
 `;
 
 export const Tag = styled.div`
+    display: flex;
     padding: 8px 16px;
     margin: 0 8px 4px 0;
     border-radius: 5px;
@@ -18,6 +19,11 @@ export const Tag = styled.div`
     @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
         padding: 6px 12px;
     };
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        margin-right: 4px;
+        padding: 4px 8px;
+    };
 `;
 
 export const TagName = styled.span`
@@ -27,5 +33,9 @@ export const TagName = styled.span`
 
     @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
         font-size: 12px;
+    };
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        font-size: 8px;
     };
 `;

@@ -11,12 +11,21 @@ export const RatingElement = styled.div`
 export const StarImage = styled.img`
     width: 24px;
     height: 24px;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        width: 16px;
+        height: 16px;
+    };
 `;
 
 export const VoteElements = styled.div`
     display: flex;
     align-items: flex-end;
     margin-left: 12px;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        font-size: 10px;
+    };
 `;
 
 export const VoteAverage = styled.span`

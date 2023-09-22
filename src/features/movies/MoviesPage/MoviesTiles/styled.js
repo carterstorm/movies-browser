@@ -17,6 +17,10 @@ export const Tiles = styled.ul`
     @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
         grid-template-columns: repeat(1, 1fr);
     };
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+        grid-gap: 16px;
+    };
 `;
 
 export const Tile = styled.li`
@@ -24,6 +28,10 @@ export const Tile = styled.li`
     box-shadow: 0px 4px 12px 0px rgba(186, 199, 213, 0.50);
     border-radius: 5px;
     cursor: pointer;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        padding: 10px;
+    };
 `;
 
 export const TileLink = styled(Link)`
@@ -47,6 +55,11 @@ export const Poster = styled.img`
         width: auto;
         margin-bottom: 0;
         margin-right: 20px;
+    };
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        height: 175px;
+        margin-right: 10px;
     };
 `;
 
