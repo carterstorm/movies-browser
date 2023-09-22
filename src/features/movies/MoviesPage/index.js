@@ -3,6 +3,7 @@ import { Heading } from "../../../common/Heading";
 import {
     Main,
 } from "./styled";
+import { Pagination } from "../../../common/Pagination";
 
 export const MoviesPage = () => (
     <Main>
@@ -10,5 +11,6 @@ export const MoviesPage = () => (
             title="Popular movies"
         />
         <MoviesTiles />
+        <Pagination />
     </Main>
 );
