@@ -1,4 +1,8 @@
-import { MovieInfoContainer, MovieName, MovieYear } from "./styled";
+import {
+    MovieInfoContainer,
+    MovieName,
+    MovieYear
+} from "./styled";
 
 export const MovieInfo = ({ title, releaseDate }) => (
     <MovieInfoContainer>
