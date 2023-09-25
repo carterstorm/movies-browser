@@ -5,7 +5,7 @@ export const PaginationNav = styled.nav`
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 100px;
+    padding-bottom: 40px;
 `;
 
 export const PaginationButtonsContainer = styled.div`
