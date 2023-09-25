@@ -33,7 +33,7 @@ export const PaginationButton = ({ first, previous, next, last }) => {
                 </PaginationButtonText>
             </PaginationButtonElement>
         );
-    } else {
+    } else if (last) {
         return (
             <PaginationButtonElement>
                 <RightArrow />
