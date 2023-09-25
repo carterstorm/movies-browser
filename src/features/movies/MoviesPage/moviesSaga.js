@@ -10,7 +10,7 @@ function* fetchPopularMoviesHandler() {
     try {
         yield delay(1000);
         const popularMovies = yield call(getPopularMovies);
-        yield put(fetchPopularMoviesSuccess(popularMovies.results));
+        yield put(fetchPopularMoviesSuccess(popularMovies));
     } catch (error) {
         yield put(fetchPopularMoviesError());
         yield call(alert, "Something go wrong!");
