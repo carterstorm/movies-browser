@@ -12,6 +12,7 @@ export const HeadingElement = styled.h2`
     };
 
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        font-size: 18px;
         margin: 24px 0 12px;
     };
 `;
