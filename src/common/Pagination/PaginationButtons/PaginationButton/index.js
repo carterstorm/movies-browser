@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { selectPage, setPage } from "../../../../features/movies/MoviesPage/moviesSlice";
+import { selectNumberOfPages, selectPage, setPage } from "../../../../features/movies/MoviesPage/moviesSlice";
 import {
     DesktopPaginationButtonsContainer,
     LeftArrow,
@@ -13,6 +13,7 @@ import {
 export const PaginationButton = ({ first, previous, next, last }) => {
     const dispatch = useDispatch();
     const page = useSelector(selectPage);
+    const numberOfPages = useSelector(selectNumberOfPages);
 
     if (first) {
         return (
@@ -53,7 +54,7 @@ export const PaginationButton = ({ first, previous, next, last }) => {
         return (
             <PaginationButtonElement
                 onClick={() => dispatch(setPage(page + 1))}
-                disabled={page === 500}
+                disabled={page === numberOfPages}
             >
                 <DesktopPaginationButtonsContainer>
                     <NextButtonText>
@@ -69,8 +70,8 @@ export const PaginationButton = ({ first, previous, next, last }) => {
     } else if (last) {
         return (
             <PaginationButtonElement
-                onClick={() => dispatch(setPage(500))}
-                disabled={page === 500}
+                onClick={() => dispatch(setPage(numberOfPages))}
+                disabled={page === numberOfPages}
             >
                 <DesktopPaginationButtonsContainer>
                     <NextButtonText>
