@@ -1,7 +1,8 @@
 import {
     LeftArrow,
+    NextButtonText,
     PaginationButtonElement,
-    PaginationButtonText,
+    PreviousButtonText,
     RightArrow
 } from "./styled";
 
@@ -10,36 +11,36 @@ export const PaginationButton = ({ first, previous, next, last }) => {
         return (
             <PaginationButtonElement>
                 <LeftArrow />
-                <PaginationButtonText>
+                <PreviousButtonText>
                     First
-                </PaginationButtonText>
+                </PreviousButtonText>
             </PaginationButtonElement>
         );
     } else if (previous) {
         return (
             <PaginationButtonElement>
                 <LeftArrow />
-                <PaginationButtonText>
+                <PreviousButtonText>
                     Previous
-                </PaginationButtonText>
+                </PreviousButtonText>
             </PaginationButtonElement>
         );
     } else if (next) {
         return (
             <PaginationButtonElement>
                 <RightArrow />
-                <PaginationButtonText>
+                <NextButtonText>
                     Next
-                </PaginationButtonText>
+                </NextButtonText>
             </PaginationButtonElement>
         );
     } else if (last) {
         return (
             <PaginationButtonElement>
                 <RightArrow />
-                <PaginationButtonText>
+                <NextButtonText>
                     Last
-                </PaginationButtonText>
+                </NextButtonText>
             </PaginationButtonElement>
         );
     };

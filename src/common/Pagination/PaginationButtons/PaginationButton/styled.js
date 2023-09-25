@@ -16,13 +16,18 @@ export const PaginationButtonElement = styled.button`
     };
 `;
 
-export const PaginationButtonText = styled.span`
+export const PreviousButtonText = styled.span`
     display: inline-block;
     font-size: 14px;
     font-weight: 400;
     line-height: 140%;
     margin-left: 8px;
     background-color: ${({ theme }) => theme.colors.mystic};
+`;
+
+export const NextButtonText = styled(PreviousButtonText)`
+    margin-left: 0;
+    margin-right: 8px;
 `;
 
 export const LeftArrow = styled(Arrow)`
