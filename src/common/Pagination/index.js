@@ -1,24 +1,10 @@
-import { LeftArrow, PagesInfo, PagesText, PaginationButton, PaginationButtonText, PaginationButtonsContainer, PaginationNav } from "./styled";
+import { PaginationButtons } from "./PaginationButtons";
+import { PagesInfo, PagesText, PaginationNav } from "./styled";
 
 export const Pagination = () => {
     return (
         <PaginationNav>
-
-            <PaginationButtonsContainer>
-                <PaginationButton>
-                    <LeftArrow />
-                    <PaginationButtonText>
-                        First
-                    </PaginationButtonText>
-                </PaginationButton>
-                <PaginationButton>
-                    <LeftArrow />
-                    <PaginationButtonText>
-                        Previous
-                    </PaginationButtonText>
-                </PaginationButton>
-            </PaginationButtonsContainer>
-
+            <PaginationButtons />
             <PagesInfo>
                 <PagesText>
                     Page
@@ -29,21 +15,7 @@ export const Pagination = () => {
                 </PagesText>
                 500
             </PagesInfo>
-
-            <PaginationButtonsContainer>
-                <PaginationButton>
-                    <LeftArrow />
-                    <PaginationButtonText>
-                        First
-                    </PaginationButtonText>
-                </PaginationButton>
-                <PaginationButton>
-                    <LeftArrow />
-                    <PaginationButtonText>
-                        Previous
-                    </PaginationButtonText>
-                </PaginationButton>
-            </PaginationButtonsContainer>
+            <PaginationButtons />
         </PaginationNav>
     );
 };
