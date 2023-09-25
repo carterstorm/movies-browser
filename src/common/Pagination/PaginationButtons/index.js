@@ -1,21 +1,20 @@
-import { LeftArrow } from "./styled";
-import { PaginationButton, PaginationButtonText, PaginationButtonsContainer } from "./styled";
+import { PaginationButton } from "./PaginationButton";
+import { PaginationButtonsContainer } from "./styled";
 
-export const PaginationButtons = () => {
-    return (
-        <PaginationButtonsContainer>
-            <PaginationButton>
-                <LeftArrow />
-                <PaginationButtonText>
-                    First
-                </PaginationButtonText>
-            </PaginationButton>
-            <PaginationButton>
-                <LeftArrow />
-                <PaginationButtonText>
-                    Previous
-                </PaginationButtonText>
-            </PaginationButton>
-        </PaginationButtonsContainer>
-    );
+export const PaginationButtons = ({ previous, next }) => {
+    if (previous) {
+        return (
+            <PaginationButtonsContainer>
+                <PaginationButton first />
+                <PaginationButton previous />
+            </PaginationButtonsContainer>
+        );
+    } else if (next) {
+        return (
+            <PaginationButtonsContainer>
+                <PaginationButton next />
+                <PaginationButton last />
+            </PaginationButtonsContainer>
+        );
+    };
 };
