@@ -11,7 +11,7 @@ import {
 } from "./moviesSlice";
 
 import {
-    Main,
+    Main, Wrapper,
 } from "./styled";
 
 export const MoviesPage = () => {
@@ -25,21 +25,23 @@ export const MoviesPage = () => {
     }, [dispatch, page])
 
     return (
-        <Main>
-            {areLoading ?
-                (<>Loading</>)
-                :
-                (
-                    <>
-                        <Heading
-                            title="Popular movies"
-                        />
-                        <MoviesTiles
-                            popularMovies={popularMovies}
-                        />
-                        <Pagination />
-                    </>
-                )}
-        </Main>
+        <Wrapper>
+            <Main>
+                {areLoading ?
+                    (<>Loading</>)
+                    :
+                    (
+                        <>
+                            <Heading
+                                title="Popular movies"
+                            />
+                            <MoviesTiles
+                                popularMovies={popularMovies}
+                            />
+                            <Pagination />
+                        </>
+                    )}
+            </Main>
+        </Wrapper>
     )
 };

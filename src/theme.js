@@ -3,6 +3,7 @@ export const theme = {
         black: "#18181B",
         white: "#FFFFFF",
         waterloo: "#7E839A",
+        whisper: "#F5F5FA",
         mystic: "#E4E6F0",
         pattensBlue: '#D6E4FF',
     },
