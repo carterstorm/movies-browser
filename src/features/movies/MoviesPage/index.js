@@ -11,9 +11,7 @@ import {
     selectPopularMovies
 } from "./moviesSlice";
 
-import {
-    Main, Wrapper,
-} from "./styled";
+import { Main } from "./styled";
 
 export const MoviesPage = () => {
     const dispatch = useDispatch();
@@ -26,23 +24,21 @@ export const MoviesPage = () => {
     }, [dispatch, page])
 
     return (
-        <Wrapper>
-            <Main>
-                {areLoading ?
-                    (<Loading />)
-                    :
-                    (
-                        <>
-                            <Heading
-                                title="Popular movies"
-                            />
-                            <MoviesTiles
-                                popularMovies={popularMovies}
-                            />
-                            <Pagination />
-                        </>
-                    )}
-            </Main>
-        </Wrapper>
+        <Main>
+            {areLoading ?
+                (<Loading />)
+                :
+                (
+                    <>
+                        <Heading
+                            title="Popular movies"
+                        />
+                        <MoviesTiles
+                            popularMovies={popularMovies}
+                        />
+                        <Pagination />
+                    </>
+                )}
+        </Main>
     )
 };
