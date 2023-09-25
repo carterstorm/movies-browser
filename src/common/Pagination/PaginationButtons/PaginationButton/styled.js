@@ -7,12 +7,24 @@ export const PaginationButtonElement = styled.button`
     padding: 8px 16px;
     margin-left: 12px;
     border: none;
-    background-color: ${({ theme }) => theme.colors.mystic};
+    background-color: ${({ theme }) => theme.colors.pattensBlue};
     border-radius: 5px;
     cursor: pointer;
+    transition: .2s;
 
     &:nth-child(1) {
         margin-left: 0;
+    };
+
+    &:hover {
+        filter: brightness(90%);
+    };
+
+    &:disabled {
+        background-color: ${({ theme }) => theme.colors.mystic};
+        color: ${({ theme }) => theme.colors.black};
+        filter: brightness(90%);
+        cursor: not-allowed;
     };
 `;
 
@@ -22,7 +34,6 @@ export const PreviousButtonText = styled.span`
     font-weight: 400;
     line-height: 140%;
     margin-left: 8px;
-    background-color: ${({ theme }) => theme.colors.mystic};
 `;
 
 export const NextButtonText = styled(PreviousButtonText)`

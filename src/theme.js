@@ -4,6 +4,7 @@ export const theme = {
         white: "#FFFFFF",
         waterloo: "#7E839A",
         mystic: "#E4E6F0",
+        pattensBlue: '#D6E4FF',
     },
     breakpoints: {
         mobile: 480,

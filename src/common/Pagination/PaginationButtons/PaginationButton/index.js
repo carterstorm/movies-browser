@@ -14,7 +14,10 @@ export const PaginationButton = ({ first, previous, next, last }) => {
 
     if (first) {
         return (
-            <PaginationButtonElement onClick={() => dispatch(setPage(1))}>
+            <PaginationButtonElement
+                onClick={() => dispatch(setPage(1))}
+                disabled={page === 1}
+            >
                 <LeftArrow />
                 <PreviousButtonText>
                     First
@@ -23,7 +26,10 @@ export const PaginationButton = ({ first, previous, next, last }) => {
         );
     } else if (previous) {
         return (
-            <PaginationButtonElement onClick={() => dispatch(setPage(page - 1))}>
+            <PaginationButtonElement
+                onClick={() => dispatch(setPage(page - 1))}
+                disabled={page === 1}
+            >
                 <LeftArrow />
                 <PreviousButtonText>
                     Previous
@@ -32,7 +38,10 @@ export const PaginationButton = ({ first, previous, next, last }) => {
         );
     } else if (next) {
         return (
-            <PaginationButtonElement onClick={() => dispatch(setPage(page + 1))}>
+            <PaginationButtonElement
+                onClick={() => dispatch(setPage(page + 1))}
+                disabled={page === 500}
+            >
                 <RightArrow />
                 <NextButtonText>
                     Next
@@ -41,7 +50,10 @@ export const PaginationButton = ({ first, previous, next, last }) => {
         );
     } else if (last) {
         return (
-            <PaginationButtonElement onClick={() => dispatch(setPage(500))}>
+            <PaginationButtonElement
+                onClick={() => dispatch(setPage(500))}
+                disabled={page === 500}
+            >
                 <RightArrow />
                 <NextButtonText>
                     Last
