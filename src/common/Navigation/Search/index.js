@@ -1,8 +1,10 @@
-import { SearchBox, SearchBoxButton, SearchBoxInput } from "./styled";
+import { SearchBox, SearchBoxButton, SearchBoxInput, SearchImage } from "./styled";
 
 export const Search = () => (
     <SearchBox>
-        <SearchBoxButton />
+        <SearchBoxButton>
+            <SearchImage />
+        </SearchBoxButton>
         <SearchBoxInput
             placeholder="Search for movies..."
         />

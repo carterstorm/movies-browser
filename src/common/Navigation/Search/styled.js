@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import search from "../../../assets/svg/search.svg";
+import { ReactComponent as Search } from "../../../assets/svg/search.svg";
 
 export const SearchBox = styled.form`
     position: relative;
@@ -10,20 +10,22 @@ export const SearchBoxButton = styled.button`
     top: 50%;
     left: 24px;
     transform: translateY(-50%);
-    width: 24px;
-    height: 24px;
-    background-image: url(${search});
-    background-size: 24px;
-    background-repeat: none;
-    background-position: center;
-    background-color: transparent;
     border: none;
+    background-color: transparent;
     cursor: pointer;
-    
+
     @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+        left: 12px;
+    };
+`;
+
+export const SearchImage = styled(Search)`
+    margin-top: 2px;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+        margin-top: 3px;
         width: 18px;
         height: 18px;
-        background-size: 18px;
     };
 `;
 
@@ -52,5 +54,6 @@ export const SearchBoxInput = styled.input`
     @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
         height: 30px;
         font-size: 12px;
+        padding-left: 46px;
     };
 `;
