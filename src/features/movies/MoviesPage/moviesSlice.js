@@ -5,8 +5,8 @@ const moviesSlice = createSlice({
     initialState: {
         popularMovies: [],
         loading: false,
-        page: 1,
-        numberOfPages: null,
+        page: 10,
+        numberOfPages: 500,
     },
     reducers: {
         setPage: (state, { payload: pageNumber }) => {
@@ -17,7 +17,6 @@ const moviesSlice = createSlice({
         },
         fetchPopularMoviesSuccess: (state, { payload: popularMovies }) => {
             state.popularMovies = popularMovies.results;
-            state.numberOfPages = popularMovies.total_pages;
             state.loading = false;
         },
         fetchPopularMoviesError: state => {

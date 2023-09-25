@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectPopularMovies, fetchPopularMovies } from "../moviesSlice";
+import { selectPopularMovies, fetchPopularMovies, selectPage } from "../moviesSlice";
 import { Rating } from "./Rating";
 import { Tags } from "./Tags";
 
@@ -19,10 +19,11 @@ export const MoviesTiles = () => {
     const dispatch = useDispatch();
     const popularMovies = useSelector(selectPopularMovies);
     const posterImageLink = `https://image.tmdb.org/t/p/w342`;
+    const page = useSelector(selectPage);
 
     useEffect(() => {
         dispatch(fetchPopularMovies());
-    }, [dispatch])
+    }, [dispatch, page])
 
     return (
         <TilesSection>

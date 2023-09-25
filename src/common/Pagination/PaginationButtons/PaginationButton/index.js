@@ -1,3 +1,5 @@
+import { useDispatch, useSelector } from "react-redux";
+import { selectPage, setPage } from "../../../../features/movies/MoviesPage/moviesSlice";
 import {
     LeftArrow,
     NextButtonText,
@@ -7,9 +9,12 @@ import {
 } from "./styled";
 
 export const PaginationButton = ({ first, previous, next, last }) => {
+    const dispatch = useDispatch();
+    const page = useSelector(selectPage);
+
     if (first) {
         return (
-            <PaginationButtonElement>
+            <PaginationButtonElement onClick={() => dispatch(setPage(1))}>
                 <LeftArrow />
                 <PreviousButtonText>
                     First
@@ -18,7 +23,7 @@ export const PaginationButton = ({ first, previous, next, last }) => {
         );
     } else if (previous) {
         return (
-            <PaginationButtonElement>
+            <PaginationButtonElement onClick={() => dispatch(setPage(page - 1))}>
                 <LeftArrow />
                 <PreviousButtonText>
                     Previous
@@ -27,7 +32,7 @@ export const PaginationButton = ({ first, previous, next, last }) => {
         );
     } else if (next) {
         return (
-            <PaginationButtonElement>
+            <PaginationButtonElement onClick={() => dispatch(setPage(page + 1))}>
                 <RightArrow />
                 <NextButtonText>
                     Next
@@ -36,7 +41,7 @@ export const PaginationButton = ({ first, previous, next, last }) => {
         );
     } else if (last) {
         return (
-            <PaginationButtonElement>
+            <PaginationButtonElement onClick={() => dispatch(setPage(500))}>
                 <RightArrow />
                 <NextButtonText>
                     Last
