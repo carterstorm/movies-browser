@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { MoviesTiles } from "./MoviesTiles";
 import { Heading } from "../../../common/Heading";
 import { Pagination } from "../../../common/Pagination";
+import { Loading } from "../../../common/Loading";
 import {
     fetchPopularMovies,
     selectArePopularMoviesLoading,
@@ -28,7 +29,7 @@ export const MoviesPage = () => {
         <Wrapper>
             <Main>
                 {areLoading ?
-                    (<>Loading</>)
+                    (<Loading />)
                     :
                     (
                         <>
