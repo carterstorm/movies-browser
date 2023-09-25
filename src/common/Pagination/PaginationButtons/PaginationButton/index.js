@@ -1,7 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import { selectPage, setPage } from "../../../../features/movies/MoviesPage/moviesSlice";
 import {
+    DesktopPaginationButtonsContainer,
     LeftArrow,
+    MobilePaginationButtonsContainer,
     NextButtonText,
     PaginationButtonElement,
     PreviousButtonText,
@@ -18,10 +20,16 @@ export const PaginationButton = ({ first, previous, next, last }) => {
                 onClick={() => dispatch(setPage(1))}
                 disabled={page === 1}
             >
-                <LeftArrow />
-                <PreviousButtonText>
-                    First
-                </PreviousButtonText>
+                <DesktopPaginationButtonsContainer>
+                    <LeftArrow />
+                    <PreviousButtonText>
+                        First
+                    </PreviousButtonText>
+                </DesktopPaginationButtonsContainer>
+                <MobilePaginationButtonsContainer>
+                    <LeftArrow />
+                    <LeftArrow />
+                </MobilePaginationButtonsContainer>
             </PaginationButtonElement>
         );
     } else if (previous) {
@@ -30,10 +38,15 @@ export const PaginationButton = ({ first, previous, next, last }) => {
                 onClick={() => dispatch(setPage(page - 1))}
                 disabled={page === 1}
             >
-                <LeftArrow />
-                <PreviousButtonText>
-                    Previous
-                </PreviousButtonText>
+                <DesktopPaginationButtonsContainer>
+                    <LeftArrow />
+                    <PreviousButtonText>
+                        Previous
+                    </PreviousButtonText>
+                </DesktopPaginationButtonsContainer>
+                <MobilePaginationButtonsContainer>
+                    <LeftArrow />
+                </MobilePaginationButtonsContainer>
             </PaginationButtonElement>
         );
     } else if (next) {
@@ -42,10 +55,15 @@ export const PaginationButton = ({ first, previous, next, last }) => {
                 onClick={() => dispatch(setPage(page + 1))}
                 disabled={page === 500}
             >
-                <RightArrow />
-                <NextButtonText>
-                    Next
-                </NextButtonText>
+                <DesktopPaginationButtonsContainer>
+                    <NextButtonText>
+                        Next
+                    </NextButtonText>
+                    <RightArrow />
+                </DesktopPaginationButtonsContainer>
+                <MobilePaginationButtonsContainer>
+                    <RightArrow />
+                </MobilePaginationButtonsContainer>
             </PaginationButtonElement>
         );
     } else if (last) {
@@ -54,10 +72,16 @@ export const PaginationButton = ({ first, previous, next, last }) => {
                 onClick={() => dispatch(setPage(500))}
                 disabled={page === 500}
             >
-                <RightArrow />
-                <NextButtonText>
-                    Last
-                </NextButtonText>
+                <DesktopPaginationButtonsContainer>
+                    <NextButtonText>
+                        Last
+                    </NextButtonText>
+                    <RightArrow />
+                </DesktopPaginationButtonsContainer>
+                <MobilePaginationButtonsContainer>
+                    <RightArrow />
+                    <RightArrow />
+                </MobilePaginationButtonsContainer>
             </PaginationButtonElement>
         );
     };

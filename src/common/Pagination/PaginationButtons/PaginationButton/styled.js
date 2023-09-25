@@ -12,6 +12,11 @@ export const PaginationButtonElement = styled.button`
     cursor: pointer;
     transition: .2s;
 
+    @media(max-width: 767px) {
+        padding: 8px 12px;
+        margin-left: 10px;
+    };
+
     &:nth-child(1) {
         margin-left: 0;
     };
@@ -25,6 +30,20 @@ export const PaginationButtonElement = styled.button`
         color: ${({ theme }) => theme.colors.black};
         filter: brightness(90%);
         cursor: not-allowed;
+    };
+`;
+
+export const DesktopPaginationButtonsContainer = styled.div`
+    @media(max-width: 767px) {
+        display: none;
+    };
+`;
+
+export const MobilePaginationButtonsContainer = styled.div`
+    display: flex;
+    
+    @media(min-width: 768px) {
+        display: none;
     };
 `;
 

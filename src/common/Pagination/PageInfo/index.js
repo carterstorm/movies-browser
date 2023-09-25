@@ -1,7 +1,8 @@
 import { useSelector } from "react-redux";
 import {
-    PagesInfoContainer,
-    PagesText
+    PageInfoContainer,
+    PageNumber,
+    PageText,
 } from "./styled";
 import { selectNumberOfPages, selectPage } from "../../../features/movies/MoviesPage/moviesSlice";
 
@@ -10,15 +11,19 @@ export const PagesInfo = () => {
     const numberOfPages = useSelector(selectNumberOfPages)
 
     return (
-        <PagesInfoContainer>
-            <PagesText>
+        <PageInfoContainer>
+            <PageText>
                 Page
-            </PagesText>
-            {page}
-            <PagesText>
+            </PageText>
+            <PageNumber>
+                {page}
+            </PageNumber>
+            <PageText>
                 of
-            </PagesText>
-            {numberOfPages}
-        </PagesInfoContainer>
+            </PageText>
+            <PageNumber>
+                {numberOfPages}
+            </PageNumber>
+        </PageInfoContainer>
     );
 };
