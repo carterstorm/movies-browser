@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ReactComponent as Star } from "../../../../../assets/svg/star.svg";
 
 export const RatingElement = styled.div`
     display: flex;
@@ -8,7 +9,7 @@ export const RatingElement = styled.div`
     };
 `;
 
-export const StarImage = styled.img`
+export const StarImage = styled(Star)`
     width: 24px;
     height: 24px;
 

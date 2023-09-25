@@ -1,5 +1,3 @@
-import start from "../../../../../assets/svg/star.svg";
-
 import {
     RatingElement,
     StarImage,
@@ -10,10 +8,7 @@ import {
 
 export const Rating = ({ voteAverage, voteCount }) => (
     <RatingElement>
-        <StarImage
-            src={start}
-            alt="star"
-        />
+        <StarImage />
         <VoteElements>
             <VoteAverage>
                 {voteAverage}
