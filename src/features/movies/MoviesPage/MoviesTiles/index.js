@@ -1,8 +1,6 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { selectPopularMovies, fetchPopularMovies, selectPage } from "../moviesSlice";
 import { Rating } from "./Rating";
 import { Tags } from "./Tags";
+import { MovieInfo } from "./MovieInfo";
 
 import {
     Description,
@@ -13,22 +11,22 @@ import {
     Tiles,
     TilesSection,
 } from "./styled";
-import { MovieInfo } from "./MovieInfo";
 
-export const MoviesTiles = () => {
-    const dispatch = useDispatch();
-    const popularMovies = useSelector(selectPopularMovies);
+
+export const MoviesTiles = ({ popularMovies }) => {
     const posterImageLink = `https://image.tmdb.org/t/p/w342`;
-    const page = useSelector(selectPage);
-
-    useEffect(() => {
-        dispatch(fetchPopularMovies());
-    }, [dispatch, page])
 
     return (
         <TilesSection>
             <Tiles>
-                {popularMovies.map(({ id, title, poster_path, release_date, vote_average, vote_count }) => (
+                {popularMovies.map(({
+                    id,
+                    title,
+                    poster_path,
+                    release_date,
+                    vote_average,
+                    vote_count
+                }) => (
                     <Tile key={id}>
                         <TileLink to="#">
                             <Poster

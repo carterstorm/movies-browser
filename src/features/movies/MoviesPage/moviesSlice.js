@@ -5,7 +5,7 @@ const moviesSlice = createSlice({
     initialState: {
         popularMovies: [],
         loading: false,
-        page: 10,
+        page: 1,
         numberOfPages: 500,
     },
     reducers: {
