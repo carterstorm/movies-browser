@@ -26,6 +26,7 @@ export const Tiles = styled.ul`
 export const Tile = styled.li`
     padding: 16px;
     box-shadow: 0px 4px 12px 0px rgba(186, 199, 213, 0.50);
+    background-color: ${({ theme }) => theme.colors.white};
     border-radius: 5px;
     cursor: pointer;
 
