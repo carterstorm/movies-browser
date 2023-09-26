@@ -1,5 +1,5 @@
 import { takeEvery, call, put, delay } from "redux-saga/effects";
-import { getGenres } from "./getGenres";
+import { getGenres } from "../../../getGenres";
 import { fetchGenres, fetchGenresError, fetchGenresSuccess } from "./genresSlice";
 
 function* fetchGenresHandler() {

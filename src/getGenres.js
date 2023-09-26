@@ -1,5 +1,5 @@
 import axios from "axios";
-import { api_key } from "../../../../apiKey";
+import { api_key } from "./apiKey";
 
 export const getGenres = async () => {
     const apiKey = api_key;

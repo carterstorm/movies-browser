@@ -10,7 +10,7 @@ import {
     selectPage,
     selectPopularMovies
 } from "./moviesSlice";
-import { fetchGenres } from "./MoviesGenres/genresSlice";
+import { fetchGenres } from "../MoviesPage/genresSlice";
 import { Main } from "./styled";
 
 export const MoviesPage = () => {
