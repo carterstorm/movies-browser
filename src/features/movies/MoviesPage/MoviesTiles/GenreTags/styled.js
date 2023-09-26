@@ -7,7 +7,7 @@ export const TagsContainer = styled.div`
 
 export const Tag = styled.div`
     display: flex;
-    padding: 8px 16px;
+    padding: 6px 14px;
     margin: 0 8px 4px 0;
     border-radius: 5px;
     background-color: ${({ theme }) => theme.colors.mystic};
@@ -27,12 +27,12 @@ export const Tag = styled.div`
 `;
 
 export const TagName = styled.span`
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
     line-height: 140%;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
-        font-size: 12px;
+        font-size: 10px;
     };
 
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {

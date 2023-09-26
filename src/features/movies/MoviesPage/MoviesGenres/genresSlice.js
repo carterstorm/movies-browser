@@ -28,5 +28,6 @@ export const {
 
 export const selectGenresState = state => state.genres;
 export const selectGenresList = state => selectGenresState(state).genresList;
+export const selectAreGenresLoading = state => selectGenresState(state).loading;
 
 export default genresSlice.reducer;
