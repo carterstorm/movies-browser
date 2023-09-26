@@ -1,5 +1,5 @@
 import { Rating } from "./Rating";
-import { Tags } from "./Tags";
+import { GenreTags } from "./GenreTags";
 import { MovieInfo } from "./MovieInfo";
 
 import {
@@ -40,7 +40,7 @@ export const MoviesTiles = ({ popularMovies }) => {
                                         title={title}
                                         releaseDate={release_date.substring(0, 4)}
                                     />
-                                    <Tags
+                                    <GenreTags
                                         genre={genre_ids}
                                     />
                                 </Description>
