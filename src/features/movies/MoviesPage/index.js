@@ -16,7 +16,7 @@ import { Main } from "./styled";
 export const MoviesPage = () => {
     const dispatch = useDispatch();
     const popularMovies = useSelector(selectPopularMovies);
-    const areLoading = useSelector(selectArePopularMoviesLoading);
+    const isLoading = useSelector(selectArePopularMoviesLoading);
     const page = useSelector(selectPage);
 
     useEffect(() => {
@@ -29,7 +29,7 @@ export const MoviesPage = () => {
 
     return (
         <Main>
-            {areLoading ?
+            {isLoading ?
                 (<Loading />)
                 :
                 (

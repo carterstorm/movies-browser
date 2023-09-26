@@ -11,11 +11,11 @@ import {
 
 export const GenreTags = ({ genre }) => {
     const genresList = useSelector(selectGenresList);
-    const areLoading = useSelector(selectAreGenresLoading);
+    const isLoading = useSelector(selectAreGenresLoading);
 
     return (
         <TagsContainer>
-            {!areLoading && (genre &&
+            {!isLoading && (genre &&
                 genresList.map(({ id, name }) => (
                     (genre.includes(id)) &&
                     (
