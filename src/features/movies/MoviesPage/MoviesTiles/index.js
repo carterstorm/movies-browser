@@ -21,11 +21,12 @@ export const MoviesTiles = ({ popularMovies }) => {
             <Tiles>
                 {popularMovies.map(({
                     id,
+                    genre_ids,
                     title,
                     poster_path,
                     release_date,
                     vote_average,
-                    vote_count
+                    vote_count,
                 }) => (
                     <Tile key={id}>
                         <TileLink to="#">
@@ -39,7 +40,9 @@ export const MoviesTiles = ({ popularMovies }) => {
                                         title={title}
                                         releaseDate={release_date.substring(0, 4)}
                                     />
-                                    <Tags />
+                                    <Tags
+                                        genre={genre_ids}
+                                    />
                                 </Description>
                                 <Rating
                                     voteAverage={vote_average}
