@@ -47,7 +47,6 @@ export const TileLink = styled(Link)`
 export const Poster = styled.img`
     width: 292px;
     height: 434px;
-    background-color: ${({ theme }) => theme.colors.black};;
     margin-bottom: 16px;
     border-radius: 5px;
 
