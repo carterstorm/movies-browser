@@ -29,7 +29,7 @@ export const MoviesTiles = ({ popularMovies }) => {
                     vote_count,
                 }) => (
                     <Tile key={id}>
-                        <TileLink to="#">
+                        <TileLink to={`/movies/movie/${id}`}>
                             <Poster
                                 src={`${posterImageLink}${poster_path}`}
                                 alt={`Poster: ${title}`}
