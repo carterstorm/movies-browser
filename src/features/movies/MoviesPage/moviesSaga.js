@@ -1,5 +1,5 @@
 import { takeEvery, call, put, delay } from "redux-saga/effects";
-import { getPopularMovies } from "./getPopularMovies";
+import { getPopularMovies } from "../../../getPopularMovies";
 import {
     fetchPopularMovies,
     fetchPopularMoviesError,

@@ -1,6 +1,6 @@
 import axios from "axios";
-import store from "../../../store";
-import { api_key } from "../../../apiKey";
+import store from "./store";
+import { api_key } from "./apiKey";
 
 export const getPopularMovies = async () => {
     const pageNumber = store.getState().movies.page;
