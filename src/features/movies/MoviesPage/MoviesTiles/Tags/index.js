@@ -1,4 +1,3 @@
-import { getGenres } from "../../MoviesGenres/getGenres";
 import {
     Tag,
     TagName,
@@ -6,7 +5,6 @@ import {
 } from "./styled";
 
 export const Tags = ({ genre }) => {
-    console.log(genre);
     return (
         <TagsContainer>
             <Tag>

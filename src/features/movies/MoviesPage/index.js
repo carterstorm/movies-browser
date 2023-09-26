@@ -10,7 +10,7 @@ import {
     selectPage,
     selectPopularMovies
 } from "./moviesSlice";
-
+import { fetchGenres } from "./MoviesGenres/genresSlice";
 import { Main } from "./styled";
 
 export const MoviesPage = () => {
@@ -21,7 +21,11 @@ export const MoviesPage = () => {
 
     useEffect(() => {
         dispatch(fetchPopularMovies());
-    }, [dispatch, page])
+    }, [dispatch, page]);
+
+    useEffect(() => {
+        dispatch(fetchGenres())
+    }, [dispatch])
 
     return (
         <Main>
