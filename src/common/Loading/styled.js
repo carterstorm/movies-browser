@@ -8,14 +8,27 @@ export const LoadingContainer = styled.div`
 `;
 
 export const LoadingSpinner = styled(Spinner)`
+    height: 91px;
     position: absolute;
     top: 219px;
     left: 50%;
     transform: translateX(-50%);
-    height: 91px;
+    animation: spin;
+    animation-duration: 0.75s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         top: 66px;
         height: 35px;
+    };
+
+    @keyframes spin {
+        from {
+            transform: translateX(-50%);
+        };
+         to {
+            transform: translateX(-50%) rotate(360deg);
+        };
     };
 `;
