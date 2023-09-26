@@ -3,14 +3,14 @@ import { Loading } from "../Loading";
 
 export const Checker = ({
     children,
-    isLoading,
-    isError
+    areLoading,
+    areError
 }) => {
     return (
         <>
-            {isLoading
+            {areLoading
                 ? <Loading />
-                : isError
+                : areError
                     ? <Error />
                     : children
             }

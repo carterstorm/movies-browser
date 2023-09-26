@@ -3,12 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { MoviesTiles } from "./MoviesTiles";
 import { Heading } from "../../../common/Heading";
 import { Pagination } from "../../../common/Pagination";
-import { Loading } from "../../../common/Loading";
+import { Checker } from "../../../common/Checker";
 import {
     fetchPopularMovies,
+    selectArePopularMoviesError,
     selectArePopularMoviesLoading,
     selectPage,
-    selectPopularMovies
+    selectPopularMovies,
 } from "../../../moviesSlice";
 import { fetchGenres } from "../../../genresSlice";
 import { Main } from "./styled";
@@ -16,7 +17,8 @@ import { Main } from "./styled";
 export const MoviesPage = () => {
     const dispatch = useDispatch();
     const popularMovies = useSelector(selectPopularMovies);
-    const isLoading = useSelector(selectArePopularMoviesLoading);
+    const areLoading = useSelector(selectArePopularMoviesLoading);
+    const areError = useSelector(selectArePopularMoviesError)
     const page = useSelector(selectPage);
 
     useEffect(() => {
@@ -29,20 +31,18 @@ export const MoviesPage = () => {
 
     return (
         <Main>
-            {isLoading ?
-                (<Loading />)
-                :
-                (
-                    <>
-                        <Heading
-                            title="Popular movies"
-                        />
-                        <MoviesTiles
-                            popularMovies={popularMovies}
-                        />
-                        <Pagination />
-                    </>
-                )}
+            <Checker
+                areLoading={areLoading}
+                areError={areError}
+            >
+                <Heading
+                    title="Popular movies"
+                />
+                <MoviesTiles
+                    popularMovies={popularMovies}
+                />
+                <Pagination />
+            </Checker>
         </Main>
     )
 };

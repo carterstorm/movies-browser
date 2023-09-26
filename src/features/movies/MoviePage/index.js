@@ -11,8 +11,8 @@ import {
 export const MoviePage = () => {
     const dispatch = useDispatch();
     const { id } = useParams();
-    const isLoading = useSelector(selectAreMovieDetailsLoading);
-    const isError = useSelector(selectAreMovieDetailsError);
+    const areLoading = useSelector(selectAreMovieDetailsLoading);
+    const areError = useSelector(selectAreMovieDetailsError);
 
     useEffect(() => {
         dispatch(fetchMovieDetails(id));
@@ -20,8 +20,8 @@ export const MoviePage = () => {
 
     return (
         <Checker
-            isLoading={isLoading}
-            isError={isError}>
+            areLoading={areLoading}
+            areError={areError}>
             Strona
         </Checker>
     );
