@@ -9,8 +9,8 @@ import {
     selectArePopularMoviesLoading,
     selectPage,
     selectPopularMovies
-} from "./moviesSlice";
-import { fetchGenres } from "../MoviesPage/genresSlice";
+} from "../../../moviesSlice";
+import { fetchGenres } from "../../../genresSlice";
 import { Main } from "./styled";
 
 export const MoviesPage = () => {

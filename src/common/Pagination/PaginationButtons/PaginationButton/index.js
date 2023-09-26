@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { selectNumberOfPages, selectPage, setPage } from "../../../../features/movies/MoviesPage/moviesSlice";
+import { selectNumberOfPages, selectPage, setPage } from "../../../../moviesSlice";
 import {
     DesktopPaginationButtonsContainer,
     LeftArrow,

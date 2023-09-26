@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import {
     selectNumberOfPages,
     selectPage
-} from "../../../features/movies/MoviesPage/moviesSlice";
+} from "../../../moviesSlice";
 import {
     PageInfoContainer,
     PageNumber,
