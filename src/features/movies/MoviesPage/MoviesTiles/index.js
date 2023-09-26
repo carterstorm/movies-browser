@@ -1,58 +1,32 @@
-import { Rating } from "./Rating";
-import { GenreTags } from "./GenreTags";
-import { MovieInfo } from "./MovieInfo";
-
+import { MovieTile } from "../../../../common/MovieTile";
 import {
-    Description,
-    MovieDetails,
-    Poster,
-    Tile,
-    TileLink,
     Tiles,
     TilesSection,
 } from "./styled";
 
-
-export const MoviesTiles = ({ popularMovies }) => {
-    const posterImageLink = `https://image.tmdb.org/t/p/w342`;
-
-    return (
-        <TilesSection>
-            <Tiles>
-                {popularMovies.map(({
-                    id,
-                    genre_ids,
-                    title,
-                    poster_path,
-                    release_date,
-                    vote_average,
-                    vote_count,
-                }) => (
-                    <Tile key={id}>
-                        <TileLink to={`/movies/movie/${id}`}>
-                            <Poster
-                                src={`${posterImageLink}${poster_path}`}
-                                alt={`Poster: ${title}`}
-                            />
-                            <MovieDetails>
-                                <Description>
-                                    <MovieInfo
-                                        title={title}
-                                        releaseDate={release_date.substring(0, 4)}
-                                    />
-                                    <GenreTags
-                                        genre={genre_ids}
-                                    />
-                                </Description>
-                                <Rating
-                                    voteAverage={vote_average}
-                                    voteCount={vote_count}
-                                />
-                            </MovieDetails>
-                        </TileLink>
-                    </Tile>
-                ))}
-            </Tiles>
-        </TilesSection>
-    );
-};
+export const MoviesTiles = ({ popularMovies }) => (
+    <TilesSection>
+        <Tiles>
+            {popularMovies.map(({
+                id,
+                genre_ids,
+                title,
+                poster_path,
+                release_date,
+                vote_average,
+                vote_count,
+            }) => (
+                <MovieTile
+                    key={id}
+                    id={id}
+                    genre_ids={genre_ids}
+                    title={title}
+                    poster_path={poster_path}
+                    release_date={release_date}
+                    vote_average={vote_average}
+                    vote_count={vote_count}
+                />
+            ))}
+        </Tiles>
+    </TilesSection>
+);

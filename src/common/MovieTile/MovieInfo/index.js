@@ -4,7 +4,10 @@ import {
     MovieYear
 } from "./styled";
 
-export const MovieInfo = ({ title, releaseDate }) => (
+export const MovieInfo = ({
+    title,
+    releaseDate
+}) => (
     <MovieInfoContainer>
         <MovieName>
             {title}
