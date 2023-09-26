@@ -59,7 +59,7 @@ export const Poster = styled.img`
     };
 
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-        height: 175px;
+        height: 200px;
         margin-right: 10px;
     };
 `;
