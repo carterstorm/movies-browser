@@ -5,17 +5,21 @@ const movieDetailsSlice = createSlice({
     initialState: {
         movieDetailsList: [],
         loading: false,
+        error: false,
     },
     reducers: {
         fetchMovieDetails: state => {
             state.loading = true;
+            state.error = false;
         },
         fetchMovieDetailsSuccess: (state, { payload: movieDetailsList }) => {
             state.movieDetailsList = movieDetailsList;
             state.loading = false;
+            state.error = false;
         },
         fetchMovieDetailsError: state => {
             state.loading = false;
+            state.error = true;
         },
     },
 });
@@ -29,5 +33,6 @@ export const {
 export const selectMovieDetails = state => state.movieDetails;
 export const selectMovieDetailsList = state => selectMovieDetails(state).movieDetailsList;
 export const selectAreMovieDetailsLoading = state => selectMovieDetails(state).loading;
+export const selectAreMovieDetailsError = state => selectMovieDetails(state).error;
 
 export default movieDetailsSlice.reducer;
