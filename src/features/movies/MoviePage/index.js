@@ -39,6 +39,9 @@ export const MoviePage = () => {
                 (
                     <MovieHeroSection
                         backdrop_path={backdrop_path}
+                        title={title}
+                        vote_average={vote_average}
+                        vote_count={vote_count}
                     />
                 )}
         </Checker>
