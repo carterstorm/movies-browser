@@ -1,4 +1,3 @@
-import { Rating } from "../../../../common/MovieTile/Rating";
 import {
     MovieDetails,
     MovieDetailsInfo,
@@ -22,10 +21,6 @@ export const MovieHeroSection = ({
                         <MovieTitle>
                             {title}
                         </MovieTitle>
-                        <Rating
-                            vote_average={vote_average}
-                            vote_count={vote_count}
-                        />
                     </MovieDetailsInfo>
                 </MovieDetails>
                 <MovieImage
