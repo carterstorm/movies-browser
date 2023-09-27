@@ -1,6 +1,6 @@
-import { Star } from "../../Star";
 import {
     RatingElement,
+    StarElement,
     VoteElements,
     VoteNumber
 } from "./styled";
@@ -8,7 +8,7 @@ import {
 export const Rating = ({ vote_average, vote_count }) => (
     <RatingElement>
         <VoteElements>
-            <Star />
+            <StarElement />
             <VoteNumber>
                 {vote_average.toFixed(1)}
             </VoteNumber>
