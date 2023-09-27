@@ -1,5 +1,12 @@
 import { Rating } from "../../../../common/MovieTile/Rating";
-import { MovieDetails, MovieDetailsInfo, MovieImage, MovieImageContainer, MovieTitle, Wrapper } from "./styled";
+import {
+    MovieDetails,
+    MovieDetailsInfo,
+    MovieImage,
+    MovieImageContainer,
+    MovieTitle,
+    Wrapper
+} from "./styled";
 
 export const MovieHeroSection = ({
     backdrop_path,

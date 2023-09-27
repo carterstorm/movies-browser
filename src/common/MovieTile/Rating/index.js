@@ -7,16 +7,16 @@ import {
 
 export const Rating = ({ vote_average, vote_count }) => (
     <RatingElement>
-        <StarImage />
         <VoteElements>
+            <StarImage />
             <VoteNumber>
                 {vote_average.toFixed(1)}
             </VoteNumber>
-            <VoteNumber
-                thin
-            >
-                {vote_count} votes
-            </VoteNumber>
         </VoteElements>
+        <VoteNumber
+            thin
+        >
+            {vote_count} votes
+        </VoteNumber>
     </RatingElement>
 );
