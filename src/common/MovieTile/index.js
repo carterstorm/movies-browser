@@ -38,8 +38,8 @@ export const MovieTile = ({
                         />
                     </Description>
                     <Rating
-                        voteAverage={vote_average}
-                        voteCount={vote_count}
+                        vote_average={vote_average}
+                        vote_count={vote_count}
                     />
                 </MovieDetails>
             </TileLink>

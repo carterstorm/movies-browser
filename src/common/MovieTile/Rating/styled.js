@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { ReactComponent as Star } from "../../../assets/svg/star.svg";
 
 export const RatingElement = styled.div`
@@ -29,12 +29,13 @@ export const VoteElements = styled.div`
     };
 `;
 
-export const VoteAverage = styled.span`
+export const VoteNumber = styled.span`
     margin: 0 12px 0 0;
     font-weight: 600;
-`;
 
-export const VoteCount = styled.span`
-    font-weight: 400;
-    color: ${({ theme }) => theme.colors.waterloo};
+    ${({ thin }) => thin && css`              
+        font-weight: 400;
+        color: ${({ theme }) => theme.colors.waterloo};    
+        margin-right: 0;
+    `};
 `;
