@@ -16,6 +16,9 @@ export const MovieDetails = styled.div`
     position: absolute;
     width: 100%;
     height: 100%;
+    background-position: center;
+    background-size: 140%;
+    padding: 16px;
     background: linear-gradient(270deg, #000000 14.11%, 
         rgba(0, 0, 0, 0.873268) 15.08%, 
         rgba(0, 0, 0, 0.720529) 16.51%, 
@@ -40,9 +43,16 @@ export const MovieDetails = styled.div`
                     rgba(0, 0, 0, 0.492821) 78.08%, 
                     rgba(0, 0, 0, 0.740286) 85.86%, 
                     #000000 92.87%);
-    background-position: center;
-    background-size: 140%;
-    padding: 16px;
+`;
+
+export const MovieDetailsInfo = styled.div`
+
+`;
+
+export const MovieTitle = styled.h2`
+    font-size: 64px;
+    font-weight: 600;
+    margin: 0 0 24px 0;
 `;
 
 export const MovieImage = styled.img`

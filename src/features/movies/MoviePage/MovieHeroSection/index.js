@@ -1,11 +1,25 @@
-import { MovieDetails, MovieImage, MovieImageContainer, Wrapper } from "./styled";
+import { Rating } from "../../../../common/MovieTile/Rating";
+import { MovieDetails, MovieDetailsInfo, MovieImage, MovieImageContainer, MovieTitle, Wrapper } from "./styled";
 
-export const MovieHeroSection = ({ backdrop_path }) => {
+export const MovieHeroSection = ({
+    backdrop_path,
+    title,
+    vote_average,
+    vote_count
+}) => {
     return (
         <Wrapper>
             <MovieImageContainer>
                 <MovieDetails>
-
+                    <MovieDetailsInfo>
+                        <MovieTitle>
+                            {title}
+                        </MovieTitle>
+                        <Rating
+                            vote_average={vote_average}
+                            vote_count={vote_count}
+                        />
+                    </MovieDetailsInfo>
                 </MovieDetails>
                 <MovieImage
                     src={`https://image.tmdb.org/t/p/w1280${backdrop_path}`}
