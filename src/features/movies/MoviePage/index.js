@@ -6,13 +6,26 @@ import {
     fetchMovieDetails,
     selectAreMovieDetailsError,
     selectAreMovieDetailsLoading,
+    selectMovieDetailsList,
 } from "../../../movieDetailsSlice";
+import { MovieHeroSection } from "./MovieHeroSection";
 
 export const MoviePage = () => {
     const dispatch = useDispatch();
     const { id } = useParams();
     const areLoading = useSelector(selectAreMovieDetailsLoading);
     const areError = useSelector(selectAreMovieDetailsError);
+    const {
+        backdrop_path,
+        title,
+        vote_average,
+        vote_count,
+        poster_path,
+        release_date,
+        genres,
+        production_countries,
+        overview
+    } = useSelector(selectMovieDetailsList);
 
     useEffect(() => {
         dispatch(fetchMovieDetails(id));
@@ -22,7 +35,12 @@ export const MoviePage = () => {
         <Checker
             areLoading={areLoading}
             areError={areError}>
-            Strona
+            {backdrop_path &&
+                (
+                    <MovieHeroSection
+                        backdrop_path={backdrop_path}
+                    />
+                )}
         </Checker>
     );
 };
