@@ -9,6 +9,8 @@ import {
     selectMovieDetailsList,
 } from "../../../movieDetailsSlice";
 import { MovieHeroSection } from "./MovieHeroSection";
+import { MovieTile } from "../../../common/MovieTile";
+import { BigTileMovieContainer } from "./styled";
 
 export const MoviePage = () => {
     const dispatch = useDispatch();
@@ -20,6 +22,9 @@ export const MoviePage = () => {
         title,
         vote_average,
         vote_count,
+        poster_path,
+        release_date,
+        genres,
     } = useSelector(selectMovieDetailsList);
 
     useEffect(() => {
@@ -32,12 +37,26 @@ export const MoviePage = () => {
             areError={areError}>
             {backdrop_path &&
                 (
-                    <MovieHeroSection
-                        backdrop_path={backdrop_path}
-                        title={title}
-                        vote_average={vote_average}
-                        vote_count={vote_count}
-                    />
+                    <>
+                        <MovieHeroSection
+                            backdrop_path={backdrop_path}
+                            title={title}
+                            vote_average={vote_average}
+                            vote_count={vote_count}
+                        />
+                        <BigTileMovieContainer>
+                            <MovieTile
+                                key={id}
+                                genre_ids={genres}
+                                title={title}
+                                poster_path={poster_path}
+                                release_date={release_date}
+                                vote_average={vote_average}
+                                vote_count={vote_count}
+                            />
+                        </BigTileMovieContainer>
+
+                    </>
                 )}
         </Checker>
     );
