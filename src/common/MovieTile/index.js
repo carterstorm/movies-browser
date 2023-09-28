@@ -1,4 +1,4 @@
-import { GenreTags } from "../GenreTags";
+import { GenreTags } from "./GenreTags";
 import { MovieInfo } from "./MovieInfo";
 import { Rating } from "../Rating";
 import {

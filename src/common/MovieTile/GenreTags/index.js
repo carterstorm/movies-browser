@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import {
     selectAreGenresLoading,
     selectGenresList
-} from "../../genresSlice";
+} from "../../../genresSlice";
 import {
     Tag,
     TagName,
