@@ -1,8 +1,12 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const MovieInfoContainer = styled.div`
     display: grid;
     grid-gap: 8px;
+
+    ${({ moviePage }) => moviePage && css`
+        grid-gap: 24px;
+    `};
 `;
 
 export const MovieName = styled.p`
