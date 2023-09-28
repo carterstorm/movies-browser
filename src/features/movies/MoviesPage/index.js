@@ -9,14 +9,12 @@ import {
     selectArePopularMoviesError,
     selectArePopularMoviesLoading,
     selectPage,
-    selectPopularMovies,
 } from "../../../moviesSlice";
 import { fetchGenres } from "../../../genresSlice";
 import { Main } from "./styled";
 
 export const MoviesPage = () => {
     const dispatch = useDispatch();
-    const popularMovies = useSelector(selectPopularMovies);
     const areLoading = useSelector(selectArePopularMoviesLoading);
     const areError = useSelector(selectArePopularMoviesError)
     const page = useSelector(selectPage);
@@ -38,9 +36,7 @@ export const MoviesPage = () => {
                 <Heading
                     title="Popular movies"
                 />
-                <MoviesTiles
-                    popularMovies={popularMovies}
-                />
+                <MoviesTiles />
                 <Pagination />
             </Checker>
         </Main>

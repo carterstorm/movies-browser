@@ -20,11 +20,6 @@ export const MoviePage = () => {
         title,
         vote_average,
         vote_count,
-        poster_path,
-        release_date,
-        genres,
-        production_countries,
-        overview
     } = useSelector(selectMovieDetailsList);
 
     useEffect(() => {
