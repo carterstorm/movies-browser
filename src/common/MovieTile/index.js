@@ -1,6 +1,6 @@
 import { GenreTags } from "./GenreTags";
 import { MovieInfo } from "./MovieInfo";
-import { Rating } from "./Rating";
+import { MovieStatistics } from "./MovieStatistics";
 import {
     Description,
     MovieDetails,
@@ -37,7 +37,7 @@ export const MovieTile = ({
                             genre={genre_ids}
                         />
                     </Description>
-                    <Rating
+                    <MovieStatistics
                         vote_average={vote_average}
                         vote_count={vote_count}
                     />
