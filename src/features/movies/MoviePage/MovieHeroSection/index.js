@@ -1,4 +1,3 @@
-import { MovieStatistics } from "../../../../common/MovieStatistics";
 import {
     MovieDetails,
     MovieDetailsInfo,
@@ -22,11 +21,6 @@ export const MovieHeroSection = ({
                         <MovieTitle>
                             {title}
                         </MovieTitle>
-                        <MovieStatistics
-                            moviePage
-                            vote_average={vote_average}
-                            vote_count={vote_count}
-                        />
                     </MovieDetailsInfo>
                 </MovieDetails>
                 <MovieImage
