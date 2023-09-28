@@ -53,7 +53,7 @@ export const MoviePage = () => {
                 <BigTileMovieContainer>
                     <MovieTile
                         key={id}
-                        genre_ids={genres && genres.map((genre) => genre.id)}
+                        genre_ids={genres.map((genre) => genre.id)}
                         title={title}
                         poster_path={poster_path}
                         release_date={release_date}
