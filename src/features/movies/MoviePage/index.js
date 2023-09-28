@@ -52,6 +52,7 @@ export const MoviePage = () => {
             {genres && (
                 <BigTileMovieContainer>
                     <MovieTile
+                        moviePage
                         key={id}
                         genre_ids={genres.map((genre) => genre.id)}
                         title={title}
