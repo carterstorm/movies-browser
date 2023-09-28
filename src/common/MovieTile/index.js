@@ -1,6 +1,6 @@
 import { GenreTags } from "./GenreTags";
 import { MovieInfo } from "./MovieInfo";
-import { MovieStatistics } from "./MovieStatistics";
+import { MovieStatistics } from "../MovieStatistics";
 import {
     Description,
     MovieDetails,

@@ -1,4 +1,4 @@
-import { ReactComponent as Star } from "../../../assets/svg/star.svg";
+import { ReactComponent as Star } from "../../assets/svg/star.svg";
 import styled, { css } from "styled-components";
 
 export const Statistics = styled.div`

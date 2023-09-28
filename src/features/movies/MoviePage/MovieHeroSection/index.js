@@ -1,4 +1,4 @@
-import { MovieStatistics } from "../../../../common/MovieTile/MovieStatistics";
+import { MovieStatistics } from "../../../../common/MovieStatistics";
 import {
     MovieDetails,
     MovieDetailsInfo,
