@@ -58,6 +58,7 @@ export const MovieTile = ({
                                 production_countries={production_countries}
                             />
                             <GenreTags
+                                moviePage
                                 genre={genre_ids}
                             />
                         </Description>

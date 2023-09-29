@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const TagsContainer = styled.div`
     display: flex;
@@ -16,6 +16,11 @@ export const Tag = styled.div`
         margin-right: 0;
     };
 
+    ${({ moviePage }) => moviePage && css`
+        padding: 8px 16px;
+        margin: 0 16px 0 0;
+    `};
+
     @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
         padding: 6px 12px;
     };
@@ -30,6 +35,11 @@ export const TagName = styled.span`
     font-size: 12px;
     font-weight: 400;
     line-height: 140%;
+
+    ${({ moviePage }) => moviePage && css`
+        font-size: 14px;
+        line-height: 100%;
+    `};
 
     @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
         font-size: 10px;
