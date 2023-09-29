@@ -9,7 +9,7 @@ import {
     TagsContainer
 } from "./styled";
 
-export const GenreTags = ({ genre, moviePage }) => {
+export const GenreTags = ({ genre }) => {
     const genresList = useSelector(selectGenresList);
     const areLoading = useSelector(selectAreGenresLoading);
 
@@ -20,12 +20,8 @@ export const GenreTags = ({ genre, moviePage }) => {
                     (genre.includes(id)) &&
                     (
                         <Tag
-                            key={id}
-                            moviePage
-                        >
-                            <TagName
-                                moviePage
-                            >
+                            key={id}>
+                            <TagName>
                                 {name}
                             </TagName>
                         </Tag>
