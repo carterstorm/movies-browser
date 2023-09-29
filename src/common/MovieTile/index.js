@@ -4,6 +4,7 @@ import { Rating } from "../Rating";
 import {
     Description,
     MovieDetails,
+    Overview,
     Poster,
     Tile,
     TileLink
@@ -17,7 +18,12 @@ export const MovieTile = ({
     poster_path,
     release_date,
     vote_average,
-    vote_count
+    vote_count,
+    original_language,
+    runtime,
+    budget,
+    production_countries,
+    overview,
 }) => {
     const posterImageLink = `https://image.tmdb.org/t/p/w342`;
     if (moviePage) {
@@ -45,7 +51,11 @@ export const MovieTile = ({
                             <MovieInfo
                                 moviePage
                                 title={title}
-                                releaseDate={release_date.substring(0, 4)}
+                                releaseDate={release_date}
+                                original_language={original_language}
+                                runtime={runtime}
+                                budget={budget}
+                                production_countries={production_countries}
                             />
                             <GenreTags
                                 genre={genre_ids}
@@ -55,6 +65,9 @@ export const MovieTile = ({
                             vote_average={vote_average}
                             vote_count={vote_count}
                         />
+                        <Overview>
+                            {overview}
+                        </Overview>
                     </MovieDetails>
                 </TileLink>
             </Tile>

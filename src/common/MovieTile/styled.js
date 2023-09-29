@@ -85,3 +85,11 @@ export const Description = styled.div`
         margin-bottom: 24px;
     `};
 `;
+
+export const Overview = styled.p`
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    margin: 24px 0;
+    text-indent: 26px;
+`;

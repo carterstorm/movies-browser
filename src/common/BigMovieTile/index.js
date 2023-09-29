@@ -11,6 +11,11 @@ export const BigMovieTile = () => {
         poster_path,
         release_date,
         genres,
+        original_language,
+        runtime,
+        budget,
+        production_countries,
+        overview
     } = useSelector(selectMovieDetailsList);
 
     return (
@@ -24,6 +29,11 @@ export const BigMovieTile = () => {
                     release_date={release_date}
                     vote_average={vote_average}
                     vote_count={vote_count}
+                    original_language={original_language}
+                    runtime={runtime}
+                    budget={budget}
+                    production_countries={production_countries}
+                    overview={overview}
                 />
             )}
         </BigMovieTileContainer>
