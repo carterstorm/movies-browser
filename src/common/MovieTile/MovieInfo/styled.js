@@ -25,23 +25,6 @@ export const Name = styled.p`
     };
 `;
 
-export const ExtraInfo = styled.div`
-    display: flex;
-`;
-
-export const InfoContainer = styled.div`
-
-`;
-
-export const InfoTitle = styled.span`
-    color: ${({ theme }) => theme.colors.waterloo};
-`;
-
-export const InfoDesctiption = styled.span`
-    margin: 0 20px 0 8px;
-    text-transform: uppercase;
-`;
-
 export const Year = styled.span`
     color: ${({ theme }) => theme.colors.waterloo};
     font-weight: 400;

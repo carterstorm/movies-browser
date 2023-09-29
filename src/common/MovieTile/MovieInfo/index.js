@@ -1,10 +1,7 @@
+import { ExtraInfo } from "./ExtraInfo";
 import {
     Container,
-    ExtraInfo,
     Info,
-    InfoContainer,
-    InfoDesctiption,
-    InfoTitle,
     MoreInfo,
     MoreInfoContainer,
     MoreInfoElementDescription,
@@ -31,16 +28,10 @@ export const MovieInfo = ({
                     <Name>
                         {title}
                     </Name>
-                    <ExtraInfo>
-                        <InfoContainer>
-                            <InfoTitle>Orginal language:</InfoTitle>
-                            <InfoDesctiption>{original_language}</InfoDesctiption>
-                        </InfoContainer>
-                        <InfoContainer>
-                            <InfoTitle>Movie length:</InfoTitle>
-                            <InfoDesctiption>{runtime} min</InfoDesctiption>
-                        </InfoContainer>
-                    </ExtraInfo>
+                    <ExtraInfo
+                        original_language={original_language}
+                        runtime={runtime}
+                    />
                 </Info>
                 <Year>
                     {releaseDate.substring(0, 4)}
