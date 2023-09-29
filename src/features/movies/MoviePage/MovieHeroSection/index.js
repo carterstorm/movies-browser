@@ -28,7 +28,7 @@ export const MovieHeroSection = () => {
                                 {title}
                             </MovieTitle>
                             <Rating
-                                moviePage
+                                movieHero
                                 vote_average={vote_average}
                                 vote_count={vote_count}
                             />

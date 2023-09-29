@@ -6,7 +6,7 @@ export const RatingElement = styled.div`
     align-items: flex-end;
     line-height: 0.9;
 
-    ${({ moviePage }) => moviePage && css`
+    ${({ movieHero }) => movieHero && css`
         flex-direction: column;
         align-items: flex-start;
 
@@ -21,7 +21,7 @@ export const VoteElements = styled.div`
     display: flex;
     align-items: flex-end;
 
-    ${({ moviePage }) => moviePage && css`
+    ${({ movieHero }) => movieHero && css`
         margin-bottom: 16px;
 
         @media (max-width: ${({ theme }) => theme.breakpoints.desktop}px) {
@@ -43,7 +43,7 @@ export const StarElement = styled(Star)`
         height: 16px;
     };
 
-    ${({ moviePage }) => moviePage && css`
+    ${({ movieHero }) => movieHero && css`
         width: 40px;
         height: 40px;
 
@@ -68,7 +68,7 @@ export const VoteAverage = styled.span`
         margin-left: 8px;
     };
 
-    ${({ moviePage }) => moviePage && css`
+    ${({ movieHero }) => movieHero && css`
         font-size: 30px;
 
         @media (max-width: ${({ theme }) => theme.breakpoints.desktop}px) {
@@ -97,7 +97,7 @@ export const VoteCount = styled.span`
         margin-left: 8px;
     };
 
-    ${({ moviePage }) => moviePage && css`
+    ${({ movieHero }) => movieHero && css`
         margin: 0 0 16px 0;
         color: ${({ theme }) => theme.colors.waterloo};
 
