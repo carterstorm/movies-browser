@@ -22,7 +22,9 @@ export const MovieInfo = ({
                 moviePage
             >
                 <Info>
-                    <Name>
+                    <Name
+                        moviePage
+                    >
                         {title}
                     </Name>
                     <ExtraInfo
@@ -30,7 +32,9 @@ export const MovieInfo = ({
                         runtime={runtime}
                     />
                 </Info>
-                <Year>
+                <Year
+                    moviePage
+                >
                     {releaseDate.substring(0, 4)}
                 </Year>
                 <MoreInfo

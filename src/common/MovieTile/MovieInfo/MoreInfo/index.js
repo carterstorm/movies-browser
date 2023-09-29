@@ -1,14 +1,14 @@
-import { More, MoreInfoContainer, MoreInfoElementDescription, MoreInfoElementTitle } from "./styled";
+import { More, MoreInfoElement, MoreInfoElementDescription, MoreInfoElementTitle } from "./styled";
 
 export const MoreInfo = ({ budget, production_countries, releaseDate }) => (
     <More>
-        <MoreInfoContainer>
+        <MoreInfoElement>
             <MoreInfoElementTitle>Budget:</MoreInfoElementTitle>
             <MoreInfoElementDescription>
                 {budget ? `${budget} $` : 'No information'}
             </MoreInfoElementDescription>
-        </MoreInfoContainer>
-        <MoreInfoContainer>
+        </MoreInfoElement>
+        <MoreInfoElement>
             <MoreInfoElementTitle>Production countries:</MoreInfoElementTitle>
             {production_countries.map(({ name }) => (
                 <MoreInfoElementDescription
@@ -17,12 +17,12 @@ export const MoreInfo = ({ budget, production_countries, releaseDate }) => (
                     {name}
                 </MoreInfoElementDescription>
             ))}
-        </MoreInfoContainer>
-        <MoreInfoContainer>
+        </MoreInfoElement>
+        <MoreInfoElement>
             <MoreInfoElementTitle>Release date:</MoreInfoElementTitle>
             <MoreInfoElementDescription>
                 {releaseDate}
             </MoreInfoElementDescription>
-        </MoreInfoContainer>
+        </MoreInfoElement>
     </More>
 );

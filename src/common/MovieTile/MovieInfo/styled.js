@@ -19,7 +19,13 @@ export const Name = styled.p`
     font-weight: 500;
     margin: 0 40px 0 0;
     line-height: 130%;
-    
+
+    ${({ moviePage }) => moviePage && css`
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 120%;
+    `};
+
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         font-size: 12px;
     };
@@ -29,6 +35,12 @@ export const Year = styled.span`
     color: ${({ theme }) => theme.colors.waterloo};
     font-weight: 400;
     line-height: 150%;
+
+    ${({ moviePage }) => moviePage && css`
+        font-size: 22px;
+        color: ${({ theme }) => theme.colors.black};
+        line-height: 120%;
+    `};
 
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         font-size: 10px;

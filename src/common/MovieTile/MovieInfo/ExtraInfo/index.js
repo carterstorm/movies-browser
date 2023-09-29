@@ -5,7 +5,7 @@ export const ExtraInfo = ({ original_language, runtime }) => {
         <ExtraInfoContainer>
             <InfoContainer>
                 <InfoTitle>Orginal language:</InfoTitle>
-                <InfoDesctiption>{original_language}</InfoDesctiption>
+                <InfoDesctiption upperCase>{original_language}</InfoDesctiption>
             </InfoContainer>
             <InfoContainer>
                 <InfoTitle>Movie length:</InfoTitle>
