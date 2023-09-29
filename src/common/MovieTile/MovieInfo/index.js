@@ -1,11 +1,8 @@
 import { ExtraInfo } from "./ExtraInfo";
+import { MoreInfo } from "./MoreInfo";
 import {
     Container,
     Info,
-    MoreInfo,
-    MoreInfoContainer,
-    MoreInfoElementDescription,
-    MoreInfoElementTitle,
     Name,
     Year
 } from "./styled";
@@ -36,30 +33,11 @@ export const MovieInfo = ({
                 <Year>
                     {releaseDate.substring(0, 4)}
                 </Year>
-                <MoreInfo>
-                    <MoreInfoContainer>
-                        <MoreInfoElementTitle>Budget:</MoreInfoElementTitle>
-                        <MoreInfoElementDescription>
-                            {budget ? `${budget} $` : 'No information'}
-                        </MoreInfoElementDescription>
-                    </MoreInfoContainer>
-                    <MoreInfoContainer>
-                        <MoreInfoElementTitle>Production countries:</MoreInfoElementTitle>
-                        {production_countries.map(({ name }) => (
-                            <MoreInfoElementDescription
-                                key={name}
-                            >
-                                {name}
-                            </MoreInfoElementDescription>
-                        ))}
-                    </MoreInfoContainer>
-                    <MoreInfoContainer>
-                        <MoreInfoElementTitle>Release date:</MoreInfoElementTitle>
-                        <MoreInfoElementDescription>
-                            {releaseDate}
-                        </MoreInfoElementDescription>
-                    </MoreInfoContainer>
-                </MoreInfo>
+                <MoreInfo
+                    budget={budget}
+                    production_countries={production_countries}
+                    releaseDate={releaseDate}
+                />
             </Container >
         )
     } else {

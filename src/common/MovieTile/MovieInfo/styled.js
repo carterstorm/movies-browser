@@ -19,7 +19,7 @@ export const Name = styled.p`
     font-weight: 500;
     margin: 0 40px 0 0;
     line-height: 130%;
-
+    
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         font-size: 12px;
     };
@@ -33,20 +33,4 @@ export const Year = styled.span`
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         font-size: 10px;
     };
-`;
-
-export const MoreInfo = styled.div`
-`;
-
-export const MoreInfoContainer = styled.div`
-    margin: 8px 0;
-`;
-
-export const MoreInfoElementTitle = styled.span`
-    color: ${({ theme }) => theme.colors.waterloo};
-    margin-right: 8px;
-`;
-
-export const MoreInfoElementDescription = styled.span`
-    margin-right: 8px;
 `;
