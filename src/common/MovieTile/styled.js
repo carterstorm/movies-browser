@@ -88,6 +88,7 @@ export const Description = styled.div`
 
 export const Overview = styled.p`
     font-style: normal;
+    text-align: justify;
     font-weight: 400;
     line-height: 160%;
     margin: 24px 0;
