@@ -62,6 +62,7 @@ export const MovieTile = ({
                             />
                         </Description>
                         <Rating
+                            moviePage
                             vote_average={vote_average}
                             vote_count={vote_count}
                         />
