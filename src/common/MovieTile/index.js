@@ -42,12 +42,8 @@ export const MovieTile = ({
                     alt={`Poster: ${title}`}
                     moviePage={moviePage}
                 />
-                <MovieDetails
-                    moviePage={moviePage}
-                >
-                    <Description
-                        moviePage={moviePage}
-                    >
+                <MovieDetails moviePage={moviePage}>
+                    <Description moviePage={moviePage}>
                         <MovieInfo
                             moviePage={moviePage}
                             title={title}
@@ -57,9 +53,7 @@ export const MovieTile = ({
                             budget={budget}
                             production_countries={production_countries}
                         />
-                        <GenreTags
-                            genre={genre_ids}
-                        />
+                        <GenreTags genre={genre_ids} />
                     </Description>
                     <Rating
                         moviePage={moviePage}
@@ -69,8 +63,9 @@ export const MovieTile = ({
                     {moviePage ?
                         (<Overview>
                             {overview}
-                        </Overview>) : null
-                    }
+                        </Overview>)
+                        :
+                        null}
                 </MovieDetails>
             </TileLink>
         </Tile>
