@@ -5,35 +5,39 @@ import {
     MoreInfoElementTitle
 } from "./styled";
 
-export const MoreInfo = ({ budget, production_countries, releaseDate }) => (
-    <More>
-        <MoreInfoElement>
-            <MoreInfoElementTitle>
-                Budget:
-            </MoreInfoElementTitle>
-            <MoreInfoElementDescription>
-                {budget ? `${budget}$` : 'No information'}
-            </MoreInfoElementDescription>
-        </MoreInfoElement>
-        <MoreInfoElement>
-            <MoreInfoElementTitle>
-                Production countries:
-            </MoreInfoElementTitle>
-            {production_countries.length !== 0 ? production_countries.map(({ name }) => (
-                <MoreInfoElementDescription
-                    key={name}
-                >
-                    {name}
+export const MoreInfo = ({ budget, production_countries, releaseDate }) => {
+    const date = new Date(releaseDate);
+
+    return (
+        <More>
+            <MoreInfoElement>
+                <MoreInfoElementTitle>
+                    Budget:
+                </MoreInfoElementTitle>
+                <MoreInfoElementDescription>
+                    {budget ? `${budget}$` : 'No information'}
                 </MoreInfoElementDescription>
-            )) : `No information`}
-        </MoreInfoElement>
-        <MoreInfoElement>
-            <MoreInfoElementTitle>
-                Release date:
-            </MoreInfoElementTitle>
-            <MoreInfoElementDescription>
-                {releaseDate ? releaseDate : `No information`}
-            </MoreInfoElementDescription>
-        </MoreInfoElement>
-    </More>
-);
+            </MoreInfoElement>
+            <MoreInfoElement>
+                <MoreInfoElementTitle>
+                    Production countries:
+                </MoreInfoElementTitle>
+                {production_countries.length !== 0 ? production_countries.map(({ name }) => (
+                    <MoreInfoElementDescription
+                        key={name}
+                    >
+                        {name}
+                    </MoreInfoElementDescription>
+                )) : `No information`}
+            </MoreInfoElement>
+            <MoreInfoElement>
+                <MoreInfoElementTitle>
+                    Release date:
+                </MoreInfoElementTitle>
+                <MoreInfoElementDescription>
+                    {releaseDate ? date.toLocaleDateString("en") : `No information`}
+                </MoreInfoElementDescription>
+            </MoreInfoElement>
+        </More>
+    )
+};
