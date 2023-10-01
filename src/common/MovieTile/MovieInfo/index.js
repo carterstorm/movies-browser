@@ -16,6 +16,7 @@ export const MovieInfo = ({
     production_countries,
     moviePage,
 }) => {
+    const setYear = releaseDate.substring(0, 4);
     return (
         <Container moviePage={moviePage}>
             {moviePage ? (
@@ -30,7 +31,7 @@ export const MovieInfo = ({
                         />
                     </Info>
                     <Year moviePage>
-                        {releaseDate.substring(0, 4)}
+                        {setYear}
                     </Year>
                     <MoreInfo
                         budget={budget}
@@ -44,7 +45,7 @@ export const MovieInfo = ({
                         {title}
                     </Name>
                     <Year>
-                        {releaseDate.substring(0, 4)}
+                        {setYear}
                     </Year>
                 </>
             )}
