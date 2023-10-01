@@ -85,6 +85,10 @@ export const VoteAverage = styled.span`
             font-size: 14px;
         };
     `};
+
+    ${({ moviePage }) => moviePage && css`
+        font-size: 22px;
+    `};
 `;
 
 export const VoteCount = styled.span`
@@ -99,7 +103,8 @@ export const VoteCount = styled.span`
 
     ${({ movieHero }) => movieHero && css`
         margin: 0 0 16px 0;
-        color: ${({ theme }) => theme.colors.waterloo};
+        color: ${({ theme }) => theme.colors.white};
+
 
         @media (max-width: ${({ theme }) => theme.breakpoints.desktop}px) {
             margin-bottom: 10px;
@@ -115,6 +120,10 @@ export const VoteCount = styled.span`
             font-size: 10px;
             margin-left: 8px;
         };
+    `};
+
+    ${({ moviePage }) => moviePage && css`
+        color: ${({ theme }) => theme.colors.black};
     `};
 `;
 
