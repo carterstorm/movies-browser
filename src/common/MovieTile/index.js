@@ -26,78 +26,53 @@ export const MovieTile = ({
     overview,
 }) => {
     const posterImageLink = `https://image.tmdb.org/t/p/w342`;
-    if (moviePage) {
-        return (
-            <Tile
-                key={id}
-                as="div"
-                moviePage
+    return (
+        <Tile
+            key={id}
+            as={moviePage ? "div" : null}
+            moviePage={moviePage}
+        >
+            <TileLink
+                as={moviePage ? "div" : null}
+                moviePage={moviePage}
+                to={!moviePage ? `/movies/movie/${id}` : null}
             >
-                <TileLink
-                    moviePage
-                    as="div"
+                <Poster
+                    src={`${posterImageLink}${poster_path}`}
+                    alt={`Poster: ${title}`}
+                    moviePage={moviePage}
+                />
+                <MovieDetails
+                    moviePage={moviePage}
                 >
-                    <Poster
-                        src={`${posterImageLink}${poster_path}`}
-                        alt={`Poster: ${title}`}
-                        moviePage
-                    />
-                    <MovieDetails
-                        moviePage
+                    <Description
+                        moviePage={moviePage}
                     >
-                        <Description
-                            moviePage
-                        >
-                            <MovieInfo
-                                moviePage
-                                title={title}
-                                releaseDate={release_date}
-                                original_language={original_language}
-                                runtime={runtime}
-                                budget={budget}
-                                production_countries={production_countries}
-                            />
-                            <GenreTags
-                                genre={genre_ids}
-                            />
-                        </Description>
-                        <Rating
-                            moviePage
-                            vote_average={vote_average}
-                            vote_count={vote_count}
+                        <MovieInfo
+                            moviePage={moviePage}
+                            title={title}
+                            releaseDate={release_date}
+                            original_language={original_language}
+                            runtime={runtime}
+                            budget={budget}
+                            production_countries={production_countries}
                         />
-                        <Overview>
-                            {overview}
-                        </Overview>
-                    </MovieDetails>
-                </TileLink>
-            </Tile>
-        )
-    } else {
-        return (
-            <Tile key={id}>
-                <TileLink to={`/movies/movie/${id}`}>
-                    <Poster
-                        src={`${posterImageLink}${poster_path}`}
-                        alt={`Poster: ${title}`}
+                        <GenreTags
+                            genre={genre_ids}
+                        />
+                    </Description>
+                    <Rating
+                        moviePage={moviePage}
+                        vote_average={vote_average}
+                        vote_count={vote_count}
                     />
-                    <MovieDetails>
-                        <Description>
-                            <MovieInfo
-                                title={title}
-                                releaseDate={release_date.substring(0, 4)}
-                            />
-                            <GenreTags
-                                genre={genre_ids}
-                            />
-                        </Description>
-                        <Rating
-                            vote_average={vote_average}
-                            vote_count={vote_count}
-                        />
-                    </MovieDetails>
-                </TileLink>
-            </Tile>
-        )
-    }
+                    {moviePage ?
+                        (<Overview>
+                            {overview}
+                        </Overview>) : null
+                    }
+                </MovieDetails>
+            </TileLink>
+        </Tile>
+    )
 };
