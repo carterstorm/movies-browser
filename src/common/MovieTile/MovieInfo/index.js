@@ -16,45 +16,38 @@ export const MovieInfo = ({
     production_countries,
     moviePage,
 }) => {
-    if (moviePage) {
-        return (
-            <Container
-                moviePage
-            >
-                <Info>
-                    <Name
-                        moviePage
-                    >
+    return (
+        <Container moviePage={moviePage}>
+            {moviePage ? (
+                <>
+                    <Info>
+                        <Name moviePage>
+                            {title}
+                        </Name>
+                        <ExtraInfo
+                            original_language={original_language}
+                            runtime={runtime}
+                        />
+                    </Info>
+                    <Year moviePage>
+                        {releaseDate.substring(0, 4)}
+                    </Year>
+                    <MoreInfo
+                        budget={budget}
+                        production_countries={production_countries}
+                        releaseDate={releaseDate}
+                    />
+                </>
+            ) : (
+                <>
+                    <Name>
                         {title}
                     </Name>
-                    <ExtraInfo
-                        original_language={original_language}
-                        runtime={runtime}
-                    />
-                </Info>
-                <Year
-                    moviePage
-                >
-                    {releaseDate.substring(0, 4)}
-                </Year>
-                <MoreInfo
-                    budget={budget}
-                    production_countries={production_countries}
-                    releaseDate={releaseDate}
-                />
-            </Container >
-        )
-    } else {
-        return (
-            <Container>
-                <Name>
-                    {title}
-                </Name>
-                <Year>
-                    {releaseDate}
-                </Year>
-            </Container>
-        )
-    }
-
+                    <Year>
+                        {releaseDate.substring(0, 4)}
+                    </Year>
+                </>
+            )}
+        </Container >
+    )
 };
