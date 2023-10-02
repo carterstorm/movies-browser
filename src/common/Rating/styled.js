@@ -6,6 +6,10 @@ export const RatingElement = styled.div`
     align-items: flex-end;
     line-height: 0.9;
 
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        flex-wrap: wrap;
+    };
+
     ${({ movieHero }) => movieHero && css`
         flex-direction: column;
         align-items: flex-start;
@@ -20,6 +24,10 @@ export const RatingElement = styled.div`
 export const VoteElements = styled.div`
     display: flex;
     align-items: flex-end;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        margin-bottom: 4px;
+    };
 
     ${({ movieHero }) => movieHero && css`
         margin-bottom: 16px;
@@ -108,6 +116,7 @@ export const VoteCount = styled.span`
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         font-size: 10px;
         margin-left: 8px;
+        margin-bottom: 4px;
     };
 
     ${({ movieHero }) => movieHero && css`
