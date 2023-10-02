@@ -8,6 +8,7 @@ export const theme = {
         pattensBlue: '#D6E4FF',
     },
     breakpoints: {
+        smallMobile: 374,
         mobile: 480,
         mediumMobile: 650,
         bigMobile: 767,
