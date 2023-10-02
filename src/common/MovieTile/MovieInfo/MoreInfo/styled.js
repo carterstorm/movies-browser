@@ -39,9 +39,16 @@ export const MoreInfoElementTitle = styled.span`
 
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         font-size: 10px;
+        display: none;
     };
 `;
 
 export const MoreInfoElementDescription = styled(MoreInfoElementTitle)`
     color: ${({ theme }) => theme.colors.black};
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        font-size: 10px;
+        display: block;
+        font-weight: 300;
+    };
 `;
