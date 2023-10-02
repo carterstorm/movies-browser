@@ -1,5 +1,6 @@
 import {
     More,
+    MoreInfoDesktopContainer,
     MoreInfoElement,
     MoreInfoElementDescription,
     MoreInfoElementTitle
@@ -10,30 +11,32 @@ export const MoreInfo = ({ budget, production_countries, releaseDate, original_l
 
     return (
         <More>
-            <MoreInfoElement>
-                <MoreInfoElementTitle>
-                    Original language:
-                </MoreInfoElementTitle>
-                <MoreInfoElementDescription>
-                    {original_language ? original_language.toUpperCase() : 'No information'}
-                </MoreInfoElementDescription>
-            </MoreInfoElement>
-            <MoreInfoElement>
-                <MoreInfoElementTitle>
-                    Movie length:
-                </MoreInfoElementTitle>
-                <MoreInfoElementDescription>
-                    {runtime ? `${runtime} min` : 'No information'}
-                </MoreInfoElementDescription>
-            </MoreInfoElement>
-            <MoreInfoElement>
-                <MoreInfoElementTitle>
-                    Budget:
-                </MoreInfoElementTitle>
-                <MoreInfoElementDescription>
-                    {budget ? `${budget}$` : 'No information'}
-                </MoreInfoElementDescription>
-            </MoreInfoElement>
+            <MoreInfoDesktopContainer>
+                <MoreInfoElement>
+                    <MoreInfoElementTitle>
+                        Original language:
+                    </MoreInfoElementTitle>
+                    <MoreInfoElementDescription>
+                        {original_language ? original_language.toUpperCase() : 'No information'}
+                    </MoreInfoElementDescription>
+                </MoreInfoElement>
+                <MoreInfoElement>
+                    <MoreInfoElementTitle>
+                        Movie length:
+                    </MoreInfoElementTitle>
+                    <MoreInfoElementDescription>
+                        {runtime ? `${runtime} min` : 'No information'}
+                    </MoreInfoElementDescription>
+                </MoreInfoElement>
+                <MoreInfoElement>
+                    <MoreInfoElementTitle>
+                        Budget:
+                    </MoreInfoElementTitle>
+                    <MoreInfoElementDescription>
+                        {budget ? `${budget}$` : 'No information'}
+                    </MoreInfoElementDescription>
+                </MoreInfoElement>
+            </MoreInfoDesktopContainer>
             <MoreInfoElement>
                 <MoreInfoElementTitle>
                     Production countries:

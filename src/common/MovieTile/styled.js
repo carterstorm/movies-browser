@@ -32,6 +32,11 @@ export const TileLink = styled(Link)`
             padding: 25px 25px 0;
             margin: 20px 0 0;
         };
+
+        @media(max-width: ${({ theme }) => theme.breakpoints.mediumMobile}px) {
+            padding: 16px 16px 0;
+            margin: 16px 0 0;
+        };
     `};
 
     @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
@@ -62,12 +67,18 @@ export const Poster = styled.img`
             height: auto;
             width: 280px;
             margin-right: 0;
-    `};
+        `};
+    };
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.mediumMobile}px) {
+        ${({ moviePage }) => moviePage && css`
+            width: 230px;
+        `};
     };
 
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-        height: 200px;
-        margin-right: 10px;
+        height: 170px;
+        width: auto;
     };
 `;
 
@@ -86,6 +97,10 @@ export const MovieDetails = styled.div`
 
         @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
             margin-left: 25px;
+        };
+
+        @media(max-width: ${({ theme }) => theme.breakpoints.mediumMobile}px) {
+            margin-left: 16px;
         };
     `};
 
@@ -125,6 +140,7 @@ export const Overview = styled.p`
     font-style: normal;
     text-align: justify;
     font-weight: 400;
+    font-size: 18px;
     line-height: 160%;
     margin: 24px 0;
     text-indent: 26px;
@@ -132,5 +148,22 @@ export const Overview = styled.p`
     ${({ mobile }) => mobile && css`
         padding: 25px;
         margin: 0;
+
+        @media(max-width: ${({ theme }) => theme.breakpoints.mediumMobile}px) {
+            padding: 16px;
+        };
     `};
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+        font-size: 16px
+    };
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.mediumMobile}px) {
+        font-size: 14px;
+    };
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        font-size: 10px;
+        line-height: 140%
+    };
 `;

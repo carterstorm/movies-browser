@@ -8,7 +8,11 @@ export const Container = styled.div`
         grid-gap: 24px;
 
         @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
-            grid-gap: 12px
+            grid-gap: 12px;
+        };
+
+        @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+            grid-gap: 4px;
         };
     `};
 `;
@@ -26,6 +30,10 @@ export const Name = styled.p`
 
         @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
             font-size: 26px;
+        };
+
+        @media(max-width: ${({ theme }) => theme.breakpoints.mediumMobile}px) {
+            font-size: 20px;
         };
     `};
 
@@ -46,6 +54,10 @@ export const Year = styled.span`
 
         @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
             font-size: 16px;
+        };
+
+        @media(max-width: ${({ theme }) => theme.breakpoints.mediumMobile}px) {
+            font-size: 14px;
         };
     `};
 
