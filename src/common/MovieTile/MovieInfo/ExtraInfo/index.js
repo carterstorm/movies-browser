@@ -1,7 +1,7 @@
 import {
     ExtraInfoContainer,
     InfoContainer,
-    InfoDesctiption,
+    InfoDescription,
     InfoTitle
 } from "./styled";
 
@@ -10,20 +10,20 @@ export const ExtraInfo = ({ original_language, runtime }) => {
         <ExtraInfoContainer>
             <InfoContainer>
                 <InfoTitle>
-                    Orginal language:
+                    Original language:
                 </InfoTitle>
-                <InfoDesctiption
+                <InfoDescription
                     upperCase>
                     {original_language}
-                </InfoDesctiption>
+                </InfoDescription>
             </InfoContainer>
             <InfoContainer>
                 <InfoTitle>
                     Movie length:
                 </InfoTitle>
-                <InfoDesctiption>
+                <InfoDescription>
                     {runtime} min
-                </InfoDesctiption>
+                </InfoDescription>
             </InfoContainer>
         </ExtraInfoContainer>
     );

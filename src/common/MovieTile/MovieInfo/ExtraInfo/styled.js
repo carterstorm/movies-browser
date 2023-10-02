@@ -13,7 +13,7 @@ export const InfoTitle = styled.span`
     color: ${({ theme }) => theme.colors.waterloo};
 `;
 
-export const InfoDesctiption = styled(InfoTitle)`
+export const InfoDescription = styled(InfoTitle)`
     margin: 0 20px 0 8px;
     color: ${({ theme }) => theme.colors.black};
 
