@@ -12,7 +12,7 @@ export const MoreInfoElement = styled.div`
     };
 
     @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
-        margin: 4px 0;
+        margin: 2px 0;
     };
 `;
 
