@@ -13,6 +13,7 @@ export const Tile = styled.li`
 
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         padding: 10px;
+        margin-top: 16px;
     };
 `;
 
@@ -36,6 +37,11 @@ export const TileLink = styled(Link)`
         @media(max-width: ${({ theme }) => theme.breakpoints.mediumMobile}px) {
             padding: 16px 16px 0;
             margin: 16px 0 0;
+        };
+
+        @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+            padding: 0;
+            margin: 0;
         };
     `};
 
@@ -77,7 +83,7 @@ export const Poster = styled.img`
     };
 
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-        height: 170px;
+        height: 210px;
         width: auto;
     };
 `;
@@ -102,6 +108,10 @@ export const MovieDetails = styled.div`
         @media(max-width: ${({ theme }) => theme.breakpoints.mediumMobile}px) {
             margin-left: 16px;
         };
+
+        @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+            margin-left: 12px;
+        };
     `};
 
     @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
@@ -120,6 +130,11 @@ export const Description = styled.div`
         @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
             grid-gap: 12px;
             margin-bottom: 12px;
+        };
+
+        @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+            grid-gap: 4px;
+            margin-bottom: 6px;
         };
     `};
 `;
@@ -152,6 +167,10 @@ export const Overview = styled.p`
         @media(max-width: ${({ theme }) => theme.breakpoints.mediumMobile}px) {
             padding: 16px;
         };
+
+        @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+            padding: 10px 0 0;
+        };
     `};
 
     @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
@@ -164,6 +183,7 @@ export const Overview = styled.p`
 
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         font-size: 10px;
-        line-height: 140%
+        line-height: 140%;
+        font-weight: 300;
     };
 `;
