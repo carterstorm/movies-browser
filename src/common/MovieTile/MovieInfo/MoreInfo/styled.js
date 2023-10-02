@@ -8,11 +8,11 @@ export const MoreInfoElement = styled.div`
     flex-wrap: wrap;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
-        margin: 6px 0;
+        margin: 10px 0;
     };
 
-    @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
-        margin: 2px 0;
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        margin: 4px 0;
     };
 `;
 
