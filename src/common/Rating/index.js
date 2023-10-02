@@ -15,7 +15,7 @@ export const Rating = ({ vote_average, vote_count, movieHero, moviePage }) => (
                 {vote_average.toFixed(1)}
             </VoteAverage>
             {movieHero || moviePage ? (
-                <VoteMax>
+                <VoteMax moviePage={moviePage}>
                     / 10
                 </VoteMax>
             ) : null}

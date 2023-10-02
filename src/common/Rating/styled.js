@@ -88,6 +88,15 @@ export const VoteAverage = styled.span`
 
     ${({ moviePage }) => moviePage && css`
         font-size: 22px;
+
+        @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+            font-size: 16px;
+        };
+
+        @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+            font-size: 12px;
+            margin-left: 4px;
+        };
     `};
 `;
 
@@ -124,17 +133,33 @@ export const VoteCount = styled.span`
 
     ${({ moviePage }) => moviePage && css`
         color: ${({ theme }) => theme.colors.black};
+
+        @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+            font-size: 12px;
+        };
+
+        @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+            font-size: 10px;
+            margin-left: 6px;
+        };
     `};
 `;
 
 export const VoteMax = styled.span`
     margin-left: 5px;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-        font-size: 12px;
-    };
+    ${({ moviePage }) => moviePage && css`
+        @media (max-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+            font-size: 16px;
+        };
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-        font-size: 10px;
-    };
+        @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+            font-size: 12px;
+        };
+
+        @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+            font-size: 10px;
+            margin-left: 4px;
+        };
+    `};
 `;
