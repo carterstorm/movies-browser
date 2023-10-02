@@ -39,6 +39,7 @@ export const Name = styled.p`
 
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         font-size: 12px;
+        font-weight: 500;
     };
 `;
 
@@ -63,5 +64,7 @@ export const Year = styled.span`
 
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         font-size: 10px;
+        font-weight: 300;
+        color: ${({ theme }) => theme.colors.waterloo};
     };
 `;
