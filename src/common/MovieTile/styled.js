@@ -111,6 +111,7 @@ export const MovieDetails = styled.div`
 
         @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
             margin-left: 12px;
+            padding: 0;
         };
     `};
 
