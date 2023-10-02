@@ -5,6 +5,7 @@ export const RatingElement = styled.div`
     display: flex;
     align-items: flex-end;
     flex-direction: row;
+    flex-wrap: wrap;
 
     ${({ movieHero }) => movieHero && css`
         align-items: flex-start;
@@ -30,6 +31,12 @@ export const VoteElements = styled.div`
     @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
         ${({ movieHero }) => movieHero && css`
             margin-bottom: 0;
+        `};
+    };
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        ${({ moviePage }) => moviePage && css`
+            margin-bottom: 4px;
         `};
     };
 `;
@@ -152,6 +159,18 @@ export const VoteCount = styled(VoteAverage)`
             font-size: 10px;
             margin-left: 8px;
         `};
+
+        @media(max-width: 321px) {
+            ${({ moviePage }) => moviePage && css`
+                margin-left: 0;
+            `};
+        };
+
+        @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+            ${({ moviePage }) => moviePage && css`
+                margin-bottom: 4px;
+            `};
+        };
     };
 `;
 
