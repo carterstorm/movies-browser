@@ -64,14 +64,15 @@ export const MovieTile = ({
                             vote_average={vote_average}
                             vote_count={vote_count}
                         />
-                        <OverviewDesktopContainer>
-                            {moviePage ?
-                                (<Overview>
-                                    {overview}
-                                </Overview>)
-                                :
-                                null}
-                        </OverviewDesktopContainer>
+                        {moviePage ?
+                            (
+                                <OverviewDesktopContainer>
+                                    <Overview>
+                                        {overview}
+                                    </Overview>
+                                </OverviewDesktopContainer>)
+                            :
+                            null}
                     </MovieDetails>
                 </TileLink>
                 <OverviewMobileContainer>
