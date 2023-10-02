@@ -6,6 +6,10 @@ export const Container = styled.div`
 
     ${({ moviePage }) => moviePage && css`
         grid-gap: 24px;
+
+        @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+            grid-gap: 12px
+        };
     `};
 `;
 
@@ -19,6 +23,10 @@ export const Name = styled.p`
         font-size: 36px;
         font-weight: 600;
         line-height: 120%;
+
+        @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+            font-size: 26px;
+        };
     `};
 
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
@@ -35,6 +43,10 @@ export const Year = styled.span`
         font-size: 22px;
         color: ${({ theme }) => theme.colors.black};
         line-height: 120%;
+
+        @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+            font-size: 16px;
+        };
     `};
 
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {

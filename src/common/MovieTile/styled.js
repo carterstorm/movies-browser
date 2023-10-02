@@ -27,6 +27,11 @@ export const TileLink = styled(Link)`
         flex-direction: row;
         padding: 40px;
         margin: 64px 0;
+
+        @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+            padding: 25px 25px 0;
+            margin: 20px 0 0;
+        };
     `};
 
     @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
@@ -52,6 +57,12 @@ export const Poster = styled.img`
         width: auto;
         margin-bottom: 0;
         margin-right: 20px;
+
+        ${({ moviePage }) => moviePage && css`
+            height: auto;
+            width: 280px;
+            margin-right: 0;
+    `};
     };
 
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
@@ -72,6 +83,10 @@ export const MovieDetails = styled.div`
         margin-left: 40px;
         padding: 8px 0;
         height: auto;
+
+        @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+            margin-left: 25px;
+        };
     `};
 
     @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
@@ -86,6 +101,11 @@ export const Description = styled.div`
     ${({ moviePage }) => moviePage && css`
         grid-gap: 24px;
         margin-bottom: 24px;
+
+        @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+            grid-gap: 12px;
+            margin-bottom: 12px;
+        };
     `};
 `;
 
@@ -108,4 +128,9 @@ export const Overview = styled.p`
     line-height: 160%;
     margin: 24px 0;
     text-indent: 26px;
+
+    ${({ mobile }) => mobile && css`
+        padding: 25px;
+        margin: 0;
+    `};
 `;

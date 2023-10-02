@@ -76,7 +76,7 @@ export const MovieTile = ({
                 </TileLink>
                 <OverviewMobileContainer>
                     {moviePage ?
-                        (<Overview>
+                        (<Overview mobile>
                             {overview}
                         </Overview>)
                         :
