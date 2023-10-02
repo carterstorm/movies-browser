@@ -10,7 +10,7 @@ import {
 export const Rating = ({ vote_average, vote_count, movieHero, moviePage }) => (
     <RatingElement movieHero={movieHero}>
         <VoteElements movieHero={movieHero}>
-            <StarElement movieHero={movieHero} />
+            <StarElement movieHero={movieHero} moviePage={moviePage} />
             <VoteAverage movieHero={movieHero} moviePage={moviePage}>
                 {vote_average.toFixed(1)}
             </VoteAverage>
