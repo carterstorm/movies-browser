@@ -5,11 +5,27 @@ import {
     MoreInfoElementTitle
 } from "./styled";
 
-export const MoreInfo = ({ budget, production_countries, releaseDate }) => {
+export const MoreInfo = ({ budget, production_countries, releaseDate, original_language, runtime }) => {
     const date = new Date(releaseDate);
 
     return (
         <More>
+            <MoreInfoElement>
+                <MoreInfoElementTitle>
+                    Original language:
+                </MoreInfoElementTitle>
+                <MoreInfoElementDescription>
+                    {original_language ? original_language.toUpperCase() : 'No information'}
+                </MoreInfoElementDescription>
+            </MoreInfoElement>
+            <MoreInfoElement>
+                <MoreInfoElementTitle>
+                    Movie length:
+                </MoreInfoElementTitle>
+                <MoreInfoElementDescription>
+                    {runtime ? `${runtime} min` : 'No information'}
+                </MoreInfoElementDescription>
+            </MoreInfoElement>
             <MoreInfoElement>
                 <MoreInfoElementTitle>
                     Budget:

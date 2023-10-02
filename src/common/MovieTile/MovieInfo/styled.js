@@ -9,11 +9,6 @@ export const Container = styled.div`
     `};
 `;
 
-export const Info = styled.div`
-    display: flex;
-    align-items: center;
-`;
-
 export const Name = styled.p`
     font-size: 22px;
     font-weight: 500;

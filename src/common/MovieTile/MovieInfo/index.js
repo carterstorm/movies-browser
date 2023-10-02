@@ -1,4 +1,3 @@
-import { ExtraInfo } from "./ExtraInfo";
 import { MoreInfo } from "./MoreInfo";
 import {
     Container,
@@ -21,15 +20,9 @@ export const MovieInfo = ({
         <Container moviePage={moviePage}>
             {moviePage ? (
                 <>
-                    <Info>
-                        <Name moviePage>
-                            {title}
-                        </Name>
-                        <ExtraInfo
-                            original_language={original_language}
-                            runtime={runtime}
-                        />
-                    </Info>
+                    <Name moviePage>
+                        {title}
+                    </Name>
                     <Year moviePage>
                         {setYear}
                     </Year>
@@ -37,6 +30,8 @@ export const MovieInfo = ({
                         budget={budget}
                         production_countries={production_countries}
                         releaseDate={releaseDate}
+                        original_language={original_language}
+                        runtime={runtime}
                     />
                 </>
             ) : (
