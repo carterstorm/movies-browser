@@ -1,5 +1,6 @@
 import {
     More,
+    MoreInfoDataMobileContainer,
     MoreInfoDesktopContainer,
     MoreInfoElement,
     MoreInfoElementDescription,
@@ -8,6 +9,8 @@ import {
 
 export const MoreInfo = ({ budget, production_countries, releaseDate, original_language, runtime }) => {
     const date = new Date(releaseDate);
+    const enDate = date.toLocaleDateString("en");
+    const localDate = date.toLocaleDateString();
 
     return (
         <More>
@@ -53,9 +56,12 @@ export const MoreInfo = ({ budget, production_countries, releaseDate, original_l
                 <MoreInfoElementTitle>
                     Release date:
                 </MoreInfoElementTitle>
-                <MoreInfoElementDescription>
-                    {releaseDate ? date.toLocaleDateString("en") : `No information`}
+                <MoreInfoElementDescription mobile>
+                    {releaseDate ? enDate : `No information`}
                 </MoreInfoElementDescription>
+                <MoreInfoDataMobileContainer>
+                    {releaseDate ? localDate : `No information`}
+                </MoreInfoDataMobileContainer>
             </MoreInfoElement>
         </More>
     )

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const More = styled.div``;
 
@@ -51,4 +51,19 @@ export const MoreInfoElementDescription = styled(MoreInfoElementTitle)`
         display: block;
         font-weight: 300;
     };
+
+    ${({ mobile }) => mobile && css`
+        @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+            display: none;
+        };
+    `};
 `;
+
+export const MoreInfoDataMobileContainer = styled(MoreInfoElementDescription)`
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        display: block;
+    };
+    @media(min-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        display: none;
+    };
+`
