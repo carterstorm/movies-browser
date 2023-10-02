@@ -17,7 +17,7 @@ export const MoreInfoElement = styled.div`
 `;
 
 export const MoreInfoDesktopContainer = styled.div`
-    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    @media(max-width: ${({ theme }) => theme.breakpoints.smallMobile}px) {
         display: none;
     };
 `;
@@ -39,7 +39,6 @@ export const MoreInfoElementTitle = styled.span`
 
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         font-size: 10px;
-        display: none;
     };
 `;
 
@@ -60,9 +59,6 @@ export const MoreInfoElementDescription = styled(MoreInfoElementTitle)`
 `;
 
 export const MoreInfoDataMobileContainer = styled(MoreInfoElementDescription)`
-    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-        display: block;
-    };
     @media(min-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         display: none;
     };
