@@ -16,6 +16,8 @@ export const Tile = styled.li`
     };
 `;
 
+export const Container = styled.div``;
+
 export const TileLink = styled(Link)`
     text-decoration: none;
     color: ${({ theme }) => theme.colors.black};
@@ -40,7 +42,8 @@ export const Poster = styled.img`
 
     ${({ moviePage }) => moviePage && css`
         width: 312px;
-        height: 464px;
+        height: auto;
+        object-fit: cover;
         margin-bottom: 0;
     `};
 
@@ -84,6 +87,18 @@ export const Description = styled.div`
         grid-gap: 24px;
         margin-bottom: 24px;
     `};
+`;
+
+export const OverviewDesktopContainer = styled.div`
+    @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+        display: none;
+    };
+`;
+
+export const OverviewMobileContainer = styled.div`
+    @media(min-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+        display: none;
+    };
 `;
 
 export const Overview = styled.p`

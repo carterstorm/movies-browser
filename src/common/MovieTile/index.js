@@ -2,9 +2,12 @@ import { GenreTags } from "./GenreTags";
 import { MovieInfo } from "./MovieInfo";
 import { Rating } from "../Rating";
 import {
+    Container,
     Description,
     MovieDetails,
     Overview,
+    OverviewDesktopContainer,
+    OverviewMobileContainer,
     Poster,
     Tile,
     TileLink
@@ -32,42 +35,54 @@ export const MovieTile = ({
             as={moviePage ? "div" : null}
             moviePage={moviePage}
         >
-            <TileLink
-                as={moviePage ? "div" : null}
-                moviePage={moviePage}
-                to={!moviePage ? `/movies/movie/${id}` : null}
-            >
-                <Poster
-                    src={`${posterImageLink}${poster_path}`}
-                    alt={`Poster: ${title}`}
+            <Container>
+                <TileLink
+                    as={moviePage ? "div" : null}
                     moviePage={moviePage}
-                />
-                <MovieDetails moviePage={moviePage}>
-                    <Description moviePage={moviePage}>
-                        <MovieInfo
-                            moviePage={moviePage}
-                            title={title}
-                            releaseDate={release_date}
-                            original_language={original_language}
-                            runtime={runtime}
-                            budget={budget}
-                            production_countries={production_countries}
-                        />
-                        <GenreTags genre={genre_ids} />
-                    </Description>
-                    <Rating
+                    to={!moviePage ? `/movies/movie/${id}` : null}
+                >
+                    <Poster
+                        src={`${posterImageLink}${poster_path}`}
+                        alt={`Poster: ${title}`}
                         moviePage={moviePage}
-                        vote_average={vote_average}
-                        vote_count={vote_count}
                     />
+                    <MovieDetails moviePage={moviePage}>
+                        <Description moviePage={moviePage}>
+                            <MovieInfo
+                                moviePage={moviePage}
+                                title={title}
+                                releaseDate={release_date}
+                                original_language={original_language}
+                                runtime={runtime}
+                                budget={budget}
+                                production_countries={production_countries}
+                            />
+                            <GenreTags genre={genre_ids} />
+                        </Description>
+                        <Rating
+                            moviePage={moviePage}
+                            vote_average={vote_average}
+                            vote_count={vote_count}
+                        />
+                        <OverviewDesktopContainer>
+                            {moviePage ?
+                                (<Overview>
+                                    {overview}
+                                </Overview>)
+                                :
+                                null}
+                        </OverviewDesktopContainer>
+                    </MovieDetails>
+                </TileLink>
+                <OverviewMobileContainer>
                     {moviePage ?
                         (<Overview>
                             {overview}
                         </Overview>)
                         :
                         null}
-                </MovieDetails>
-            </TileLink>
+                </OverviewMobileContainer>
+            </Container>
         </Tile>
     )
 };
