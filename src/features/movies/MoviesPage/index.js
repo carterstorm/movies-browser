@@ -18,7 +18,7 @@ export const MoviesPage = () => {
     const dispatch = useDispatch();
     const areLoading = useSelector(selectArePopularMoviesLoading);
     const areError = useSelector(selectArePopularMoviesError);
-    const urlPageNumber = usePageParameter("page");
+    const urlPageNumber = +usePageParameter("page");
 
     useEffect(() => {
         dispatch(fetchPopularMovies());
