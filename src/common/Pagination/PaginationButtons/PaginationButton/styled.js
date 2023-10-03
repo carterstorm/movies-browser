@@ -34,6 +34,9 @@ export const PaginationButtonElement = styled.button`
 `;
 
 export const DesktopPaginationButtonsContainer = styled.div`
+    display: flex;
+    align-items: center;
+
     @media(max-width: 767px) {
         display: none;
     };
@@ -41,7 +44,8 @@ export const DesktopPaginationButtonsContainer = styled.div`
 
 export const MobilePaginationButtonsContainer = styled.div`
     display: flex;
-    
+    align-items: center;
+
     @media(min-width: 768px) {
         display: none;
     };
