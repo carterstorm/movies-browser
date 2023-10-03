@@ -1,6 +1,7 @@
 import { GenreTags } from "./GenreTags";
 import { MovieInfo } from "./MovieInfo";
 import { Rating } from "../Rating";
+import no_movie_image from "../../assets/svg/no_movie_image.svg";
 import {
     Container,
     Description,
@@ -42,7 +43,7 @@ export const MovieTile = ({
                     to={!moviePage ? `/movies/movie/${id}` : null}
                 >
                     <Poster
-                        src={`${posterImageLink}${poster_path}`}
+                        src={poster_path ? `${posterImageLink}${poster_path}` : no_movie_image}
                         alt={`Poster: ${title}`}
                         moviePage={moviePage}
                     />
