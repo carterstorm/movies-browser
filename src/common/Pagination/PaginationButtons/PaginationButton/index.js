@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { selectNumberOfPages, selectPage, setPage } from "../../../../moviesSlice";
+import { useReplacePageParameter } from "../../../../pageParameters";
 import {
     DesktopPaginationButtonsContainer,
     LeftArrow,
@@ -14,11 +15,17 @@ export const PaginationButton = ({ first, previous, next, last }) => {
     const dispatch = useDispatch();
     const page = useSelector(selectPage);
     const numberOfPages = useSelector(selectNumberOfPages);
+    const replacePageParameter = useReplacePageParameter();
+
+    const onHandleClick = (pageNumber) => {
+        replacePageParameter("page", pageNumber);
+        dispatch(setPage(pageNumber));
+    };
 
     if (first) {
         return (
             <PaginationButtonElement
-                onClick={() => dispatch(setPage(1))}
+                onClick={() => onHandleClick(1)}
                 disabled={page === 1}
             >
                 <DesktopPaginationButtonsContainer>
@@ -36,7 +43,7 @@ export const PaginationButton = ({ first, previous, next, last }) => {
     } else if (previous) {
         return (
             <PaginationButtonElement
-                onClick={() => dispatch(setPage(page - 1))}
+                onClick={() => onHandleClick(page - 1)}
                 disabled={page === 1}
             >
                 <DesktopPaginationButtonsContainer>
@@ -53,7 +60,7 @@ export const PaginationButton = ({ first, previous, next, last }) => {
     } else if (next) {
         return (
             <PaginationButtonElement
-                onClick={() => dispatch(setPage(page + 1))}
+                onClick={() => onHandleClick(page + 1)}
                 disabled={page === numberOfPages}
             >
                 <DesktopPaginationButtonsContainer>
@@ -70,7 +77,7 @@ export const PaginationButton = ({ first, previous, next, last }) => {
     } else if (last) {
         return (
             <PaginationButtonElement
-                onClick={() => dispatch(setPage(numberOfPages))}
+                onClick={() => onHandleClick(numberOfPages)}
                 disabled={page === numberOfPages}
             >
                 <DesktopPaginationButtonsContainer>
