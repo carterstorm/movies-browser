@@ -22,7 +22,7 @@ export const MoviesPage = () => {
 
     useEffect(() => {
         dispatch(fetchPopularMovies());
-        dispatch(setPage(+urlPageNumber || 1));
+        dispatch(setPage(urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber));
     }, [dispatch, urlPageNumber]);
 
     useEffect(() => {
