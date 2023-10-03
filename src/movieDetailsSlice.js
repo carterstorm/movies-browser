@@ -6,11 +6,13 @@ const movieDetailsSlice = createSlice({
         movieDetailsList: [],
         loading: false,
         error: false,
+        movieId: null,
     },
     reducers: {
-        fetchMovieDetails: state => {
+        fetchMovieDetails: (state, { payload: id }) => {
             state.loading = true;
             state.error = false;
+            state.movieId = id;
         },
         fetchMovieDetailsSuccess: (state, { payload: movieDetailsList }) => {
             state.movieDetailsList = movieDetailsList;
