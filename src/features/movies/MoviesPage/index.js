@@ -8,18 +8,22 @@ import {
     fetchPopularMovies,
     selectArePopularMoviesError,
     selectArePopularMoviesLoading,
+    setPage,
 } from "../../../moviesSlice";
 import { fetchGenres } from "../../../genresSlice";
 import { Main } from "./styled";
+import { usePageParameter } from "../../../pageParameters";
 
 export const MoviesPage = () => {
     const dispatch = useDispatch();
     const areLoading = useSelector(selectArePopularMoviesLoading);
-    const areError = useSelector(selectArePopularMoviesError)
+    const areError = useSelector(selectArePopularMoviesError);
+    const urlPageNumber = usePageParameter("page");
 
     useEffect(() => {
         dispatch(fetchPopularMovies());
-    }, [dispatch]);
+        dispatch(setPage(+urlPageNumber || 1));
+    }, [dispatch, urlPageNumber]);
 
     useEffect(() => {
         dispatch(fetchGenres())
