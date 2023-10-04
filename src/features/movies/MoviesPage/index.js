@@ -7,7 +7,8 @@ import { Checker } from "../../../common/Checker";
 import { fetchGenres } from "../../../genresSlice";
 import { Main } from "./styled";
 import { usePageParameter } from "../../../pageParameters";
-import { fetchList, selectAreListError, selectAreListLoading, setPage } from "../../../listSlice";
+import { fetchList, selectAreListError, selectAreListLoading, setPage, setPath } from "../../../listSlice";
+import { pathsList } from "../../../pathsList";
 
 export const MoviesPage = () => {
     const dispatch = useDispatch();
@@ -16,13 +17,17 @@ export const MoviesPage = () => {
     const urlPageNumber = +usePageParameter("page");
 
     useEffect(() => {
+        dispatch(setPath(pathsList["popularMovies"]));
+    }, [dispatch]);
+
+    useEffect(() => {
         dispatch(fetchList());
         dispatch(setPage(urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber));
     }, [dispatch, urlPageNumber]);
 
     useEffect(() => {
         dispatch(fetchGenres())
-    }, [dispatch])
+    }, [dispatch]);
 
     return (
         <Main>
