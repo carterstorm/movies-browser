@@ -4,24 +4,19 @@ import { MoviesTiles } from "./MoviesTiles";
 import { Heading } from "../../../common/Heading";
 import { Pagination } from "../../../common/Pagination";
 import { Checker } from "../../../common/Checker";
-import {
-    fetchPopularMovies,
-    selectArePopularMoviesError,
-    selectArePopularMoviesLoading,
-    setPage,
-} from "../../../moviesSlice";
 import { fetchGenres } from "../../../genresSlice";
 import { Main } from "./styled";
 import { usePageParameter } from "../../../pageParameters";
+import { fetchList, selectAreListError, selectAreListLoading, setPage } from "../../../listSlice";
 
 export const MoviesPage = () => {
     const dispatch = useDispatch();
-    const areLoading = useSelector(selectArePopularMoviesLoading);
-    const areError = useSelector(selectArePopularMoviesError);
+    const areLoading = useSelector(selectAreListLoading);
+    const areError = useSelector(selectAreListError);
     const urlPageNumber = +usePageParameter("page");
 
     useEffect(() => {
-        dispatch(fetchPopularMovies());
+        dispatch(fetchList());
         dispatch(setPage(urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber));
     }, [dispatch, urlPageNumber]);
 

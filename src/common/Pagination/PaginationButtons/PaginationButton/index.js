@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { selectNumberOfPages, selectPage, setPage } from "../../../../moviesSlice";
+import { selectNumberOfPages, selectPage, setPage } from "../../../../listSlice";
 import { useReplacePageParameter } from "../../../../pageParameters";
 import {
     DesktopPaginationButtonsContainer,

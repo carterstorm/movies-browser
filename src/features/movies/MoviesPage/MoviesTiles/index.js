@@ -1,13 +1,13 @@
 import { useSelector } from "react-redux";
 import { MovieTile } from "../../../../common/MovieTile";
-import { selectPopularMovies } from "../../../../moviesSlice";
 import {
     Tiles,
     TilesSection,
 } from "./styled";
+import { selectList } from "../../../../listSlice";
 
 export const MoviesTiles = () => {
-    const popularMovies = useSelector(selectPopularMovies);
+    const popularMovies = useSelector(selectList);
 
     return (
         <TilesSection>
