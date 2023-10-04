@@ -4,7 +4,7 @@ const listSlice = createSlice({
     name: "list",
     initialState: {
         list: [],
-        loading: false,
+        loading: true,
         error: false,
         page: 1,
         numberOfPages: 500,
