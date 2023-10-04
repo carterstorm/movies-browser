@@ -11,11 +11,12 @@ import { getApiData } from "./getApiData";
 function* fetchListHandler() {
     const pageNumber = store.getState().list.page;
     const apiKey = api_key;
+    const path = store.getState().list.path;
 
     try {
         yield delay(500);
         const data = yield call(() => getApiData(
-            `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=${pageNumber}`
+            `https://api.themoviedb.org/3/${path}?api_key=${apiKey}&language=en-US&page=${pageNumber}`
         ));
         yield put(fetchListSuccess(data));
     } catch (error) {

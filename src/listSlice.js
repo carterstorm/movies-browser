@@ -8,8 +8,12 @@ const listSlice = createSlice({
         error: false,
         page: 1,
         numberOfPages: 500,
+        path: "movie/popular",
     },
     reducers: {
+        setPath: (state, { payload: path }) => {
+            state.path = path;
+        },
         setPage: (state, { payload: pageNumber }) => {
             state.page = pageNumber;
         },
@@ -30,6 +34,7 @@ const listSlice = createSlice({
 });
 
 export const {
+    setPath,
     setPage,
     fetchList,
     fetchListSuccess,
