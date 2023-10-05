@@ -25,7 +25,7 @@ export const Tiles = styled.ul`
         grid-template-columns: repeat(1, 1fr);
 
         ${({ people }) => people && css`
-            grid-template-columns: repeat(2, 208px);
+            grid-template-columns: repeat(auto-fill, 208px);
         `};
     };
 
