@@ -19,13 +19,22 @@ export const Tiles = styled.ul`
 
     ${({ people }) => people && css`
         grid-template-columns: repeat(auto-fill, 208px);
-    `}
+    `};
 
     @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
         grid-template-columns: repeat(1, 1fr);
+
+        ${({ people }) => people && css`
+            grid-template-columns: repeat(2, 208px);
+        `};
     };
 
-    @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         grid-gap: 16px;
+
+        ${({ people }) => people && css`
+            grid-template-columns: repeat(2, 140px);
+            grid-gap: 10px;
+        `};
     };
 `;
