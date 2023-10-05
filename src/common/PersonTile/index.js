@@ -1,6 +1,5 @@
 import { PersonContainer, PersonDetails, PersonName, PersonPoster, PersonTileElement, PersonTileLink } from "./styled";
-import noPersonImage from "../../assets/svg/noPersonImage.svg";
-import { ImageNotFound } from "../ImageNotFound";
+import no_person_image from "../../assets/svg/no_person_image.svg";
 export const PersonTile = ({ name, profile_path }) => {
     const posterImageLink = `https://image.tmdb.org/t/p/w185`;
 
@@ -8,17 +7,10 @@ export const PersonTile = ({ name, profile_path }) => {
         <PersonTileElement>
             <PersonContainer>
                 <PersonTileLink to="#">
-                    {profile_path ?
-                        <PersonPoster
-                            src={`${posterImageLink}${profile_path}`}
-                            alt={`${name} photography`}
-                        />
-                        :
-                        <ImageNotFound
-                            image={noPersonImage}
-                            name={name}
-                        />
-                    }
+                    <PersonPoster
+                        src={profile_path ? `${posterImageLink}${profile_path}` : no_person_image}
+                        alt={`${name} photography`}
+                    />
                     <PersonDetails>
                         <PersonName>{name}</PersonName>
                     </PersonDetails>
