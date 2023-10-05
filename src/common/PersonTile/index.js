@@ -8,10 +8,16 @@ export const PersonTile = ({ name, profile_path }) => {
             <PersonContainer>
                 <PersonTileLink to="#">
                     {profile_path ?
-                        <PersonPoster src={`${posterImageLink}${profile_path}`} />
+                        <PersonPoster
+                            src={`${posterImageLink}${profile_path}`}
+                            alt={`${name} photography`}
+                        />
                         :
                         (<NoImage>
-                            <Image src={noPersonImage} />
+                            <Image
+                                src={noPersonImage}
+                                alt={`Photo not found ${name}`}
+                            />
                         </NoImage>)
                     }
                     <PersonDetails>
