@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { selectList } from "../../../../listSlice";
+import { PersonTile } from "../../../../common/PersonTile";
 
 export const PeopleTiles = () => {
     const popularPeople = useSelector(selectList);
@@ -11,7 +12,11 @@ export const PeopleTiles = () => {
                 name,
                 profile_path
             }) => (
-                <div key={id}></div>
+                <PersonTile
+                    key={id}
+                    name={name}
+                    profile_path={profile_path}
+                />
             ))}
         </>
     )
