@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const TilesSectionElement = styled.section`
     padding: 0 16px 40px;
@@ -12,6 +12,10 @@ export const Tiles = styled.ul`
     margin: 0;
     padding: 0;
     list-style: none;
+
+    ${({ people }) => people && css`
+        grid-template-columns: repeat(auto-fill, 208px);
+    `}
 
     @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
         grid-template-columns: repeat(1, 1fr);

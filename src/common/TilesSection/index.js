@@ -1,9 +1,9 @@
 import { Tiles, TilesSectionElement } from "./styled";
 
-export const TilesSection = ({ children }) => {
+export const TilesSection = ({ children, people }) => {
     return (
         <TilesSectionElement>
-            <Tiles>
+            <Tiles people={people}>
                 {children}
             </Tiles>
         </TilesSectionElement>
