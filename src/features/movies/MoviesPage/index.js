@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { MoviesTiles } from "./MoviesTiles";
 import { Heading } from "../../../common/Heading";
 import { Pagination } from "../../../common/Pagination";
 import { Checker } from "../../../common/Checker";
@@ -9,6 +8,8 @@ import { Main } from "./styled";
 import { usePageParameter } from "../../../pageParameters";
 import { resetListState, selectAreListError, selectAreListLoading, setPath } from "../../../listSlice";
 import { api_key } from "../../../apiKey";
+import { TilesSection } from "../../../common/TilesSection";
+import { MoviesTiles } from "./MoviesTiles";
 
 export const MoviesPage = () => {
     const dispatch = useDispatch();
@@ -39,7 +40,9 @@ export const MoviesPage = () => {
                 <Heading
                     title="Popular movies"
                 />
-                <MoviesTiles />
+                <TilesSection
+                    children={<MoviesTiles />}
+                />
                 <Pagination />
             </Checker>
         </Main>
