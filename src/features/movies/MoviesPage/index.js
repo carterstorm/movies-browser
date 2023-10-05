@@ -4,7 +4,7 @@ import { Heading } from "../../../common/Heading";
 import { Pagination } from "../../../common/Pagination";
 import { Checker } from "../../../common/Checker";
 import { fetchGenres } from "../../../genresSlice";
-import { Main } from "./styled";
+import { MoviesMain } from "./styled";
 import { usePageParameter } from "../../../pageParameters";
 import { resetListState, selectAreListError, selectAreListLoading, setPath } from "../../../listSlice";
 import { api_key } from "../../../apiKey";
@@ -32,7 +32,7 @@ export const MoviesPage = () => {
     }, [dispatch]);
 
     return (
-        <Main>
+        <MoviesMain>
             <Checker
                 areLoading={areLoading}
                 areError={areError}
@@ -45,6 +45,6 @@ export const MoviesPage = () => {
                 />
                 <Pagination />
             </Checker>
-        </Main>
+        </MoviesMain>
     )
 };
