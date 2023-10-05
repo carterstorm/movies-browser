@@ -32,7 +32,6 @@ const listSlice = createSlice({
             state.list = [];
             state.loading = true;
             state.error = false;
-            state.page = 1;
             state.numberOfPages = 500;
             state.path = "";
         }
