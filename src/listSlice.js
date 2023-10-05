@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { pathsList } from "./pathsList";
 
 const listSlice = createSlice({
     name: "list",
@@ -9,11 +8,11 @@ const listSlice = createSlice({
         error: false,
         page: 1,
         numberOfPages: 500,
-        path: "movie/popular",
+        path: "",
     },
     reducers: {
         setPath: (state, { payload: path }) => {
-            state.path = pathsList[[path]];
+            state.path = path;
         },
         setPage: (state, { payload: pageNumber }) => {
             state.loading = true;
