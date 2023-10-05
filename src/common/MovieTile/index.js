@@ -3,15 +3,15 @@ import { MovieInfo } from "./MovieInfo";
 import { Rating } from "../Rating";
 import no_movie_image from "../../assets/svg/no_movie_image.svg";
 import {
-    Container,
-    Description,
     MovieDetails,
-    Overview,
-    OverviewDesktopContainer,
-    OverviewMobileContainer,
-    Poster,
-    Tile,
-    TileLink
+    MovieTileElement,
+    MovieContainer,
+    MovieTileLink,
+    MoviePoster,
+    MovieDescription,
+    MovieOverviewDesktopContainer,
+    MovieOverview,
+    MovieOverviewMobileContainer
 } from "./styled";
 
 export const MovieTile = ({
@@ -31,24 +31,24 @@ export const MovieTile = ({
 }) => {
     const posterImageLink = `https://image.tmdb.org/t/p/w342`;
     return (
-        <Tile
+        <MovieTileElement
             key={id}
             as={moviePage ? "div" : null}
             moviePage={moviePage}
         >
-            <Container>
-                <TileLink
+            <MovieContainer>
+                <MovieTileLink
                     as={moviePage ? "div" : null}
                     moviePage={moviePage}
                     to={!moviePage ? `/movies/movie/${id}` : null}
                 >
-                    <Poster
+                    <MoviePoster
                         src={poster_path ? `${posterImageLink}${poster_path}` : no_movie_image}
                         alt={`Poster: ${title}`}
                         moviePage={moviePage}
                     />
                     <MovieDetails moviePage={moviePage}>
-                        <Description moviePage={moviePage}>
+                        <MovieDescription moviePage={moviePage}>
                             <MovieInfo
                                 moviePage={moviePage}
                                 title={title}
@@ -59,7 +59,7 @@ export const MovieTile = ({
                                 production_countries={production_countries}
                             />
                             <GenreTags genre={genre_ids} />
-                        </Description>
+                        </MovieDescription>
                         <Rating
                             moviePage={moviePage}
                             vote_average={vote_average}
@@ -67,24 +67,24 @@ export const MovieTile = ({
                         />
                         {moviePage ?
                             (
-                                <OverviewDesktopContainer>
-                                    <Overview>
+                                <MovieOverviewDesktopContainer>
+                                    <MovieOverview>
                                         {overview}
-                                    </Overview>
-                                </OverviewDesktopContainer>)
+                                    </MovieOverview>
+                                </MovieOverviewDesktopContainer>)
                             :
                             null}
                     </MovieDetails>
-                </TileLink>
-                <OverviewMobileContainer>
+                </MovieTileLink>
+                <MovieOverviewMobileContainer>
                     {moviePage ?
-                        (<Overview mobile>
+                        (<MovieOverview mobile>
                             {overview}
-                        </Overview>)
+                        </MovieOverview>)
                         :
                         null}
-                </OverviewMobileContainer>
-            </Container>
-        </Tile>
+                </MovieOverviewMobileContainer>
+            </MovieContainer>
+        </MovieTileElement>
     )
 };

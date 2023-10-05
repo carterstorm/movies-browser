@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 
-export const Tile = styled.li`
+export const MovieTileElement = styled.li`
     padding: 16px;
     box-shadow: 0px 4px 12px 0px rgba(186, 199, 213, 0.50);
     background-color: ${({ theme }) => theme.colors.white};
@@ -17,9 +17,9 @@ export const Tile = styled.li`
     };
 `;
 
-export const Container = styled.div``;
+export const MovieContainer = styled.div``;
 
-export const TileLink = styled(Link)`
+export const MovieTileLink = styled(Link)`
     text-decoration: none;
     color: ${({ theme }) => theme.colors.black};
 
@@ -50,7 +50,7 @@ export const TileLink = styled(Link)`
     };
 `;
 
-export const Poster = styled.img`
+export const MoviePoster = styled.img`
     width: 292px;
     height: 434px;
     margin-bottom: 16px;
@@ -120,7 +120,7 @@ export const MovieDetails = styled.div`
     };
 `;
 
-export const Description = styled.div`
+export const MovieDescription = styled.div`
     display: grid;
     grid-gap: 8px;
 
@@ -140,19 +140,19 @@ export const Description = styled.div`
     `};
 `;
 
-export const OverviewDesktopContainer = styled.div`
+export const MovieOverviewDesktopContainer = styled.div`
     @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
         display: none;
     };
 `;
 
-export const OverviewMobileContainer = styled.div`
+export const MovieOverviewMobileContainer = styled.div`
     @media(min-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
         display: none;
     };
 `;
 
-export const Overview = styled.p`
+export const MovieOverview = styled.p`
     font-style: normal;
     text-align: justify;
     font-weight: 400;
