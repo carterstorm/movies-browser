@@ -22,6 +22,10 @@ export const MovieTileLink = styled(Link)`
     text-decoration: none;
     color: ${({ theme }) => theme.colors.black};
 
+    @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+        display: flex;
+    };
+
     ${({ moviePage }) => moviePage && css`
         display: flex;
         flex-direction: row;
@@ -43,10 +47,6 @@ export const MovieTileLink = styled(Link)`
             margin: 0;
         };
     `};
-
-    @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
-        display: flex;
-    };
 `;
 
 export const MoviePoster = styled.img`
