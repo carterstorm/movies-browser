@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Main = styled.main`
+export const MoviesMain = styled.main`
     max-width: 1400px;
     margin: 0 auto;
 `;
