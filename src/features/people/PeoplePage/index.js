@@ -6,6 +6,8 @@ import { usePageParameter } from "../../../pageParameters";
 import { Heading } from "../../../common/Heading";
 import { Pagination } from "../../../common/Pagination";
 import { api_key } from "../../../apiKey";
+import { TilesSection } from "../../../common/TilesSection";
+import { PeopleTiles } from "./PeopleTiles";
 
 export const PeoplePage = () => {
     const dispatch = useDispatch();
@@ -31,6 +33,9 @@ export const PeoplePage = () => {
             >
                 <Heading
                     title="Popular people"
+                />
+                <TilesSection
+                    children={<PeopleTiles />}
                 />
                 <Pagination />
             </Checker>
