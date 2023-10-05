@@ -8,6 +8,7 @@ import { Pagination } from "../../../common/Pagination";
 import { api_key } from "../../../apiKey";
 import { TilesSection } from "../../../common/TilesSection";
 import { PeopleTiles } from "./PeopleTiles";
+import { PeopleMain } from "./styled";
 
 export const PeoplePage = () => {
     const dispatch = useDispatch();
@@ -26,7 +27,7 @@ export const PeoplePage = () => {
     }, [dispatch, apiKey, urlPageNumber]);
 
     return (
-        <>
+        <PeopleMain>
             <Checker
                 areLoading={areLoading}
                 areError={areError}
@@ -36,9 +37,10 @@ export const PeoplePage = () => {
                 />
                 <TilesSection
                     children={<PeopleTiles />}
+                    people
                 />
                 <Pagination />
             </Checker>
-        </>
+        </PeopleMain>
     );
 };
