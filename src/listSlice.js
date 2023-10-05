@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { pathsList } from "./pathsList";
 
 const listSlice = createSlice({
     name: "list",
@@ -12,7 +13,7 @@ const listSlice = createSlice({
     },
     reducers: {
         setPath: (state, { payload: path }) => {
-            state.path = path;
+            state.path = pathsList[[path]];
         },
         setPage: (state, { payload: pageNumber }) => {
             state.page = pageNumber;

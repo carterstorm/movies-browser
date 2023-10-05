@@ -17,7 +17,7 @@ export const MoviesPage = () => {
     const urlPageNumber = +usePageParameter("page");
 
     useEffect(() => {
-        dispatch(setPath(pathsList["popularMovies"]));
+        dispatch(setPath("popularMovies"));
     }, [dispatch]);
 
     useEffect(() => {
