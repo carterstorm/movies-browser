@@ -1,8 +1,8 @@
 import { takeEvery, call, put, delay } from "redux-saga/effects";
 import {
-    fetchList,
     fetchListError,
     fetchListSuccess,
+    setPage,
 } from "./listSlice";
 import store from "./store";
 import { api_key } from "./apiKey";
@@ -26,5 +26,5 @@ function* fetchListHandler() {
 };
 
 export function* listSaga() {
-    yield takeEvery(fetchList.type, fetchListHandler);
+    yield takeEvery(setPage.type, fetchListHandler);
 };

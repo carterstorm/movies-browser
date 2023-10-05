@@ -16,11 +16,9 @@ const listSlice = createSlice({
             state.path = pathsList[[path]];
         },
         setPage: (state, { payload: pageNumber }) => {
-            state.page = pageNumber;
-        },
-        fetchList: state => {
             state.loading = true;
             state.error = false;
+            state.page = pageNumber;
         },
         fetchListSuccess: (state, { payload: list }) => {
             state.list = list.results;
@@ -37,7 +35,6 @@ const listSlice = createSlice({
 export const {
     setPath,
     setPage,
-    fetchList,
     fetchListSuccess,
     fetchListError,
 } = listSlice.actions;
