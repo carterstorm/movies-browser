@@ -13,7 +13,6 @@ export const MovieTileElement = styled.li`
 
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         padding: 10px;
-        margin-top: 16px;
     };
 `;
 

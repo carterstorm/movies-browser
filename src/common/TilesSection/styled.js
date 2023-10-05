@@ -2,6 +2,10 @@ import styled, { css } from "styled-components";
 
 export const TilesSectionElement = styled.section`
     padding: 0 16px 40px;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        margin-top: 16px;
+    };
 `;
 
 export const Tiles = styled.ul`
