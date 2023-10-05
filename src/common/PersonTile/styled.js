@@ -27,6 +27,7 @@ export const NoImage = styled.div`
     height: 264px;
     background-color: ${({ theme }) => theme.colors.silver};
     border-radius: 5px;
+    margin-bottom: 12px;
 `;
 
 export const Image = styled.img`
