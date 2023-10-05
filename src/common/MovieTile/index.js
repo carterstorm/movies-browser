@@ -44,7 +44,7 @@ export const MovieTile = ({
                 >
                     <MoviePoster
                         src={poster_path ? `${posterImageLink}${poster_path}` : no_movie_image}
-                        alt={`Poster: ${title}`}
+                        alt={poster_path ? `Poster: ${title}` : "Image not found"}
                         moviePage={moviePage}
                     />
                     <MovieDetails moviePage={moviePage}>

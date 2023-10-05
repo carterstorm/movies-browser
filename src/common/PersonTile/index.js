@@ -9,7 +9,7 @@ export const PersonTile = ({ name, profile_path }) => {
                 <PersonTileLink to="#">
                     <PersonPoster
                         src={profile_path ? `${posterImageLink}${profile_path}` : no_person_image}
-                        alt={`${name} photography`}
+                        alt={profile_path ? `${name} photography` : "Image not found"}
                     />
                     <PersonDetails>
                         <PersonName>{name}</PersonName>
