@@ -28,6 +28,14 @@ const listSlice = createSlice({
             state.loading = false;
             state.error = true;
         },
+        resetListState: state => {
+            state.list = [];
+            state.loading = true;
+            state.error = false;
+            state.page = 1;
+            state.numberOfPages = 500;
+            state.path = "";
+        }
     },
 });
 
@@ -36,6 +44,7 @@ export const {
     setPage,
     fetchListSuccess,
     fetchListError,
+    resetListState,
 } = listSlice.actions;
 
 export const selectListState = state => state.list;

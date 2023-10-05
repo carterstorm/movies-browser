@@ -7,21 +7,24 @@ import { Checker } from "../../../common/Checker";
 import { fetchGenres } from "../../../genresSlice";
 import { Main } from "./styled";
 import { usePageParameter } from "../../../pageParameters";
-import { selectAreListError, selectAreListLoading, selectList, setPath } from "../../../listSlice";
+import { resetListState, selectAreListError, selectAreListLoading, setPath } from "../../../listSlice";
 import { api_key } from "../../../apiKey";
 
 export const MoviesPage = () => {
     const dispatch = useDispatch();
     const areLoading = useSelector(selectAreListLoading);
     const areError = useSelector(selectAreListError);
-    const path = useSelector(selectList);
     const urlPageNumber = +usePageParameter("page");
     const apiKey = api_key;
 
     useEffect(() => {
         dispatch(setPath(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=
         ${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`));
-    }, [dispatch, path, apiKey, urlPageNumber]);
+
+        return () => {
+            dispatch(resetListState());
+        };
+    }, [dispatch, apiKey, urlPageNumber]);
 
     useEffect(() => {
         dispatch(fetchGenres())
