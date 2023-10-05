@@ -6,16 +6,19 @@ import {
 } from "./styled";
 
 export const MovieInfo = ({ title, releaseDate, original_language, runtime, budget, production_countries, moviePage, }) => {
-    const setYear = releaseDate.substring(0, 4);
 
     return (
         <Container moviePage={moviePage}>
-            <Name moviePage={moviePage}>
-                {title}
-            </Name>
-            <Year moviePage={moviePage}>
-                {setYear}
-            </Year>
+            {title &&
+                <Name moviePage={moviePage}>
+                    {title}
+                </Name>
+            }
+            {releaseDate &&
+                <Year moviePage={moviePage}>
+                    {releaseDate.substring(0, 4)}
+                </Year>
+            }
             {moviePage &&
                 (
                     <MoreInfo
