@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { selectMovieDetailsList } from "../../movieDetailsSlice";
-import { MovieTile } from "../MovieTile";
+import { MovieTile } from "../tile/MovieTile";
 import { BigMovieTileContainer } from "./styled";
 
 export const BigMovieTile = () => {

@@ -1,5 +1,5 @@
 import { PersonContainer, PersonDetails, PersonName, PersonPoster, PersonTileElement, PersonTileLink } from "./styled";
-import no_person_image from "../../assets/svg/no_person_image.svg";
+import no_person_image from "../../../assets/svg/no_person_image.svg";
 export const PersonTile = ({ id, name, profile_path }) => {
     const posterImageLink = `https://image.tmdb.org/t/p/w185`;
 

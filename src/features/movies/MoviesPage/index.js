@@ -9,7 +9,7 @@ import { usePageParameter } from "../../../pageParameters";
 import { resetListState, selectAreListError, selectAreListLoading, setPath } from "../../../listSlice";
 import { api_key } from "../../../apiKey";
 import { TilesSection } from "../../../common/TilesSection";
-import { MoviesTiles } from "./MoviesTiles";
+import { MoviesTiles } from "../../../common/tiles/MoviesTiles";
 
 export const MoviesPage = () => {
     const dispatch = useDispatch();

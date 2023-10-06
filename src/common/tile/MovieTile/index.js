@@ -1,7 +1,7 @@
 import { GenreTags } from "./GenreTags";
 import { MovieInfo } from "./MovieInfo";
-import { Rating } from "../Rating";
-import no_movie_image from "../../assets/svg/no_movie_image.svg";
+import { Rating } from "../../Rating";
+import no_movie_image from "../../../assets/svg/no_movie_image.svg";
 import {
     MovieDetails,
     MovieTileElement,

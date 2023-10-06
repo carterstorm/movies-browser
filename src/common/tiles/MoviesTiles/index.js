@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
-import { MovieTile } from "../../../../common/MovieTile";
-import { selectList } from "../../../../listSlice";
+import { MovieTile } from "../../tile/MovieTile";
+import { selectList } from "../../../listSlice";
 
 export const MoviesTiles = () => {
     const popularMovies = useSelector(selectList);

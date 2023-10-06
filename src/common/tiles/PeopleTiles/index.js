@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
-import { selectList } from "../../../../listSlice";
-import { PersonTile } from "../../../../common/PersonTile";
+import { selectList } from "../../../listSlice";
+import { PersonTile } from "../../tile/PersonTile";
 
 export const PeopleTiles = () => {
     const popularPeople = useSelector(selectList);
