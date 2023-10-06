@@ -143,9 +143,15 @@ export const MovieOverviewDesktopContainer = styled.div`
     @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
         display: none;
     };
+    @media(min-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+        display: block;
+    };
 `;
 
 export const MovieOverviewMobileContainer = styled.div`
+    @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+        display: block;
+    };
     @media(min-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
         display: none;
     };
