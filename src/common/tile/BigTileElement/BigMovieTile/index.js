@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux";
-import { selectMovieDetailsList } from "../../movieDetailsSlice";
-import { MovieTile } from "../tile/MovieTile";
-import { BigMovieTileContainer } from "./styled";
+import { selectMovieDetailsList } from "../../../../movieDetailsSlice";
+import { MovieTile } from "../../MovieTile";
 
 export const BigMovieTile = () => {
     const {
@@ -19,7 +18,7 @@ export const BigMovieTile = () => {
     } = useSelector(selectMovieDetailsList);
 
     return (
-        <BigMovieTileContainer>
+        <>
             {genres && (
                 <MovieTile
                     moviePage
@@ -36,6 +35,6 @@ export const BigMovieTile = () => {
                     overview={overview}
                 />
             )}
-        </BigMovieTileContainer>
+        </>
     );
 };
