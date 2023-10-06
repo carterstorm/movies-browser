@@ -9,11 +9,12 @@ export const MovieTileElement = styled.li`
 
     ${({ moviePage }) => moviePage && css`
         padding: 0;
-    `};
 
-    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-        padding: 10px;
-    };
+        @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+            padding: 10px;
+            margin-top: 10px;
+        };
+    `};
 `;
 
 export const MovieContainer = styled.div``;
@@ -33,7 +34,7 @@ export const MovieTileLink = styled(Link)`
         margin: 64px 0;
 
         @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
-            padding: 25px 25px 0;
+            padding: 25px;
             margin: 20px 0 0;
         };
 
@@ -94,6 +95,10 @@ export const MovieDetails = styled.div`
     height: 200px;
     flex-grow: 1;
 
+    @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+        justify-content: flex-start;
+    };
+
     ${({ moviePage }) => moviePage && css`
         justify-content: flex-start;
         margin-left: 40px;
@@ -113,10 +118,6 @@ export const MovieDetails = styled.div`
             padding: 0;
         };
     `};
-
-    @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
-        justify-content: flex-start;
-    };
 `;
 
 export const MovieDescription = styled.div`
