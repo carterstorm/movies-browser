@@ -55,6 +55,7 @@ export const MovieDetails = styled.div`
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         padding: 8px 16px;
+        background-size: 120%;
     };
 `;
 
@@ -88,6 +89,6 @@ export const MovieImage = styled.img`
     display: block;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-        height: 150px;
+        height: 200px;
     };
 `;
