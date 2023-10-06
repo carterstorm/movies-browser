@@ -14,6 +14,7 @@ export const PeopleTiles = () => {
             }) => (
                 <PersonTile
                     key={id}
+                    id={id}
                     name={name}
                     profile_path={profile_path}
                 />
