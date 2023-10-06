@@ -8,7 +8,7 @@ import { MoviesMain } from "./styled";
 import { usePageParameter } from "../../../pageParameters";
 import { resetListState, selectAreListError, selectAreListLoading, setPath } from "../../../listSlice";
 import { api_key } from "../../../apiKey";
-import { TilesSection } from "../../../common/TilesSection";
+import { TilesSection } from "../../../common/tiles/TilesSection";
 import { MoviesTiles } from "../../../common/tiles/MoviesTiles";
 
 export const MoviesPage = () => {

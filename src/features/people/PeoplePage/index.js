@@ -6,7 +6,7 @@ import { usePageParameter } from "../../../pageParameters";
 import { Heading } from "../../../common/Heading";
 import { Pagination } from "../../../common/Pagination";
 import { api_key } from "../../../apiKey";
-import { TilesSection } from "../../../common/TilesSection";
+import { TilesSection } from "../../../common/tiles/TilesSection";
 import { PeopleTiles } from "../../../common/tiles/PeopleTiles";
 import { PeopleMain } from "./styled";
 
