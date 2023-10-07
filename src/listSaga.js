@@ -1,4 +1,4 @@
-import { takeEvery, call, put, delay } from "redux-saga/effects";
+import { call, put, delay, takeLatest } from "redux-saga/effects";
 import {
     fetchListError,
     fetchListSuccess,
@@ -21,5 +21,5 @@ function* fetchListHandler() {
 };
 
 export function* listSaga() {
-    yield takeEvery(setPath.type, fetchListHandler);
+    yield takeLatest(setPath.type, fetchListHandler);
 };

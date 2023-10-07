@@ -1,4 +1,4 @@
-import { takeEvery, call, put, delay } from "redux-saga/effects";
+import { call, put, delay, takeLatest } from "redux-saga/effects";
 import { fetchMovieDetails, fetchMovieDetailsError, fetchMovieDetailsSuccess } from "./movieDetailsSlice";
 import { api_key } from "./apiKey";
 import { getApiData } from "./getApiData";
@@ -21,5 +21,5 @@ function* fetchMovieDetailsHandler() {
 };
 
 export function* movieDetailsSaga() {
-    yield takeEvery(fetchMovieDetails.type, fetchMovieDetailsHandler);
+    yield takeLatest(fetchMovieDetails.type, fetchMovieDetailsHandler);
 };

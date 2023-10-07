@@ -1,4 +1,4 @@
-import { takeEvery, call, put, delay } from "redux-saga/effects";
+import { call, put, delay, takeLatest } from "redux-saga/effects";
 import { fetchGenres, fetchGenresError, fetchGenresSuccess } from "./genresSlice";
 import { getApiData } from "./getApiData";
 import { api_key } from "./apiKey";
@@ -18,5 +18,5 @@ function* fetchGenresHandler() {
 };
 
 export function* genresSaga() {
-    yield takeEvery(fetchGenres.type, fetchGenresHandler);
+    yield takeLatest(fetchGenres.type, fetchGenresHandler);
 };
