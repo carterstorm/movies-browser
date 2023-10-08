@@ -14,6 +14,7 @@ export const BigPersonTile = () => {
 
     return (
         <PersonTile
+            page
             name={name}
             birthday={birthday}
             deathday={deathday}
