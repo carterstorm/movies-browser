@@ -72,21 +72,24 @@ export const PersonPoster = styled.img`
     ${({ page }) => page && css`
         width: 399px;
         height: 564px;
-        margin-bottom: 0;
+        margin-bottom: 10px;
         margin-right: 40px;
         float: left;
 
         @media(max-width: ${({ theme }) => theme.breakpoints.desktop}px) {
             height: 439px;
             width: auto;
+            margin-right: 30px;
         };
 
         @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
             height: 300px;
+            margin-right: 20px;
         };
 
         @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
             height: 163px;
+            margin-right: 10px;
         };
     `};
 
@@ -104,6 +107,15 @@ export const PersonDetails = styled.div`
         display: grid;
         grid-gap: 24px;
         padding: 8px 0;
+
+        @media(max-width: ${({ theme }) => theme.breakpoints.mediumMobile}px) {
+            grid-gap: 12px;
+        };
+
+        @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+            grid-gap: 8px;
+            padding: 0;
+        };
     `};
 
     @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
@@ -122,26 +134,29 @@ export const PersonName = styled.p`
     font-weight: 500;
     line-height: 130%;
 
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        font-size: 12px;
+    };
+
     ${({ page }) => page && css`
         font-size: 36px;
         font-weight: 600;
         line-height: 120%;
         text-align: left;
+
+        @media(max-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+            font-size: 30px;
+        };
+
+        @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+            font-size: 24px;
+            line-height: 100%;
+        };
+
+        @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+            font-size: 20px;
+        };
     `};
-
-    @media(max-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-        font-size: 16px;
-        font-weight: 400;
-    };
-
-    @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
-        font-size: 14px;
-        line-height: 100%;
-    };
-
-    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-        font-size: 12px;
-    };
 `;
 
 export const PersonInfo = styled.div``;
@@ -154,4 +169,8 @@ export const MorePersonInfoDescription = styled(MoreInfoElementDescription)``;
 
 export const PersonOverview = styled(MovieOverview)`
     margin: 10px 0 0;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.mediumMobile}px) {
+        margin: 6px 0 0;
+    };
 `;
