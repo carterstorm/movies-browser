@@ -7,22 +7,22 @@ import {
     VoteMax,
 } from "./styled";
 
-export const Rating = ({ vote_average, vote_count, movieHero, moviePage }) => (
+export const Rating = ({ vote_average, vote_count, movieHero, page }) => (
     <RatingElement movieHero={movieHero}>
-        <VoteElements movieHero={movieHero} moviePage={moviePage}>
-            <StarElement movieHero={movieHero} moviePage={moviePage} />
+        <VoteElements movieHero={movieHero} page={page}>
+            <StarElement movieHero={movieHero} page={page} />
             {vote_average &&
-                <VoteAverage movieHero={movieHero} moviePage={moviePage}>
+                <VoteAverage movieHero={movieHero} page={page}>
                     {vote_average.toFixed(1)}
                 </VoteAverage>
             }
-            {movieHero || moviePage ? (
-                <VoteMax moviePage={moviePage} movieHero={movieHero}>
+            {movieHero || page ? (
+                <VoteMax page={page} movieHero={movieHero}>
                     / 10
                 </VoteMax>
             ) : null}
         </VoteElements>
-        <VoteCount thin movieHero={movieHero} moviePage={moviePage}>
+        <VoteCount thin movieHero={movieHero} page={page}>
             {vote_count} votes
         </VoteCount>
     </RatingElement>

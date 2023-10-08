@@ -35,7 +35,7 @@ export const VoteElements = styled.div`
     };
 
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-        ${({ moviePage }) => moviePage && css`
+        ${({ page }) => page && css`
             margin-bottom: 4px;
         `};
     };
@@ -47,7 +47,7 @@ export const StarElement = styled(Star)`
         height: 40px;
     `};
 
-    ${({ moviePage }) => moviePage && css`
+    ${({ page }) => page && css`
         width: 30px;
         height: 30px;
     `};
@@ -85,7 +85,7 @@ export const VoteAverage = styled.span`
         line-height: 110%;
     `};
 
-    ${({ moviePage }) => moviePage && css`
+    ${({ page }) => page && css`
         font-size: 22px;
     `};
 
@@ -96,7 +96,7 @@ export const VoteAverage = styled.span`
             font-size: 22px;
         `};
 
-        ${({ moviePage }) => moviePage && css`
+        ${({ page }) => page && css`
             font-size: 22px;
         `};
     };
@@ -134,7 +134,7 @@ export const VoteCount = styled(VoteAverage)`
         margin-left: 0;
     `};
 
-    ${({ moviePage }) => moviePage && css`
+    ${({ page }) => page && css`
             font-size: 16px;
         `};
 
@@ -161,13 +161,13 @@ export const VoteCount = styled(VoteAverage)`
         `};
 
         @media(max-width: 321px) {
-            ${({ moviePage }) => moviePage && css`
+            ${({ page }) => page && css`
                 margin-left: 0;
             `};
         };
 
         @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-            ${({ moviePage }) => moviePage && css`
+            ${({ page }) => page && css`
                 margin-bottom: 4px;
             `};
         };

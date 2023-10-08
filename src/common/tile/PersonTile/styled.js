@@ -1,23 +1,23 @@
 import styled from "styled-components";
 import {
-    MovieContainer,
-    MovieDetails,
-    MoviePoster,
-    MovieTileElement,
-    MovieTileLink
-} from "../MovieTile/styled";
+    Container,
+    Details,
+    Poster,
+    TileElement,
+    TileLink
+} from "../TileElement/styled";
 
-export const PersonTileElement = styled(MovieTileElement)``;
+export const PersonTileElement = styled(TileElement)``;
 
-export const PersonContainer = styled(MovieContainer)``;
+export const PersonContainer = styled(Container)``;
 
-export const PersonTileLink = styled(MovieTileLink)`
+export const PersonTileLink = styled(TileLink)`
     @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
         flex-direction: column;
     };
 `;
 
-export const PersonPoster = styled(MoviePoster)`
+export const PersonPoster = styled(Poster)`
     width: 177px;
     height: 264px;
     margin-bottom: 12px;
@@ -33,7 +33,7 @@ export const PersonPoster = styled(MoviePoster)`
     };
 `;
 
-export const PersonDetails = styled(MovieDetails)`
+export const PersonDetails = styled(Details)`
     height: 60px;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {

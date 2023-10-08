@@ -1,13 +1,13 @@
 import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 
-export const MovieTileElement = styled.li`
+export const TileElement = styled.li`
     padding: 16px;
     box-shadow: 0px 4px 12px 0px rgba(186, 199, 213, 0.50);
     background-color: ${({ theme }) => theme.colors.white};
     border-radius: 5px;
 
-    ${({ moviePage }) => moviePage && css`
+    ${({ page }) => page && css`
         padding: 0;
 
         @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
@@ -17,9 +17,9 @@ export const MovieTileElement = styled.li`
     `};
 `;
 
-export const MovieContainer = styled.div``;
+export const Container = styled.div``;
 
-export const MovieTileLink = styled(Link)`
+export const TileLink = styled(Link)`
     text-decoration: none;
     color: ${({ theme }) => theme.colors.black};
 
@@ -27,7 +27,7 @@ export const MovieTileLink = styled(Link)`
         display: flex;
     };
 
-    ${({ moviePage }) => moviePage && css`
+    ${({ page }) => page && css`
         display: flex;
         flex-direction: row;
         padding: 40px;
@@ -50,13 +50,13 @@ export const MovieTileLink = styled(Link)`
     `};
 `;
 
-export const MoviePoster = styled.img`
+export const Poster = styled.img`
     width: 292px;
     height: 434px;
     margin-bottom: 16px;
     border-radius: 5px;
 
-    ${({ moviePage }) => moviePage && css`
+    ${({ page }) => page && css`
         width: 312px;
         height: auto;
         object-fit: cover;
@@ -69,7 +69,7 @@ export const MoviePoster = styled.img`
         margin-bottom: 0;
         margin-right: 20px;
 
-        ${({ moviePage }) => moviePage && css`
+        ${({ page }) => page && css`
             height: auto;
             width: 280px;
             margin-right: 0;
@@ -77,7 +77,7 @@ export const MoviePoster = styled.img`
     };
 
     @media(max-width: ${({ theme }) => theme.breakpoints.mediumMobile}px) {
-        ${({ moviePage }) => moviePage && css`
+        ${({ page }) => page && css`
             width: 230px;
         `};
     };
@@ -88,7 +88,7 @@ export const MoviePoster = styled.img`
     };
 `;
 
-export const MovieDetails = styled.div`
+export const Details = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -99,7 +99,7 @@ export const MovieDetails = styled.div`
         justify-content: flex-start;
     };
 
-    ${({ moviePage }) => moviePage && css`
+    ${({ page }) => page && css`
         justify-content: flex-start;
         margin-left: 40px;
         padding: 8px 0;
@@ -120,11 +120,11 @@ export const MovieDetails = styled.div`
     `};
 `;
 
-export const MovieDescription = styled.div`
+export const Description = styled.div`
     display: grid;
     grid-gap: 8px;
 
-    ${({ moviePage }) => moviePage && css`
+    ${({ page }) => page && css`
         grid-gap: 24px;
         margin-bottom: 24px;
 
@@ -140,7 +140,7 @@ export const MovieDescription = styled.div`
     `};
 `;
 
-export const MovieOverviewDesktopContainer = styled.div`
+export const OverviewDesktopContainer = styled.div`
     @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
         display: none;
     };
@@ -149,7 +149,7 @@ export const MovieOverviewDesktopContainer = styled.div`
     };
 `;
 
-export const MovieOverviewMobileContainer = styled.div`
+export const OverviewMobileContainer = styled.div`
     @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
         display: block;
     };
@@ -158,7 +158,7 @@ export const MovieOverviewMobileContainer = styled.div`
     };
 `;
 
-export const MovieOverview = styled.p`
+export const Overview = styled.p`
     font-style: normal;
     text-align: justify;
     font-weight: 400;

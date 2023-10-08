@@ -4,7 +4,7 @@ export const Container = styled.div`
     display: grid;
     grid-gap: 8px;
 
-    ${({ moviePage }) => moviePage && css`
+    ${({ page }) => page && css`
         grid-gap: 24px;
 
         @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
@@ -23,7 +23,7 @@ export const Name = styled.p`
     margin: 0 40px 0 0;
     line-height: 130%;
 
-    ${({ moviePage }) => moviePage && css`
+    ${({ page }) => page && css`
         font-size: 36px;
         font-weight: 600;
         line-height: 120%;
@@ -48,7 +48,7 @@ export const Year = styled.span`
     font-weight: 400;
     line-height: 150%;
 
-    ${({ moviePage }) => moviePage && css`
+    ${({ page }) => page && css`
         font-size: 22px;
         color: ${({ theme }) => theme.colors.black};
         line-height: 120%;

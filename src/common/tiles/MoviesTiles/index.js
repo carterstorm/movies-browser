@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
-import { MovieTile } from "../../tile/MovieTile";
 import { selectList } from "../../../listSlice";
+import { Tile } from "../../tile/TileElement";
 
 export const MoviesTiles = () => {
     const popularMovies = useSelector(selectList);
@@ -16,7 +16,7 @@ export const MoviesTiles = () => {
                 vote_average,
                 vote_count,
             }) => (
-                <MovieTile
+                <Tile
                     key={id}
                     id={id}
                     genre_ids={genre_ids}
