@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 
 export const PersonTileElement = styled.li`
@@ -10,16 +10,53 @@ export const PersonTileElement = styled.li`
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         padding: 10px;
     };
+
+    ${({ page }) => page && css`
+        padding: 0;
+        margin-top: 64px;
+
+        @media(max-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+            margin-top: 40px;
+        };
+
+        @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+            margin-top: 20px;
+        };
+
+        @media(max-width: ${({ theme }) => theme.breakpoints.mediumMobile}px) {
+            margin-top: 16px;
+        };
+
+        @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+            padding: 10px;
+            margin-top: 10px;
+        };
+    `};
 `;
 
 export const PersonContainer = styled.div`
-    display: flex;
-    justify-content: center;
 `;
 
 export const PersonTileLink = styled(Link)`
     text-decoration: none;
     color: ${({ theme }) => theme.colors.black};
+
+    ${({ page }) => page && css`
+        display: flex;
+        padding: 40px;
+
+        @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+            padding: 25px;
+        };
+
+        @media(max-width: ${({ theme }) => theme.breakpoints.mediumMobile}px) {
+            padding: 16px;
+        };
+
+        @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+            padding: 0;
+        };
+    `};
 `;
 
 export const PersonPoster = styled.img`
@@ -27,6 +64,25 @@ export const PersonPoster = styled.img`
     height: 264px;
     border-radius: 5px;
     margin-bottom: 12px;
+
+    ${({ page }) => page && css`
+        width: 399px;
+        height: 564px;
+        margin-bottom: 0;
+
+        @media(max-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+            height: 439px;
+            width: auto;
+        };
+
+        @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+            height: 300px;
+        };
+
+        @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+            height: 163px;
+        };
+    `};
 
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         width: 120px;
