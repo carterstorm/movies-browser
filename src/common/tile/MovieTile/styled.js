@@ -9,6 +9,19 @@ export const MovieTileElement = styled.li`
 
     ${({ page }) => page && css`
         padding: 0;
+        margin-top: 64px;
+
+        @media(max-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+            margin-top: 40px;
+        };
+
+        @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+            margin-top: 20px;
+        };
+
+        @media(max-width: ${({ theme }) => theme.breakpoints.mediumMobile}px) {
+            margin-top: 16px;
+        };
 
         @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
             padding: 10px;
@@ -31,21 +44,17 @@ export const MovieTileLink = styled(Link)`
         display: flex;
         flex-direction: row;
         padding: 40px;
-        margin: 64px 0;
 
         @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
             padding: 25px;
-            margin: 20px 0 0;
         };
 
         @media(max-width: ${({ theme }) => theme.breakpoints.mediumMobile}px) {
             padding: 16px 16px 0;
-            margin: 16px 0 0;
         };
 
         @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
             padding: 0;
-            margin: 0;
         };
     `};
 `;
