@@ -1,5 +1,7 @@
 import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
+import { MoreInfoElement, MoreInfoElementDescription, MoreInfoElementTitle } from "../MovieTile/Info/MoreInfo/styled";
+import { MovieOverview } from "../MovieTile/styled";
 
 export const PersonTileElement = styled.li`
     padding: 16px;
@@ -59,6 +61,8 @@ export const PersonTileLink = styled(Link)`
     `};
 `;
 
+export const FloatContainer = styled.div``;
+
 export const PersonPoster = styled.img`
     width: 176px;
     height: 264px;
@@ -69,6 +73,8 @@ export const PersonPoster = styled.img`
         width: 399px;
         height: 564px;
         margin-bottom: 0;
+        margin-right: 40px;
+        float: left;
 
         @media(max-width: ${({ theme }) => theme.breakpoints.desktop}px) {
             height: 439px;
@@ -94,6 +100,12 @@ export const PersonPoster = styled.img`
 export const PersonDetails = styled.div`
     min-height: 50px;
 
+    ${({ page }) => page && css`
+        display: grid;
+        grid-gap: 24px;
+        padding: 8px 0;
+    `};
+
     @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
         min-height: 40px;
     };
@@ -110,6 +122,13 @@ export const PersonName = styled.p`
     font-weight: 500;
     line-height: 130%;
 
+    ${({ page }) => page && css`
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 120%;
+        text-align: left;
+    `};
+
     @media(max-width: ${({ theme }) => theme.breakpoints.desktop}px) {
         font-size: 16px;
         font-weight: 400;
@@ -123,4 +142,16 @@ export const PersonName = styled.p`
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         font-size: 12px;
     };
+`;
+
+export const PersonInfo = styled.div``;
+
+export const MorePersonInfoElement = styled(MoreInfoElement)``;
+
+export const MorePersonInfoElementTitle = styled(MoreInfoElementTitle)``;
+
+export const MorePersonInfoDescription = styled(MoreInfoElementDescription)``;
+
+export const PersonOverview = styled(MovieOverview)`
+    margin: 10px 0 0;
 `;
