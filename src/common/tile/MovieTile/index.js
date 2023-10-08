@@ -2,19 +2,9 @@ import { GenreTags } from "./GenreTags";
 import { Info } from "./Info";
 import { Rating } from "../../Rating";
 import no_movie_image from "../../../assets/svg/no_movie_image.svg";
-import {
-    Container,
-    Description,
-    Details,
-    Overview,
-    OverviewDesktopContainer,
-    OverviewMobileContainer,
-    Poster,
-    TileElement,
-    TileLink
-} from "./styled";
+import { MovieContainer, MovieDescription, MovieDetails, MovieOverview, MovieOverviewDesktopContainer, MovieOverviewMobileContainer, MoviePoster, MovieTileElement, MovieTileLink } from "./styled";
 
-export const Tile = ({
+export const MovieTile = ({
     page,
     id,
     genre_ids,
@@ -31,24 +21,24 @@ export const Tile = ({
 }) => {
     const posterImageLink = `https://image.tmdb.org/t/p/w342`;
     return (
-        <TileElement
+        <MovieTileElement
             key={id}
             as={page ? "div" : null}
             page={page}
         >
-            <Container>
-                <TileLink
+            <MovieContainer>
+                <MovieTileLink
                     as={page ? "div" : null}
                     page={page}
                     to={!page ? `/movies/movie/${id}` : null}
                 >
-                    <Poster
+                    <MoviePoster
                         src={poster_path ? `${posterImageLink}${poster_path}` : no_movie_image}
                         alt={poster_path ? `Poster: ${title}` : "Image not found"}
                         page={page}
                     />
-                    <Details page={page}>
-                        <Description page={page}>
+                    <MovieDetails page={page}>
+                        <MovieDescription page={page}>
                             <Info
                                 page={page}
                                 title={title}
@@ -59,7 +49,7 @@ export const Tile = ({
                                 production_countries={production_countries}
                             />
                             <GenreTags genre={genre_ids} />
-                        </Description>
+                        </MovieDescription>
                         <Rating
                             page={page}
                             vote_average={vote_average}
@@ -67,24 +57,24 @@ export const Tile = ({
                         />
                         {page ?
                             (
-                                <OverviewDesktopContainer>
-                                    <Overview>
+                                <MovieOverviewDesktopContainer>
+                                    <MovieOverview>
                                         {overview}
-                                    </Overview>
-                                </OverviewDesktopContainer>)
+                                    </MovieOverview>
+                                </MovieOverviewDesktopContainer>)
                             :
                             null}
-                    </Details>
-                </TileLink>
-                <OverviewMobileContainer>
+                    </MovieDetails>
+                </MovieTileLink>
+                <MovieOverviewMobileContainer>
                     {page ?
-                        (<Overview mobile>
+                        (<MovieOverview mobile>
                             {overview}
-                        </Overview>)
+                        </MovieOverview>)
                         :
                         null}
-                </OverviewMobileContainer>
-            </Container>
-        </TileElement>
+                </MovieOverviewMobileContainer>
+            </MovieContainer>
+        </MovieTileElement>
     )
 };

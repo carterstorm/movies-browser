@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { selectMovieDetailsList } from "../../../../movieDetailsSlice";
-import { Tile } from "../../TileElement";
+import { MovieTile } from "../../MovieTile";
 
 export const BigMovieTile = () => {
     const {
@@ -20,7 +20,7 @@ export const BigMovieTile = () => {
     return (
         <>
             {genres && (
-                <Tile
+                <MovieTile
                     page
                     genre_ids={genres.map((genre) => genre.id)}
                     title={title}
