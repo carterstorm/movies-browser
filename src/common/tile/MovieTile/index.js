@@ -30,7 +30,7 @@ export const MovieTile = ({
                 <MovieTileLink
                     as={page ? "div" : null}
                     page={page}
-                    to={!page ? `/movies/movie/${id}` : null}
+                    to={`/movies/movie/${id}`}
                 >
                     <MoviePoster
                         src={poster_path ? `${posterImageLink}${poster_path}` : no_movie_image}
