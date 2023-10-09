@@ -15,6 +15,7 @@ import {
     selectAreDetailsLoading,
 } from "../../../detailsSlice";
 import { fetchGenres } from "../../../genresSlice";
+import { CrewTiles } from "../../../common/tiles/CrewTiles";
 
 export const MoviePage = () => {
     const dispatch = useDispatch();
@@ -44,6 +45,11 @@ export const MoviePage = () => {
                 <Heading title={"Cast"} />
                 <TilesSection
                     children={<CastTiles />}
+                    people
+                />
+                <Heading title={"Crew"} />
+                <TilesSection
+                    children={<CrewTiles />}
                     people
                 />
             </Main>
