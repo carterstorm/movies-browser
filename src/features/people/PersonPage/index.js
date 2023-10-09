@@ -1,19 +1,20 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { fetchPersonDetails, selectArePersonDetailsError, selectArePersonDetailsLoading } from "../../../personDetailsSlice";
 import { Checker } from "../../../common/Checker";
 import { BigTileElement } from "../../../common/tile/BigTileElement";
 import { BigPersonTile } from "../../../common/tile/BigTileElement/BigPersonTile";
+import { fetchDetails, selectAreDetailsError, selectAreDetailsLoading } from "../../../detailsSlice";
+
 
 export const PersonPage = () => {
     const dispatch = useDispatch();
     const { id } = useParams();
-    const areLoading = useSelector(selectArePersonDetailsLoading);
-    const areError = useSelector(selectArePersonDetailsError);
+    const areLoading = useSelector(selectAreDetailsLoading);
+    const areError = useSelector(selectAreDetailsError);
 
     useEffect(() => {
-        dispatch(fetchPersonDetails(id));
+        dispatch(fetchDetails({ id, type: "person" }));
     }, [dispatch, id]);
 
     return (

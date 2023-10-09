@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
-import { selectPersonDetailsList } from "../../../../personDetailsSlice";
 import { PersonTile } from "../../PersonTile";
+import { selectDetailsItemData } from "../../../../detailsSlice";
 
 export const BigPersonTile = () => {
     const {
@@ -10,7 +10,7 @@ export const BigPersonTile = () => {
         place_of_birth,
         profile_path,
         biography
-    } = useSelector(selectPersonDetailsList);
+    } = useSelector(selectDetailsItemData).itemData;
 
     return (
         <PersonTile
