@@ -3,22 +3,26 @@ import { Info, MorePersonInfoDescription, MorePersonInfoElement, MorePersonInfoE
 export const PersonInfo = ({ birthday, place_of_birth, deathday }) => {
     return (
         <Info>
-            <MorePersonInfoElement>
-                <MorePersonInfoElementTitle>
-                    Date of birth:
-                </MorePersonInfoElementTitle>
-                <MorePersonInfoDescription>
-                    {birthday}
-                </MorePersonInfoDescription>
-            </MorePersonInfoElement>
-            <MorePersonInfoElement>
-                <MorePersonInfoElementTitle>
-                    Place of birth:
-                </MorePersonInfoElementTitle>
-                <MorePersonInfoDescription>
-                    {place_of_birth}
-                </MorePersonInfoDescription>
-            </MorePersonInfoElement>
+            {birthday && (
+                <MorePersonInfoElement>
+                    <MorePersonInfoElementTitle>
+                        Date of birth:
+                    </MorePersonInfoElementTitle>
+                    <MorePersonInfoDescription>
+                        {birthday}
+                    </MorePersonInfoDescription>
+                </MorePersonInfoElement>
+            )}
+            {place_of_birth && (
+                <MorePersonInfoElement>
+                    <MorePersonInfoElementTitle>
+                        Place of birth:
+                    </MorePersonInfoElementTitle>
+                    <MorePersonInfoDescription>
+                        {place_of_birth}
+                    </MorePersonInfoDescription>
+                </MorePersonInfoElement>
+            )}
             {deathday && (
                 <MorePersonInfoElement>
                     <MorePersonInfoElementTitle>

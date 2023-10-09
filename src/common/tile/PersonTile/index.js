@@ -8,11 +8,12 @@ import {
     PersonDetails,
     PersonName,
     PersonPoster,
+    PersonRole,
     PersonTileElement,
     PersonTileLink
 } from "./styled";
 
-export const PersonTile = ({ id, page, name, profile_path, birthday, deathday, place_of_birth, biography }) => {
+export const PersonTile = ({ id, page, name, profile_path, birthday, deathday, place_of_birth, biography, character, job }) => {
     return (
         <PersonTileElement
             as={page ? "div" : null}
@@ -34,11 +35,17 @@ export const PersonTile = ({ id, page, name, profile_path, birthday, deathday, p
                                 src={profile_path ? `${smallPersonTileImageLink}${profile_path}` : no_person_image}
                                 alt={profile_path ? `${name} photography` : "Image not found"}
                             />)}
-                        <PersonDetails page={page}>
+                        <PersonDetails
+                            page={page}
+                            people
+                        >
                             <PersonName
                                 page={page}>
                                 {name}
                             </PersonName>
+                            <PersonRole>
+                                {character || job}
+                            </PersonRole>
                             {page && (
                                 <PersonInfo
                                     birthday={birthday}

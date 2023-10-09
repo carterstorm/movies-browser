@@ -99,12 +99,20 @@ export const PersonPoster = styled.img`
 `;
 
 export const PersonDetails = styled.div`
-    min-height: 50px;
+    min-height: 70px;
+
+    ${({ people, page }) => people && !page && css`
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    `};
 
     ${({ page }) => page && css`
         display: grid;
         grid-gap: 24px;
         padding: 8px 0;
+
 
         @media(max-width: ${({ theme }) => theme.breakpoints.mediumMobile}px) {
             grid-gap: 12px;
@@ -155,4 +163,11 @@ export const PersonName = styled.p`
             font-size: 20px;
         };
     `};
+`;
+
+export const PersonRole = styled.span`
+    display: block;
+    text-align: center;
+    font-weight: 300;
+    color: ${({ theme }) => theme.colors.waterloo};
 `;
