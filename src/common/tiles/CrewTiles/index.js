@@ -11,10 +11,11 @@ export const CrewTiles = () => {
                 id,
                 name,
                 job,
-                profile_path
+                profile_path,
+                credit_id
             }) => (
                 <PersonTile
-                    key={id}
+                    key={credit_id}
                     id={id}
                     name={name}
                     job={job}

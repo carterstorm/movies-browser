@@ -11,10 +11,11 @@ export const CastTiles = () => {
                 id,
                 character,
                 name,
-                profile_path
+                profile_path,
+                credit_id
             }) => (
                 <PersonTile
-                    key={id}
+                    key={credit_id}
                     id={id}
                     character={character}
                     name={name}
