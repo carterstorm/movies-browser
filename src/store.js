@@ -1,7 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import listReducer from "./listSlice";
 import genresReducer from "./genresSlice";
-import movieDetailsReducer from "./movieDetailsSlice";
 import personDetailsReducer from "./personDetailsSlice";
 import detailsReducer from "./detailsSlice";
 import createSagaMiddleware from "redux-saga";
@@ -13,7 +12,6 @@ const store = configureStore({
     reducer: {
         list: listReducer,
         genres: genresReducer,
-        movieDetails: movieDetailsReducer,
         personDetails: personDetailsReducer,
         details: detailsReducer,
     },

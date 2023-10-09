@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
-import { selectMovieDetailsList } from "../../../../movieDetailsSlice";
 import { MovieTile } from "../../MovieTile";
+import { selectDetailsItemData } from "../../../../detailsSlice";
 
 export const BigMovieTile = () => {
     const {
@@ -15,7 +15,7 @@ export const BigMovieTile = () => {
         budget,
         production_countries,
         overview
-    } = useSelector(selectMovieDetailsList);
+    } = useSelector(selectDetailsItemData).itemData;
 
     return (
         <>

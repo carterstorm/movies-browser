@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux";
 import { Rating } from "../../../../common/Rating";
-import { selectMovieDetailsList } from "../../../../movieDetailsSlice";
 import {
     MovieDetails,
     MovieDetailsInfo,
@@ -9,6 +8,7 @@ import {
     MovieTitle,
     Wrapper
 } from "./styled";
+import { selectDetailsItemData } from "../../../../detailsSlice";
 
 export const MovieHeroSection = () => {
     const {
@@ -16,7 +16,7 @@ export const MovieHeroSection = () => {
         title,
         vote_average,
         vote_count,
-    } = useSelector(selectMovieDetailsList);
+    } = useSelector(selectDetailsItemData).itemData;
 
     return (
         <Wrapper>
