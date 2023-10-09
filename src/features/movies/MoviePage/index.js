@@ -6,6 +6,9 @@ import { MovieHeroSection } from "./MovieHeroSection";
 import { fetchGenres } from "../../../genresSlice";
 import { BigTileElement } from "../../../common/tile/BigTileElement";
 import { BigMovieTile } from "../../../common/tile/BigTileElement/BigMovieTile";
+import { TilesSection } from "../../../common/tiles/TilesSection";
+import { CastAndCrewTiles } from "../../../common/tiles/CastAndCrewTiles";
+import { Heading } from "../../../common/Heading";
 import {
     fetchDetails,
     selectAreDetailsError,
@@ -34,6 +37,11 @@ export const MoviePage = () => {
             <MovieHeroSection />
             <BigTileElement
                 children={<BigMovieTile />}
+            />
+            <Heading title={"Cast"} />
+            <TilesSection
+                children={<CastAndCrewTiles />}
+                people
             />
         </Checker>
     );
