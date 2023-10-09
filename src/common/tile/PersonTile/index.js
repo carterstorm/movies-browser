@@ -1,14 +1,11 @@
 import no_person_image from "../../../assets/svg/no_person_image.svg";
+import { PersonInfo } from "./PersonInfo";
+import { PersonOverview } from "./PersonInfo/styled";
 import {
     FloatContainer,
-    MorePersonInfoDescription,
-    MorePersonInfoElement,
-    MorePersonInfoElementTitle,
     PersonContainer,
     PersonDetails,
-    PersonInfo,
     PersonName,
-    PersonOverview,
     PersonPoster,
     PersonTileElement,
     PersonTileLink
@@ -45,34 +42,11 @@ export const PersonTile = ({ id, page, name, profile_path, birthday, deathday, p
                                 {name}
                             </PersonName>
                             {page && (
-                                <PersonInfo>
-                                    <MorePersonInfoElement>
-                                        <MorePersonInfoElementTitle>
-                                            Date of birth:
-                                        </MorePersonInfoElementTitle>
-                                        <MorePersonInfoDescription>
-                                            {birthday}
-                                        </MorePersonInfoDescription>
-                                    </MorePersonInfoElement>
-                                    <MorePersonInfoElement>
-                                        <MorePersonInfoElementTitle>
-                                            Place of birth:
-                                        </MorePersonInfoElementTitle>
-                                        <MorePersonInfoDescription>
-                                            {place_of_birth}
-                                        </MorePersonInfoDescription>
-                                    </MorePersonInfoElement>
-                                    {deathday && (
-                                        <MorePersonInfoElement>
-                                            <MorePersonInfoElementTitle>
-                                                Date of death:
-                                            </MorePersonInfoElementTitle>
-                                            <MorePersonInfoDescription>
-                                                {deathday}
-                                            </MorePersonInfoDescription>
-                                        </MorePersonInfoElement>
-                                    )}
-                                </PersonInfo>
+                                <PersonInfo
+                                    birthday={birthday}
+                                    place_of_birth={place_of_birth}
+                                    deathday={deathday}
+                                />
                             )}
                         </PersonDetails>
                         {page && (
