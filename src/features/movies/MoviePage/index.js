@@ -6,17 +6,23 @@ import { MovieHeroSection } from "./MovieHeroSection";
 import { fetchGenres } from "../../../genresSlice";
 import { BigTileElement } from "../../../common/tile/BigTileElement";
 import { BigMovieTile } from "../../../common/tile/BigTileElement/BigMovieTile";
+import { fetchDetails } from "../../../detailsSlice";
 import {
     fetchMovieDetails,
     selectAreMovieDetailsError,
     selectAreMovieDetailsLoading,
 } from "../../../movieDetailsSlice";
 
+
 export const MoviePage = () => {
     const dispatch = useDispatch();
     const { id } = useParams();
     const areLoading = useSelector(selectAreMovieDetailsLoading);
     const areError = useSelector(selectAreMovieDetailsError);
+
+    useEffect(() => {
+        dispatch(fetchDetails({ id: id, type: "movie" }));
+    }, [dispatch, id]);
 
     useEffect(() => {
         dispatch(fetchMovieDetails(id));

@@ -3,6 +3,7 @@ import { listSaga } from "./listSaga";
 import { genresSaga } from "./genresSaga";
 import { movieDetailsSaga } from "./movieDetailsSaga";
 import { personDetailsSaga } from "./personDetailsSaga";
+import { watchFetchDetails } from "./detailsSaga";
 
 export default function* rootSaga() {
     yield all([
@@ -10,5 +11,6 @@ export default function* rootSaga() {
         genresSaga(),
         movieDetailsSaga(),
         personDetailsSaga(),
+        watchFetchDetails(),
     ]);
 };
