@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { selectDetailsExtraData } from "../../../detailsSlice";
 import { PersonTile } from "../../tile/PersonTile";
 
-export const CastAndCrewTiles = () => {
+export const CastTiles = () => {
     const { cast } = useSelector(selectDetailsExtraData);
 
     return (

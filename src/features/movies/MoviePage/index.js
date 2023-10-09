@@ -6,7 +6,7 @@ import { MovieHeroSection } from "./MovieHeroSection";
 import { BigTileElement } from "../../../common/tile/BigTileElement";
 import { BigMovieTile } from "../../../common/tile/BigTileElement/BigMovieTile";
 import { TilesSection } from "../../../common/tiles/TilesSection";
-import { CastAndCrewTiles } from "../../../common/tiles/CastAndCrewTiles";
+import { CastTiles } from "../../../common/tiles/CastTiles";
 import { Heading } from "../../../common/Heading";
 import { Main } from "../../../common/Main";
 import {
@@ -43,7 +43,7 @@ export const MoviePage = () => {
 
                 <Heading title={"Cast"} />
                 <TilesSection
-                    children={<CastAndCrewTiles />}
+                    children={<CastTiles />}
                     people
                 />
             </Main>
