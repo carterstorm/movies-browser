@@ -17,8 +17,8 @@ export const MovieHeroSection = () => {
         backdrop_path,
         title,
         vote_average,
-        vote_count,
-    } = useSelector(selectDetailsItemData).itemData;
+        vote_count
+    } = useSelector(selectDetailsItemData);
 
     return (
         <Wrapper>

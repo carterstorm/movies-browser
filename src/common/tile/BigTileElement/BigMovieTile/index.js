@@ -15,7 +15,7 @@ export const BigMovieTile = () => {
         budget,
         production_countries,
         overview
-    } = useSelector(selectDetailsItemData).itemData;
+    } = useSelector(selectDetailsItemData);
 
     return (
         <>

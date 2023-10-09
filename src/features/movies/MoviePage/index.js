@@ -9,7 +9,7 @@ import { BigMovieTile } from "../../../common/tile/BigTileElement/BigMovieTile";
 import {
     fetchDetails,
     selectAreDetailsError,
-    selectAreDetailsLoading
+    selectAreDetailsLoading,
 } from "../../../detailsSlice";
 
 export const MoviePage = () => {

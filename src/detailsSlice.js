@@ -12,10 +12,11 @@ const detailsSlice = createSlice({
         fetchDetails: state => {
             state.loading = true;
         },
-        fetchDetailsSuccess: (state, { payload: itemData }) => {
+        fetchDetailsSuccess: (state, { payload: { itemData, extraData } }) => {
             state.loading = false;
             state.error = false;
             state.itemData = itemData;
+            state.extraData = extraData;
         },
         fetchDetailsError: state => {
             state.loading = false;

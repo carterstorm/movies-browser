@@ -10,7 +10,7 @@ export const BigPersonTile = () => {
         place_of_birth,
         profile_path,
         biography
-    } = useSelector(selectDetailsItemData).itemData;
+    } = useSelector(selectDetailsItemData);
 
     return (
         <PersonTile
