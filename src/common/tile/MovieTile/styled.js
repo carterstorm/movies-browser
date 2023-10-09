@@ -177,7 +177,7 @@ export const MovieOverview = styled.p`
     text-indent: 26px;
 
     ${({ mobile }) => mobile && css`
-        padding: 25px;
+        padding: 0 25px 25px;
         margin: 0;
 
         @media(max-width: ${({ theme }) => theme.breakpoints.mediumMobile}px) {
