@@ -1,14 +1,14 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { usePageParameter } from "../../../pageParameters";
 import { Heading } from "../../../common/Heading";
 import { Pagination } from "../../../common/Pagination";
 import { Checker } from "../../../common/Checker";
-import { fetchGenres } from "../../../genresSlice";
-import { MoviesMain } from "./styled";
-import { usePageParameter } from "../../../pageParameters";
-import { resetListState, selectAreListError, selectAreListLoading, setPath } from "../../../listSlice";
 import { TilesSection } from "../../../common/tiles/TilesSection";
 import { MoviesTiles } from "../../../common/tiles/MoviesTiles";
+import { Main } from "../../../common/Main";
+import { fetchGenres } from "../../../genresSlice";
+import { resetListState, selectAreListError, selectAreListLoading, setPath } from "../../../listSlice";
 import { apiBaseLink, apiKey, apiLanguage } from "../../../common/commonValues";
 
 export const MoviesPage = () => {
@@ -31,19 +31,19 @@ export const MoviesPage = () => {
     }, [dispatch]);
 
     return (
-        <MoviesMain>
-            <Checker
-                areLoading={areLoading}
-                areError={areError}
-            >
+        <Checker
+            areLoading={areLoading}
+            areError={areError}
+        >
+            <Main>
                 <Heading
                     title="Popular movies"
                 />
                 <TilesSection
                     children={<MoviesTiles />}
                 />
-                <Pagination />
-            </Checker>
-        </MoviesMain>
+            </Main>
+            <Pagination />
+        </Checker>
     )
 };

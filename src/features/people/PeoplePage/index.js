@@ -1,13 +1,13 @@
 import { useEffect } from "react";
-import { Checker } from "../../../common/Checker";
-import { resetListState, selectAreListError, selectAreListLoading, setPath } from "../../../listSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { usePageParameter } from "../../../pageParameters";
+import { Checker } from "../../../common/Checker";
+import { Main } from "../../../common/Main";
 import { Heading } from "../../../common/Heading";
 import { Pagination } from "../../../common/Pagination";
 import { TilesSection } from "../../../common/tiles/TilesSection";
 import { PeopleTiles } from "../../../common/tiles/PeopleTiles";
-import { PeopleMain } from "./styled";
+import { resetListState, selectAreListError, selectAreListLoading, setPath } from "../../../listSlice";
 import { apiBaseLink, apiKey, apiLanguage } from "../../../common/commonValues";
 
 export const PeoplePage = () => {
@@ -26,11 +26,11 @@ export const PeoplePage = () => {
     }, [dispatch, urlPageNumber]);
 
     return (
-        <PeopleMain>
-            <Checker
-                areLoading={areLoading}
-                areError={areError}
-            >
+        <Checker
+            areLoading={areLoading}
+            areError={areError}
+        >
+            <Main>
                 <Heading
                     title="Popular people"
                 />
@@ -38,8 +38,8 @@ export const PeoplePage = () => {
                     children={<PeopleTiles />}
                     people
                 />
-                <Pagination />
-            </Checker>
-        </PeopleMain>
+            </Main>
+            <Pagination />
+        </Checker>
     );
 };

@@ -5,6 +5,7 @@ import { Checker } from "../../../common/Checker";
 import { BigTileElement } from "../../../common/tile/BigTileElement";
 import { BigPersonTile } from "../../../common/tile/BigTileElement/BigPersonTile";
 import { fetchDetails, selectAreDetailsError, selectAreDetailsLoading } from "../../../detailsSlice";
+import { Main } from "../../../common/Main";
 
 
 export const PersonPage = () => {
@@ -22,9 +23,11 @@ export const PersonPage = () => {
             areLoading={areLoading}
             areError={areError}
         >
-            <BigTileElement
-                children={<BigPersonTile />}
-            />
+            <Main>
+                <BigTileElement
+                    children={<BigPersonTile />}
+                />
+            </Main>
         </Checker>
     );
 };
