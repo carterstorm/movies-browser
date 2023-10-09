@@ -2,6 +2,7 @@ import { GenreTags } from "./GenreTags";
 import { Info } from "./Info";
 import { Rating } from "../../Rating";
 import no_movie_image from "../../../assets/svg/no_movie_image.svg";
+import { movieTileImageLink } from "../../commonValues";
 import {
     MovieContainer,
     MovieDescription,
@@ -13,6 +14,7 @@ import {
     MovieTileElement,
     MovieTileLink
 } from "./styled";
+
 
 export const MovieTile = ({
     page,
@@ -29,7 +31,6 @@ export const MovieTile = ({
     production_countries,
     overview,
 }) => {
-    const posterImageLink = `https://image.tmdb.org/t/p/w342`;
     return (
         <MovieTileElement
             key={id}
@@ -43,7 +44,7 @@ export const MovieTile = ({
                     to={`/movies/movie/${id}`}
                 >
                     <MoviePoster
-                        src={poster_path ? `${posterImageLink}${poster_path}` : no_movie_image}
+                        src={poster_path ? `${movieTileImageLink}${poster_path}` : no_movie_image}
                         alt={poster_path ? `Poster: ${title}` : "Image not found"}
                         page={page}
                     />

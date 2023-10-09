@@ -1,4 +1,5 @@
 import no_person_image from "../../../assets/svg/no_person_image.svg";
+import { bigPersonTileImageLink, smallPersonTileImageLink } from "../../commonValues";
 import { PersonInfo } from "./PersonInfo";
 import { PersonOverview } from "./PersonInfo/styled";
 import {
@@ -12,9 +13,6 @@ import {
 } from "./styled";
 
 export const PersonTile = ({ id, page, name, profile_path, birthday, deathday, place_of_birth, biography }) => {
-    const bigPersonImageLink = `https://image.tmdb.org/t/p/h632`;
-    const smallPersonImageLink = `https://image.tmdb.org/t/p/w185`;
-
     return (
         <PersonTileElement
             as={page ? "div" : null}
@@ -29,11 +27,11 @@ export const PersonTile = ({ id, page, name, profile_path, birthday, deathday, p
                         {page ?
                             (<PersonPoster
                                 page
-                                src={profile_path ? `${bigPersonImageLink}${profile_path}` : no_person_image}
+                                src={profile_path ? `${bigPersonTileImageLink}${profile_path}` : no_person_image}
                                 alt={profile_path ? `${name} photography` : "Image not found"} />)
                             :
                             (<PersonPoster
-                                src={profile_path ? `${smallPersonImageLink}${profile_path}` : no_person_image}
+                                src={profile_path ? `${smallPersonTileImageLink}${profile_path}` : no_person_image}
                                 alt={profile_path ? `${name} photography` : "Image not found"}
                             />)}
                         <PersonDetails page={page}>

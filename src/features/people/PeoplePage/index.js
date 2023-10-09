@@ -5,26 +5,25 @@ import { useDispatch, useSelector } from "react-redux";
 import { usePageParameter } from "../../../pageParameters";
 import { Heading } from "../../../common/Heading";
 import { Pagination } from "../../../common/Pagination";
-import { api_key } from "../../../apiKey";
 import { TilesSection } from "../../../common/tiles/TilesSection";
 import { PeopleTiles } from "../../../common/tiles/PeopleTiles";
 import { PeopleMain } from "./styled";
+import { apiBaseLink, apiKey, apiLanguage } from "../../../common/commonValues";
 
 export const PeoplePage = () => {
     const dispatch = useDispatch();
     const areLoading = useSelector(selectAreListLoading);
     const areError = useSelector(selectAreListError);
     const urlPageNumber = +usePageParameter("page");
-    const apiKey = api_key;
 
     useEffect(() => {
-        dispatch(setPath(`https://api.themoviedb.org/3/person/popular?api_key=${apiKey}&language=en-US&page=
+        dispatch(setPath(`${apiBaseLink}person/popular?api_key=${apiKey}&language=${apiLanguage}&page=
         ${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`));
 
         return () => {
             dispatch(resetListState());
         };
-    }, [dispatch, apiKey, urlPageNumber]);
+    }, [dispatch, urlPageNumber]);
 
     return (
         <PeopleMain>
