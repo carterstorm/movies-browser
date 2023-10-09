@@ -2,7 +2,17 @@ import { GenreTags } from "./GenreTags";
 import { Info } from "./Info";
 import { Rating } from "../../Rating";
 import no_movie_image from "../../../assets/svg/no_movie_image.svg";
-import { MovieContainer, MovieDescription, MovieDetails, MovieOverview, MovieOverviewDesktopContainer, MovieOverviewMobileContainer, MoviePoster, MovieTileElement, MovieTileLink } from "./styled";
+import {
+    MovieContainer,
+    MovieDescription,
+    MovieDetails,
+    MovieOverview,
+    MovieOverviewDesktopContainer,
+    MovieOverviewMobileContainer,
+    MoviePoster,
+    MovieTileElement,
+    MovieTileLink
+} from "./styled";
 
 export const MovieTile = ({
     page,
@@ -23,12 +33,12 @@ export const MovieTile = ({
     return (
         <MovieTileElement
             key={id}
-            as={page ? "div" : null}
+            as={page && "div"}
             page={page}
         >
             <MovieContainer>
                 <MovieTileLink
-                    as={page ? "div" : null}
+                    as={page && "div"}
                     page={page}
                     to={`/movies/movie/${id}`}
                 >
@@ -55,24 +65,21 @@ export const MovieTile = ({
                             vote_average={vote_average}
                             vote_count={vote_count}
                         />
-                        {page ?
-                            (
-                                <MovieOverviewDesktopContainer>
-                                    <MovieOverview>
-                                        {overview}
-                                    </MovieOverview>
-                                </MovieOverviewDesktopContainer>)
-                            :
-                            null}
+                        {page &&
+                            (<MovieOverviewDesktopContainer>
+                                <MovieOverview>
+                                    {overview}
+                                </MovieOverview>
+                            </MovieOverviewDesktopContainer>)
+                        }
                     </MovieDetails>
                 </MovieTileLink>
                 <MovieOverviewMobileContainer>
-                    {page ?
+                    {page &&
                         (<MovieOverview mobile>
                             {overview}
                         </MovieOverview>)
-                        :
-                        null}
+                    }
                 </MovieOverviewMobileContainer>
             </MovieContainer>
         </MovieTileElement>
