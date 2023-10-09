@@ -1,5 +1,8 @@
 import { useSelector } from "react-redux";
+import { movieHeroLink } from "../../../../common/commonValues";
 import { Rating } from "../../../../common/Rating";
+import { selectDetailsItemData } from "../../../../detailsSlice";
+
 import {
     MovieDetails,
     MovieDetailsInfo,
@@ -8,7 +11,6 @@ import {
     MovieTitle,
     Wrapper
 } from "./styled";
-import { selectDetailsItemData } from "../../../../detailsSlice";
 
 export const MovieHeroSection = () => {
     const {
@@ -35,7 +37,7 @@ export const MovieHeroSection = () => {
                         </MovieDetailsInfo>
                     </MovieDetails>
                     <MovieImage
-                        src={`https://image.tmdb.org/t/p/w1280${backdrop_path}`}
+                        src={`${movieHeroLink}${backdrop_path}`}
                     />
                 </MovieImageContainer>
             )}
