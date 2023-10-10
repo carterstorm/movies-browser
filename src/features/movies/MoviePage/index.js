@@ -6,7 +6,8 @@ import { MovieHeroSection } from "./MovieHeroSection";
 import { BigTileElement } from "../../../common/tile/BigTileElement";
 import { BigMovieTile } from "../../../common/tile/BigTileElement/BigMovieTile";
 import { TilesSection } from "../../../common/tiles/TilesSection";
-import { CastTiles } from "../../../common/tiles/CastTiles";
+import { MovieCastTiles } from "../../../common/tiles/MovieCastTiles";
+import { MovieCrewTiles } from "../../../common/tiles/MovieCrewTiles";
 import { Heading } from "../../../common/Heading";
 import { Main } from "../../../common/Main";
 import {
@@ -16,7 +17,7 @@ import {
     selectAreDetailsLoading,
 } from "../../../detailsSlice";
 import { fetchGenres } from "../../../genresSlice";
-import { CrewTiles } from "../../../common/tiles/CrewTiles";
+
 
 export const MoviePage = () => {
     const dispatch = useDispatch();
@@ -49,12 +50,12 @@ export const MoviePage = () => {
 
                 <Heading title={"Cast"} />
                 <TilesSection
-                    children={<CastTiles />}
+                    children={<MovieCastTiles />}
                     people
                 />
                 <Heading title={"Crew"} />
                 <TilesSection
-                    children={<CrewTiles />}
+                    children={<MovieCrewTiles />}
                     people
                 />
             </Main>
