@@ -6,22 +6,22 @@ import { MovieHeroSection } from "./MovieHeroSection";
 import { BigTileElement } from "../../../common/tile/BigTileElement";
 import { BigMovieTile } from "../../../common/tile/BigTileElement/BigMovieTile";
 import { TilesSection } from "../../../common/tiles/TilesSection";
-import { MovieCastTiles } from "../../../common/tiles/MovieCastTiles";
-import { MovieCrewTiles } from "../../../common/tiles/MovieCrewTiles";
 import { Heading } from "../../../common/Heading";
 import { Main } from "../../../common/Main";
+import { MovieCastAndCrewTiles } from "../../../common/tiles/MovieCastAndCrewTiles";
 import {
     fetchDetails,
     resetDetailsState,
     selectAreDetailsError,
     selectAreDetailsLoading,
+    selectDetailsExtraData,
 } from "../../../detailsSlice";
 import { fetchGenres } from "../../../genresSlice";
-
 
 export const MoviePage = () => {
     const dispatch = useDispatch();
     const { id } = useParams();
+    const { cast, crew } = useSelector(selectDetailsExtraData);
     const areLoading = useSelector(selectAreDetailsLoading);
     const areError = useSelector(selectAreDetailsError);
 
@@ -47,16 +47,21 @@ export const MoviePage = () => {
                 <BigTileElement
                     children={<BigMovieTile />}
                 />
-
-                <Heading title={"Cast"} />
+                <Heading title={`Cast`} />
                 <TilesSection
-                    children={<MovieCastTiles />}
                     people
+                    children={
+                        <MovieCastAndCrewTiles
+                            data={cast}
+                        />}
                 />
                 <Heading title={"Crew"} />
                 <TilesSection
-                    children={<MovieCrewTiles />}
                     people
+                    children={
+                        <MovieCastAndCrewTiles
+                            data={crew}
+                        />}
                 />
             </Main>
         </Checker>
