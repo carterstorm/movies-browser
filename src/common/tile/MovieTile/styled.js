@@ -101,7 +101,7 @@ export const MovieDetails = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 200px;
+    min-height: 175px;
     flex-grow: 1;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
