@@ -27,7 +27,9 @@ export const MoviePage = () => {
     useEffect(() => {
         dispatch(fetchDetails({ id, type: "movie" }));
 
-        return () => resetDetailsState();
+        return () => {
+            dispatch(resetDetailsState());
+        };
     }, [dispatch, id]);
 
     useEffect(() => {

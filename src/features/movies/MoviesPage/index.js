@@ -21,7 +21,9 @@ export const MoviesPage = () => {
         dispatch(setPath(`${apiBaseLink}movie/popular?api_key=${apiKey}&language=${apiLanguage}S&page=
         ${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`));
 
-        return () => resetListState();
+        return () => {
+            dispatch(resetListState());
+        };
     }, [dispatch, urlPageNumber]);
 
     useEffect(() => {

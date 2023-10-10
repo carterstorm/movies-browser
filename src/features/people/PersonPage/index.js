@@ -7,7 +7,6 @@ import { BigPersonTile } from "../../../common/tile/BigTileElement/BigPersonTile
 import { fetchDetails, resetDetailsState, selectAreDetailsError, selectAreDetailsLoading } from "../../../detailsSlice";
 import { Main } from "../../../common/Main";
 
-
 export const PersonPage = () => {
     const dispatch = useDispatch();
     const { id } = useParams();
@@ -17,7 +16,9 @@ export const PersonPage = () => {
     useEffect(() => {
         dispatch(fetchDetails({ id, type: "person" }));
 
-        return () => resetDetailsState();
+        return () => {
+            dispatch(resetDetailsState());
+        };
     }, [dispatch, id]);
 
     return (

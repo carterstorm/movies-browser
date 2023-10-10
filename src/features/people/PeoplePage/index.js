@@ -20,7 +20,9 @@ export const PeoplePage = () => {
         dispatch(setPath(`${apiBaseLink}person/popular?api_key=${apiKey}&language=${apiLanguage}&page=
         ${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`));
 
-        return () => resetListState();
+        return () => {
+            dispatch(resetListState());
+        };
     }, [dispatch, urlPageNumber]);
 
     return (
