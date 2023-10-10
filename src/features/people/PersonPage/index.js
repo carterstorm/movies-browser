@@ -4,11 +4,18 @@ import { useParams } from "react-router-dom";
 import { Checker } from "../../../common/Checker";
 import { BigTileElement } from "../../../common/tile/BigTileElement";
 import { BigPersonTile } from "../../../common/tile/BigTileElement/BigPersonTile";
-import { fetchDetails, resetDetailsState, selectAreDetailsError, selectAreDetailsLoading, selectDetailsExtraData } from "../../../detailsSlice";
 import { Main } from "../../../common/Main";
 import { TilesSection } from "../../../common/tiles/TilesSection";
 import { Heading } from "../../../common/Heading";
 import { PersonCastAndCrewTiles } from "../../../common/tiles/PersonCastAndCrewTiles";
+import {
+    fetchDetails,
+    resetDetailsState,
+    selectAreDetailsError,
+    selectAreDetailsLoading,
+    selectDetailsExtraData
+} from "../../../detailsSlice";
+import { getNumberOfCast, getNumberOfCrew } from "../../../common/commonFunction";
 
 export const PersonPage = () => {
     const dispatch = useDispatch();
@@ -34,7 +41,7 @@ export const PersonPage = () => {
                 <BigTileElement
                     children={<BigPersonTile />}
                 />
-                <Heading title={`Movie - cast`} />
+                <Heading title={getNumberOfCast(cast)} />
                 <TilesSection
                     children=
                     {
@@ -43,7 +50,7 @@ export const PersonPage = () => {
                         />
                     }
                 />
-                <Heading title={"Movies - crew"} />
+                <Heading title={getNumberOfCrew(crew)} />
                 <TilesSection
                     children=
                     {

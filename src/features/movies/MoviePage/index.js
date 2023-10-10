@@ -17,6 +17,7 @@ import {
     selectDetailsExtraData,
 } from "../../../detailsSlice";
 import { fetchGenres } from "../../../genresSlice";
+import { getNumberOfCast, getNumberOfCrew } from "../../../common/commonFunction";
 
 export const MoviePage = () => {
     const dispatch = useDispatch();
@@ -47,7 +48,7 @@ export const MoviePage = () => {
                 <BigTileElement
                     children={<BigMovieTile />}
                 />
-                <Heading title={`Cast`} />
+                <Heading title={getNumberOfCast(cast)} />
                 <TilesSection
                     people
                     children={
@@ -55,7 +56,7 @@ export const MoviePage = () => {
                             data={cast}
                         />}
                 />
-                <Heading title={"Crew"} />
+                <Heading title={getNumberOfCrew(crew)} />
                 <TilesSection
                     people
                     children={
