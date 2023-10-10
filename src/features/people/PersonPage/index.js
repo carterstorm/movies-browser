@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { Checker } from "../../../common/Checker";
 import { BigTileElement } from "../../../common/tile/BigTileElement";
 import { BigPersonTile } from "../../../common/tile/BigTileElement/BigPersonTile";
-import { fetchDetails, selectAreDetailsError, selectAreDetailsLoading } from "../../../detailsSlice";
+import { fetchDetails, resetDetailsState, selectAreDetailsError, selectAreDetailsLoading } from "../../../detailsSlice";
 import { Main } from "../../../common/Main";
 
 
@@ -16,6 +16,8 @@ export const PersonPage = () => {
 
     useEffect(() => {
         dispatch(fetchDetails({ id, type: "person" }));
+
+        return () => resetDetailsState();
     }, [dispatch, id]);
 
     return (

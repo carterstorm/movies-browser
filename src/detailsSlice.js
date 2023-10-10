@@ -22,13 +22,20 @@ const detailsSlice = createSlice({
             state.loading = false;
             state.error = true;
         },
+        resetDetailsState: state => {
+            state.itemData = [];
+            state.extraData = [];
+            state.loading = true;
+            state.error = false;
+        },
     },
 });
 
 export const {
     fetchDetails,
     fetchDetailsSuccess,
-    fetchDetailsError
+    fetchDetailsError,
+    resetDetailsState,
 } = detailsSlice.actions;
 
 export const selectDetailsSlice = state => state.details;

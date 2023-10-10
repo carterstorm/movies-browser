@@ -11,6 +11,7 @@ import { Heading } from "../../../common/Heading";
 import { Main } from "../../../common/Main";
 import {
     fetchDetails,
+    resetDetailsState,
     selectAreDetailsError,
     selectAreDetailsLoading,
 } from "../../../detailsSlice";
@@ -25,6 +26,8 @@ export const MoviePage = () => {
 
     useEffect(() => {
         dispatch(fetchDetails({ id, type: "movie" }));
+
+        return () => resetDetailsState();
     }, [dispatch, id]);
 
     useEffect(() => {
