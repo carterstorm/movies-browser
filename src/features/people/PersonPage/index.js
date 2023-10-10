@@ -6,6 +6,10 @@ import { BigTileElement } from "../../../common/tile/BigTileElement";
 import { BigPersonTile } from "../../../common/tile/BigTileElement/BigPersonTile";
 import { fetchDetails, resetDetailsState, selectAreDetailsError, selectAreDetailsLoading } from "../../../detailsSlice";
 import { Main } from "../../../common/Main";
+import { TilesSection } from "../../../common/tiles/TilesSection";
+import { PersonCastTiles } from "../../../common/tiles/PersonCastTiles";
+import { Heading } from "../../../common/Heading";
+import { PersonCrewTiles } from "../../../common/tiles/PersonCrewTiles";
 
 export const PersonPage = () => {
     const dispatch = useDispatch();
@@ -30,7 +34,15 @@ export const PersonPage = () => {
                 <BigTileElement
                     children={<BigPersonTile />}
                 />
+                <Heading title={"Movies - cast"} />
+                <TilesSection
+                    children={<PersonCastTiles />}
+                />
+                <Heading title={"Movies - crew"} />
+                <TilesSection
+                    children={<PersonCrewTiles />}
+                />
             </Main>
-        </Checker>
+        </Checker >
     );
 };
