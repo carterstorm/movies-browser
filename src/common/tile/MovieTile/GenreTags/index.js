@@ -15,18 +15,20 @@ export const GenreTags = ({ genre }) => {
 
     return (
         <TagsContainer>
-            {!areLoading && (genre &&
-                genresList.map(({ id, name }) => (
-                    (genre.includes(id)) &&
-                    (
-                        <Tag
-                            key={id}>
-                            <TagName>
-                                {name}
-                            </TagName>
-                        </Tag>
-                    )
-                )))}
+            {!areLoading ?
+                (genre ?
+                    genresList.map(({ id, name }) => (
+                        (genre.includes(id)) ?
+                            (<Tag
+                                key={id}>
+                                <TagName>
+                                    {name}
+                                </TagName>
+                            </Tag>
+                            )
+                            : null
+                    )) : null)
+                : null}
         </TagsContainer>
     );
 };

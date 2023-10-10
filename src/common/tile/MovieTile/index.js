@@ -34,12 +34,12 @@ export const MovieTile = ({
     return (
         <MovieTileElement
             key={id}
-            as={page && "div"}
+            as={page ? "div" : null}
             page={page}
         >
             <MovieContainer>
                 <MovieTileLink
-                    as={page && "div"}
+                    as={page ? "div" : null}
                     page={page}
                     to={`/movies/movie/${id}`}
                 >
@@ -66,20 +66,21 @@ export const MovieTile = ({
                             vote_average={vote_average}
                             vote_count={vote_count}
                         />
-                        {page &&
+                        {page ?
                             (<MovieOverviewDesktopContainer>
                                 <MovieOverview>
                                     {overview}
                                 </MovieOverview>
                             </MovieOverviewDesktopContainer>)
+                            : null
                         }
                     </MovieDetails>
                 </MovieTileLink>
                 <MovieOverviewMobileContainer>
-                    {page &&
+                    {page ?
                         (<MovieOverview mobile>
                             {overview}
-                        </MovieOverview>)
+                        </MovieOverview>) : null
                     }
                 </MovieOverviewMobileContainer>
             </MovieContainer>

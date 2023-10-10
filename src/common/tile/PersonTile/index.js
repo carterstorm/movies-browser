@@ -13,7 +13,18 @@ import {
     PersonTileLink
 } from "./styled";
 
-export const PersonTile = ({ id, page, name, profile_path, birthday, deathday, place_of_birth, biography, character, job }) => {
+export const PersonTile = ({
+    id,
+    page,
+    name,
+    profile_path,
+    birthday,
+    deathday,
+    place_of_birth,
+    biography,
+    character,
+    job
+}) => {
     return (
         <PersonTileElement
             as={page ? "div" : null}
@@ -46,19 +57,19 @@ export const PersonTile = ({ id, page, name, profile_path, birthday, deathday, p
                             <PersonRole>
                                 {character || job}
                             </PersonRole>
-                            {page && (
+                            {page ? (
                                 <PersonInfo
                                     birthday={birthday}
                                     place_of_birth={place_of_birth}
                                     deathday={deathday}
                                 />
-                            )}
+                            ) : null}
                         </PersonDetails>
-                        {page && (
+                        {page ? (
                             <PersonOverview>
                                 {biography}
                             </PersonOverview>
-                        )}
+                        ) : null}
                     </FloatContainer>
                 </PersonTileLink>
             </PersonContainer>
