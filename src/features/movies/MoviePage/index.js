@@ -48,22 +48,30 @@ export const MoviePage = () => {
                 <BigTileElement
                     children={<BigMovieTile />}
                 />
-                <Heading title={getNumberOfCast(cast)} />
-                <TilesSection
-                    people
-                    children={
-                        <MovieCastAndCrewTiles
-                            data={cast}
-                        />}
-                />
-                <Heading title={getNumberOfCrew(crew)} />
-                <TilesSection
-                    people
-                    children={
-                        <MovieCastAndCrewTiles
-                            data={crew}
-                        />}
-                />
+                {cast && cast.length > 0 ? (
+                    <>
+                        <Heading title={getNumberOfCast(cast)} />
+                        <TilesSection
+                            people
+                            children={
+                                <MovieCastAndCrewTiles
+                                    data={cast}
+                                />}
+                        />
+                    </>
+                ) : null}
+                {crew && crew.length > 0 ? (
+                    <>
+                        <Heading title={getNumberOfCrew(crew)} />
+                        <TilesSection
+                            people
+                            children={
+                                <MovieCastAndCrewTiles
+                                    data={crew}
+                                />}
+                        />
+                    </>
+                ) : null}
             </Main>
         </Checker>
     );

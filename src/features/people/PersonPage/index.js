@@ -41,24 +41,28 @@ export const PersonPage = () => {
                 <BigTileElement
                     children={<BigPersonTile />}
                 />
-                <Heading title={getNumberOfCast(cast)} />
-                <TilesSection
-                    children=
-                    {
-                        <PersonCastAndCrewTiles
-                            data={cast}
+                {cast && cast.length > 0 ? (
+                    <>
+                        <Heading title={getNumberOfCast(cast)} />
+                        <TilesSection
+                            children=
+                            {<PersonCastAndCrewTiles
+                                data={cast}
+                            />}
                         />
-                    }
-                />
-                <Heading title={getNumberOfCrew(crew)} />
-                <TilesSection
-                    children=
-                    {
-                        <PersonCastAndCrewTiles
-                            data={crew}
+                    </>
+                ) : null}
+                {crew && crew.length > 0 ? (
+                    <>
+                        <Heading title={getNumberOfCrew(crew)} />
+                        <TilesSection
+                            children=
+                            {<PersonCastAndCrewTiles
+                                data={crew}
+                            />}
                         />
-                    }
-                />
+                    </>
+                ) : null}
             </Main>
         </Checker >
     );
