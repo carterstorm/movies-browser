@@ -4,16 +4,16 @@ import { useParams } from "react-router-dom";
 import { Checker } from "../../../common/Checker";
 import { BigTileElement } from "../../../common/tile/BigTileElement";
 import { BigPersonTile } from "../../../common/tile/BigTileElement/BigPersonTile";
-import { fetchDetails, resetDetailsState, selectAreDetailsError, selectAreDetailsLoading } from "../../../detailsSlice";
+import { fetchDetails, resetDetailsState, selectAreDetailsError, selectAreDetailsLoading, selectDetailsExtraData } from "../../../detailsSlice";
 import { Main } from "../../../common/Main";
 import { TilesSection } from "../../../common/tiles/TilesSection";
-import { PersonCastTiles } from "../../../common/tiles/PersonCastTiles";
 import { Heading } from "../../../common/Heading";
-import { PersonCrewTiles } from "../../../common/tiles/PersonCrewTiles";
+import { PersonCastAndCrewTiles } from "../../../common/tiles/PersonCastAndCrewTiles";
 
 export const PersonPage = () => {
     const dispatch = useDispatch();
     const { id } = useParams();
+    const { cast, crew } = useSelector(selectDetailsExtraData);
     const areLoading = useSelector(selectAreDetailsLoading);
     const areError = useSelector(selectAreDetailsError);
 
@@ -34,13 +34,23 @@ export const PersonPage = () => {
                 <BigTileElement
                     children={<BigPersonTile />}
                 />
-                <Heading title={"Movies - cast"} />
+                <Heading title={`Movie - cast`} />
                 <TilesSection
-                    children={<PersonCastTiles />}
+                    children=
+                    {
+                        <PersonCastAndCrewTiles
+                            data={cast}
+                        />
+                    }
                 />
                 <Heading title={"Movies - crew"} />
                 <TilesSection
-                    children={<PersonCrewTiles />}
+                    children=
+                    {
+                        <PersonCastAndCrewTiles
+                            data={crew}
+                        />
+                    }
                 />
             </Main>
         </Checker >
