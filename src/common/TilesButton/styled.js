@@ -16,7 +16,7 @@ export const Button = styled.button`
     transition: .3s;
 
     &:hover {
-        background-color: #77AAFF;
+        background-color: ${({ theme }) => theme.colors.cornflowerBlue};
         color: ${({ theme }) => theme.colors.white};
     };
 `;

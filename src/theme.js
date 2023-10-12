@@ -7,6 +7,7 @@ export const theme = {
         mystic: "#E4E6F0",
         pattensBlue: '#D6E4FF',
         silver: `#C4C4C4`,
+        cornflowerBlue: `#77AAFF`,
     },
     breakpoints: {
         smallMobile: 374,
