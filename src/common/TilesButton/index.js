@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { Button } from "./styled";
 
-export const TilesButton = ({ castCrew, numberOfDisplayedTiles, setNumberOfDisplayedTiles }) => {
+export const TilesButton = ({ castCrew, numberOfDisplayedTiles, setNumberOfDisplayedTiles, numberOfDisplayedCastCrew }) => {
     const buttonRef = useRef(null);
 
     const handleClick = () => {
@@ -9,7 +9,7 @@ export const TilesButton = ({ castCrew, numberOfDisplayedTiles, setNumberOfDispl
             setNumberOfDisplayedTiles(castCrew.length);
             buttonRef.current.innerText = "Hide";
         } else if (castCrew.length <= numberOfDisplayedTiles) {
-            setNumberOfDisplayedTiles(12);
+            setNumberOfDisplayedTiles(numberOfDisplayedCastCrew);
             buttonRef.current.innerText = "Show all";
         };
     };
@@ -17,7 +17,7 @@ export const TilesButton = ({ castCrew, numberOfDisplayedTiles, setNumberOfDispl
     return (
         <Button
             ref={buttonRef}
-            onClick={() => handleClick()}>
+            onClick={handleClick}>
             Show all
         </Button>
     );

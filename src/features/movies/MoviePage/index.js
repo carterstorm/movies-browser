@@ -18,7 +18,7 @@ import {
 } from "../../../detailsSlice";
 import { fetchGenres } from "../../../genresSlice";
 import { getNumberOfCast, getNumberOfCrew } from "../../../common/commonFunction";
-import { numberOfDisplayedMovieCastCrew } from "../../../common/commonValues";
+import { numberOfDisplayedPersonCastCrew } from "../../../common/commonValues";
 import { TilesButton } from "../../../common/TilesButton";
 
 export const MoviePage = () => {
@@ -30,11 +30,11 @@ export const MoviePage = () => {
     const [
         numberOfDisplayedCastTiles,
         setNumberOfDisplayedCastTiles
-    ] = useState(numberOfDisplayedMovieCastCrew);
+    ] = useState(numberOfDisplayedPersonCastCrew);
     const [
         numberOfDisplayedCrewTiles,
         setNumberOfDisplayedCrewTiles
-    ] = useState(numberOfDisplayedMovieCastCrew);
+    ] = useState(numberOfDisplayedPersonCastCrew);
 
 
 
@@ -70,11 +70,14 @@ export const MoviePage = () => {
                                     data={cast.slice(0, numberOfDisplayedCastTiles)}
                                 />}
                         />
-                        <TilesButton
-                            castCrew={cast}
-                            numberOfDisplayedTiles={numberOfDisplayedCastTiles}
-                            setNumberOfDisplayedTiles={setNumberOfDisplayedCastTiles}
-                        />
+                        {cast.length >= numberOfDisplayedPersonCastCrew ? (
+                            <TilesButton
+                                castCrew={cast}
+                                numberOfDisplayedTiles={numberOfDisplayedCastTiles}
+                                setNumberOfDisplayedTiles={setNumberOfDisplayedCastTiles}
+                                numberOfDisplayedCastCrew={numberOfDisplayedPersonCastCrew}
+                            />
+                        ) : null}
                     </>
                 ) : null}
                 {crew && crew.length > 0 ? (
@@ -87,11 +90,14 @@ export const MoviePage = () => {
                                     data={crew.slice(0, numberOfDisplayedCrewTiles)}
                                 />}
                         />
-                        <TilesButton
-                            castCrew={crew}
-                            numberOfDisplayedTiles={numberOfDisplayedCrewTiles}
-                            setNumberOfDisplayedTiles={setNumberOfDisplayedCrewTiles}
-                        />
+                        {crew.length >= numberOfDisplayedPersonCastCrew ? (
+                            <TilesButton
+                                castCrew={crew}
+                                numberOfDisplayedTiles={numberOfDisplayedCrewTiles}
+                                setNumberOfDisplayedTiles={setNumberOfDisplayedCrewTiles}
+                                numberOfDisplayedCastCrew={numberOfDisplayedPersonCastCrew}
+                            />
+                        ) : null}
                     </>
                 ) : null}
             </Main>
