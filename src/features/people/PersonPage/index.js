@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Checker } from "../../../common/Checker";
@@ -16,6 +16,8 @@ import {
     selectDetailsExtraData
 } from "../../../detailsSlice";
 import { getNumberOfCast, getNumberOfCrew } from "../../../common/commonFunction";
+import { numberOfDisplayedMovieCastCrew } from "../../../common/commonValues";
+import { TilesButton } from "../../../common/TilesButton";
 
 export const PersonPage = () => {
     const dispatch = useDispatch();
@@ -23,6 +25,14 @@ export const PersonPage = () => {
     const { cast, crew } = useSelector(selectDetailsExtraData);
     const areLoading = useSelector(selectAreDetailsLoading);
     const areError = useSelector(selectAreDetailsError);
+    const [
+        numberOfDisplayedCastTiles,
+        setNumberOfDisplayedCastTiles
+    ] = useState(numberOfDisplayedMovieCastCrew);
+    const [
+        numberOfDisplayedCrewTiles,
+        setNumberOfDisplayedCrewTiles
+    ] = useState(numberOfDisplayedMovieCastCrew);
 
     useEffect(() => {
         dispatch(fetchDetails({ id, type: "person" }));
@@ -47,9 +57,17 @@ export const PersonPage = () => {
                         <TilesSection
                             children=
                             {<PersonCastAndCrewTiles
-                                data={cast}
+                                data={cast.slice(0, numberOfDisplayedCastTiles)}
                             />}
                         />
+                        {cast.length >= numberOfDisplayedMovieCastCrew ? (
+                            <TilesButton
+                                castCrew={cast}
+                                numberOfDisplayedTiles={numberOfDisplayedCastTiles}
+                                setNumberOfDisplayedTiles={setNumberOfDisplayedCastTiles}
+                                numberOfDisplayedCastCrew={numberOfDisplayedMovieCastCrew}
+                            />
+                        ) : null}
                     </>
                 ) : null}
                 {crew && crew.length > 0 ? (
@@ -58,9 +76,17 @@ export const PersonPage = () => {
                         <TilesSection
                             children=
                             {<PersonCastAndCrewTiles
-                                data={crew}
+                                data={crew.slice(0, numberOfDisplayedCrewTiles)}
                             />}
                         />
+                        {crew.length >= numberOfDisplayedMovieCastCrew ? (
+                            <TilesButton
+                                castCrew={crew}
+                                numberOfDisplayedTiles={numberOfDisplayedCrewTiles}
+                                setNumberOfDisplayedTiles={setNumberOfDisplayedCrewTiles}
+                                numberOfDisplayedCastCrew={numberOfDisplayedMovieCastCrew}
+                            />
+                        ) : null}
                     </>
                 ) : null}
             </Main>

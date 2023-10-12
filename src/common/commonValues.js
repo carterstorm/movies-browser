@@ -7,3 +7,4 @@ export const smallPersonTileImageLink = `https://image.tmdb.org/t/p/w185`;
 export const movieHeroLink = `https://image.tmdb.org/t/p/w1280`;
 
 export const numberOfDisplayedPersonCastCrew = 12;
+export const numberOfDisplayedMovieCastCrew = 8;
