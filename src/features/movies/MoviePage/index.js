@@ -26,19 +26,24 @@ export const MoviePage = () => {
     const { cast, crew } = useSelector(selectDetailsExtraData);
     const areLoading = useSelector(selectAreDetailsLoading);
     const areError = useSelector(selectAreDetailsError);
-    const buttonRef = useRef(null);
+    const buttonCastRef = useRef(null);
+    const buttonCrewRef = useRef(null);
     const [
         numberOfDisplayedCastTiles,
+        setNumberOfDisplayedCastTiles
+    ] = useState(numberOfDisplayedMovieCastCrew);
+    const [
+        numberOfDisplayedCrewTiles,
         setNumberOfDisplayedCrewTiles
     ] = useState(numberOfDisplayedMovieCastCrew);
 
-    const handleClick = (cast) => {
-        if (cast.length > numberOfDisplayedCastTiles) {
-            setNumberOfDisplayedCrewTiles(cast.length);
-            buttonRef.current.innerText = "Hide";
-        } else if (cast.length <= numberOfDisplayedCastTiles) {
-            setNumberOfDisplayedCrewTiles(numberOfDisplayedMovieCastCrew);
-            buttonRef.current.innerText = "Show all";
+    const handleClick = (castCrew, refElement, numberOfDisplayedTiles, setNumberOfDisplayedTiles) => {
+        if (castCrew.length > numberOfDisplayedTiles) {
+            setNumberOfDisplayedTiles(castCrew.length);
+            refElement.current.innerText = "Hide";
+        } else if (castCrew.length <= numberOfDisplayedTiles) {
+            setNumberOfDisplayedTiles(numberOfDisplayedMovieCastCrew);
+            refElement.current.innerText = "Show all";
         };
     };
 
@@ -74,7 +79,12 @@ export const MoviePage = () => {
                                     data={cast.slice(0, numberOfDisplayedCastTiles)}
                                 />}
                         />
-                        <button ref={buttonRef} onClick={() => handleClick(cast)}>Show all</button>
+                        <button
+                            ref={buttonCastRef}
+                            onClick={() =>
+                                handleClick(cast, buttonCastRef, numberOfDisplayedCastTiles, setNumberOfDisplayedCastTiles)}>
+                            Show all
+                        </button>
                     </>
                 ) : null}
                 {crew && crew.length > 0 ? (
@@ -84,9 +94,14 @@ export const MoviePage = () => {
                             people
                             children={
                                 <MovieCastAndCrewTiles
-                                    data={crew}
+                                    data={crew.slice(0, numberOfDisplayedCrewTiles)}
                                 />}
                         />
+                        <button
+                            ref={buttonCrewRef}
+                            onClick={() => handleClick(crew, buttonCrewRef, numberOfDisplayedCrewTiles, setNumberOfDisplayedCrewTiles)}>
+                            Show all
+                        </button>
                     </>
                 ) : null}
             </Main>
