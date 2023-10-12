@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Checker } from "../../../common/Checker";
@@ -26,6 +26,7 @@ export const MoviePage = () => {
     const { cast, crew } = useSelector(selectDetailsExtraData);
     const areLoading = useSelector(selectAreDetailsLoading);
     const areError = useSelector(selectAreDetailsError);
+    const buttonRef = useRef(null);
     const [
         numberOfDisplayedCastTiles,
         setNumberOfDisplayedCrewTiles
@@ -34,8 +35,10 @@ export const MoviePage = () => {
     const handleClick = (cast) => {
         if (cast.length > numberOfDisplayedCastTiles) {
             setNumberOfDisplayedCrewTiles(cast.length);
+            buttonRef.current.innerText = "Hide";
         } else if (cast.length <= numberOfDisplayedCastTiles) {
             setNumberOfDisplayedCrewTiles(numberOfDisplayedMovieCastCrew);
+            buttonRef.current.innerText = "Show all";
         };
     };
 
@@ -71,7 +74,7 @@ export const MoviePage = () => {
                                     data={cast.slice(0, numberOfDisplayedCastTiles)}
                                 />}
                         />
-                        <button onClick={() => handleClick(cast)}>Hide</button>
+                        <button ref={buttonRef} onClick={() => handleClick(cast)}>Show all</button>
                     </>
                 ) : null}
                 {crew && crew.length > 0 ? (
