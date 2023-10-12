@@ -1,16 +1,12 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const Wrapper = styled.div`
     display: flex;
     justify-content: center;
-
-    ${({ lastElement }) => lastElement && css`
-        margin-bottom: 40px;
-    `}
+    margin-bottom: 40px;
 `;
 
 export const Button = styled.button`
-    margin-left: 16px;
     padding: 15px 25px;
     border-radius: 5px;
     border: none;

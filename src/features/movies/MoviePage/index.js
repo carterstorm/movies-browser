@@ -96,7 +96,6 @@ export const MoviePage = () => {
                                 numberOfDisplayedTiles={numberOfDisplayedCrewTiles}
                                 setNumberOfDisplayedTiles={setNumberOfDisplayedCrewTiles}
                                 numberOfDisplayedCastCrew={numberOfDisplayedPersonCastCrew}
-                                lastElement
                             />
                         ) : null}
                     </>

@@ -21,9 +21,7 @@ export const TilesButton = ({
     };
 
     return (
-        <Wrapper
-            lastElement={lastElement}
-        >
+        <Wrapper>
             <Button
                 ref={buttonRef}
                 onClick={handleClick}>
