@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Checker } from "../../../common/Checker";
@@ -18,6 +18,7 @@ import {
 } from "../../../detailsSlice";
 import { fetchGenres } from "../../../genresSlice";
 import { getNumberOfCast, getNumberOfCrew } from "../../../common/commonFunction";
+import { numberOfDisplayedMovieCastCrew } from "../../../common/commonValues";
 
 export const MoviePage = () => {
     const dispatch = useDispatch();
@@ -25,6 +26,18 @@ export const MoviePage = () => {
     const { cast, crew } = useSelector(selectDetailsExtraData);
     const areLoading = useSelector(selectAreDetailsLoading);
     const areError = useSelector(selectAreDetailsError);
+    const [
+        numberOfDisplayedCastTiles,
+        setNumberOfDisplayedCrewTiles
+    ] = useState(numberOfDisplayedMovieCastCrew);
+
+    const handleClick = (cast) => {
+        if (cast.length > numberOfDisplayedCastTiles) {
+            setNumberOfDisplayedCrewTiles(cast.length);
+        } else if (cast.length <= numberOfDisplayedCastTiles) {
+            setNumberOfDisplayedCrewTiles(numberOfDisplayedMovieCastCrew);
+        };
+    };
 
     useEffect(() => {
         dispatch(fetchDetails({ id, type: "movie" }));
@@ -36,7 +49,7 @@ export const MoviePage = () => {
 
     useEffect(() => {
         dispatch(fetchGenres())
-    }, [dispatch])
+    }, [dispatch]);
 
     return (
         <Checker
@@ -55,9 +68,10 @@ export const MoviePage = () => {
                             people
                             children={
                                 <MovieCastAndCrewTiles
-                                    data={cast}
+                                    data={cast.slice(0, numberOfDisplayedCastTiles)}
                                 />}
                         />
+                        <button onClick={() => handleClick(cast)}>Hide</button>
                     </>
                 ) : null}
                 {crew && crew.length > 0 ? (
