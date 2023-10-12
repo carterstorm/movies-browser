@@ -1,7 +1,12 @@
 import { useRef } from "react";
-import { Button } from "./styled";
+import { Button, Wrapper } from "./styled";
 
-export const TilesButton = ({ castCrew, numberOfDisplayedTiles, setNumberOfDisplayedTiles, numberOfDisplayedCastCrew }) => {
+export const TilesButton = ({
+    castCrew,
+    numberOfDisplayedTiles,
+    setNumberOfDisplayedTiles,
+    numberOfDisplayedCastCrew
+}) => {
     const buttonRef = useRef(null);
 
     const handleClick = () => {
@@ -15,10 +20,12 @@ export const TilesButton = ({ castCrew, numberOfDisplayedTiles, setNumberOfDispl
     };
 
     return (
-        <Button
-            ref={buttonRef}
-            onClick={handleClick}>
-            Show all
-        </Button>
+        <Wrapper>
+            <Button
+                ref={buttonRef}
+                onClick={handleClick}>
+                Show all
+            </Button>
+        </Wrapper>
     );
 };
