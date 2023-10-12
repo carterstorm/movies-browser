@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Checker } from "../../../common/Checker";
@@ -19,6 +19,7 @@ import {
 import { fetchGenres } from "../../../genresSlice";
 import { getNumberOfCast, getNumberOfCrew } from "../../../common/commonFunction";
 import { numberOfDisplayedMovieCastCrew } from "../../../common/commonValues";
+import { TilesButton } from "../../../common/TilesButton";
 
 export const MoviePage = () => {
     const dispatch = useDispatch();
@@ -26,8 +27,6 @@ export const MoviePage = () => {
     const { cast, crew } = useSelector(selectDetailsExtraData);
     const areLoading = useSelector(selectAreDetailsLoading);
     const areError = useSelector(selectAreDetailsError);
-    const buttonCastRef = useRef(null);
-    const buttonCrewRef = useRef(null);
     const [
         numberOfDisplayedCastTiles,
         setNumberOfDisplayedCastTiles
@@ -37,15 +36,7 @@ export const MoviePage = () => {
         setNumberOfDisplayedCrewTiles
     ] = useState(numberOfDisplayedMovieCastCrew);
 
-    const handleClick = (castCrew, refElement, numberOfDisplayedTiles, setNumberOfDisplayedTiles) => {
-        if (castCrew.length > numberOfDisplayedTiles) {
-            setNumberOfDisplayedTiles(castCrew.length);
-            refElement.current.innerText = "Hide";
-        } else if (castCrew.length <= numberOfDisplayedTiles) {
-            setNumberOfDisplayedTiles(numberOfDisplayedMovieCastCrew);
-            refElement.current.innerText = "Show all";
-        };
-    };
+
 
     useEffect(() => {
         dispatch(fetchDetails({ id, type: "movie" }));
@@ -79,12 +70,11 @@ export const MoviePage = () => {
                                     data={cast.slice(0, numberOfDisplayedCastTiles)}
                                 />}
                         />
-                        <button
-                            ref={buttonCastRef}
-                            onClick={() =>
-                                handleClick(cast, buttonCastRef, numberOfDisplayedCastTiles, setNumberOfDisplayedCastTiles)}>
-                            Show all
-                        </button>
+                        <TilesButton
+                            castCrew={cast}
+                            numberOfDisplayedTiles={numberOfDisplayedCastTiles}
+                            setNumberOfDisplayedTiles={setNumberOfDisplayedCastTiles}
+                        />
                     </>
                 ) : null}
                 {crew && crew.length > 0 ? (
@@ -97,11 +87,11 @@ export const MoviePage = () => {
                                     data={crew.slice(0, numberOfDisplayedCrewTiles)}
                                 />}
                         />
-                        <button
-                            ref={buttonCrewRef}
-                            onClick={() => handleClick(crew, buttonCrewRef, numberOfDisplayedCrewTiles, setNumberOfDisplayedCrewTiles)}>
-                            Show all
-                        </button>
+                        <TilesButton
+                            castCrew={crew}
+                            numberOfDisplayedTiles={numberOfDisplayedCrewTiles}
+                            setNumberOfDisplayedTiles={setNumberOfDisplayedCrewTiles}
+                        />
                     </>
                 ) : null}
             </Main>
