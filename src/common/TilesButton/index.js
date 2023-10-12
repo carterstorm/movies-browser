@@ -5,7 +5,8 @@ export const TilesButton = ({
     castCrew,
     numberOfDisplayedTiles,
     setNumberOfDisplayedTiles,
-    numberOfDisplayedCastCrew
+    numberOfDisplayedCastCrew,
+    lastElement
 }) => {
     const buttonRef = useRef(null);
 
@@ -20,7 +21,9 @@ export const TilesButton = ({
     };
 
     return (
-        <Wrapper>
+        <Wrapper
+            lastElement={lastElement}
+        >
             <Button
                 ref={buttonRef}
                 onClick={handleClick}>

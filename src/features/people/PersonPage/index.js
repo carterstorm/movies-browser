@@ -85,6 +85,7 @@ export const PersonPage = () => {
                                 numberOfDisplayedTiles={numberOfDisplayedCrewTiles}
                                 setNumberOfDisplayedTiles={setNumberOfDisplayedCrewTiles}
                                 numberOfDisplayedCastCrew={numberOfDisplayedMovieCastCrew}
+                                lastElement
                             />
                         ) : null}
                     </>
