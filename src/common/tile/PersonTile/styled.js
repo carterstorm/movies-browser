@@ -105,14 +105,13 @@ export const PersonDetails = styled.div`
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-between;
     `};
 
     ${({ page }) => page && css`
         display: grid;
         grid-gap: 24px;
         padding: 8px 0;
-
 
         @media(max-width: ${({ theme }) => theme.breakpoints.mediumMobile}px) {
             grid-gap: 12px;
@@ -124,12 +123,20 @@ export const PersonDetails = styled.div`
         };
     `};
 
-    @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
-        min-height: 40px;
+    @media(max-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+        min-height: 60px;
     };
 
-    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-        min-height: 34px;
+    @media(max-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+        min-height: 60px;
+    };
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+        min-height: 50px;
+    };
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+        min-height: 40px;
     };
 `;
 
@@ -139,6 +146,14 @@ export const PersonName = styled.p`
     font-size: 18px;
     font-weight: 500;
     line-height: 130%;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+        font-size: 16px;
+    };
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+        font-size: 14px;
+    };
 
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         font-size: 12px;
@@ -170,4 +185,13 @@ export const PersonRole = styled.span`
     text-align: center;
     font-weight: 300;
     color: ${({ theme }) => theme.colors.waterloo};
+    font-size: 14px;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+        font-size: 12px;
+    };
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        font-size: 10px;
+    };
 `;
