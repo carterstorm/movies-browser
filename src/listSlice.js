@@ -6,18 +6,12 @@ const listSlice = createSlice({
         list: [],
         loading: true,
         error: false,
-        page: 1,
         numberOfPages: 500,
         path: "",
     },
     reducers: {
         setPath: (state, { payload: path }) => {
             state.path = path;
-        },
-        setPage: (state, { payload: pageNumber }) => {
-            state.loading = true;
-            state.error = false;
-            state.page = pageNumber;
         },
         fetchListSuccess: (state, { payload: list }) => {
             state.list = list.results;
@@ -40,7 +34,6 @@ const listSlice = createSlice({
 
 export const {
     setPath,
-    setPage,
     fetchListSuccess,
     fetchListError,
     resetListState,
