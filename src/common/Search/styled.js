@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as Search } from "../../../assets/svg/search.svg";
+import { ReactComponent as Search } from "../../assets/svg/search.svg";
 
 export const SearchBox = styled.form`
     position: relative;

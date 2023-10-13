@@ -1,6 +1,6 @@
 import { NavigationList } from "./NavigationList";
 import { PageTitle } from "./PageTitle";
-import { Search } from "./Search";
+import { Search } from "../Search";
 import {
     NavContainerRight,
     NavContainerLeft,
