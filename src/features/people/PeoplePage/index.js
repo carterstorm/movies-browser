@@ -9,6 +9,7 @@ import { TilesSection } from "../../../common/tiles/TilesSection";
 import { PeopleTiles } from "../../../common/tiles/PeopleTiles";
 import { resetListState, selectAreListError, selectAreListLoading, setPath } from "../../../listSlice";
 import { apiBaseLink, apiKey, apiLanguage } from "../../../common/commonValues";
+import { checkPageUrlNumber } from "../../../common/commonFunction";
 
 export const PeoplePage = () => {
     const dispatch = useDispatch();
@@ -18,7 +19,7 @@ export const PeoplePage = () => {
 
     useEffect(() => {
         dispatch(setPath(`${apiBaseLink}person/popular?api_key=${apiKey}&language=${apiLanguage}&page=
-        ${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`));
+        ${checkPageUrlNumber(urlPageNumber)}`));
 
         return () => {
             dispatch(resetListState());

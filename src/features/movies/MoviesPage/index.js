@@ -10,6 +10,7 @@ import { Main } from "../../../common/Main";
 import { fetchGenres } from "../../../genresSlice";
 import { resetListState, selectAreListError, selectAreListLoading, setPath } from "../../../listSlice";
 import { apiBaseLink, apiKey, apiLanguage } from "../../../common/commonValues";
+import { checkPageUrlNumber } from "../../../common/commonFunction";
 
 export const MoviesPage = () => {
     const dispatch = useDispatch();
@@ -19,7 +20,7 @@ export const MoviesPage = () => {
 
     useEffect(() => {
         dispatch(setPath(`${apiBaseLink}movie/popular?api_key=${apiKey}&language=${apiLanguage}S&page=
-        ${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`));
+        ${checkPageUrlNumber(urlPageNumber)}`));
 
         return () => {
             dispatch(resetListState());

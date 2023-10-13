@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { selectNumberOfPages } from "../../../../listSlice";
 import { usePageParameter, useReplacePageParameter } from "../../../../pageParameters";
-import { checkPageUrlNumber } from "../../../checkPageUrlNumber";
+import { checkPageUrlNumber } from "../../../commonFunction";
 import {
     DesktopPaginationButtonsContainer,
     LeftArrow,
