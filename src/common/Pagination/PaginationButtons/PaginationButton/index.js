@@ -19,7 +19,12 @@ export const PaginationButton = ({ first, previous, next, last }) => {
     const replacePageParameter = useReplacePageParameter();
 
     const onHandleClick = (pageNumber) => {
-        replacePageParameter("page", pageNumber);
+        replacePageParameter([
+            {
+                key: "page",
+                value: page,
+            }
+        ]);
     };
 
     if (first) {

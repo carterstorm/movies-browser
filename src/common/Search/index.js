@@ -1,11 +1,23 @@
 import { useState } from "react";
 import { SearchBox, SearchBoxButton, SearchBoxInput, SearchImage } from "./styled";
+import { useReplacePageParameter } from "../../pageParameters";
 
 export const Search = () => {
-    const [movieTitle, setMovieTitle] = useState("");
+    const [query, setQuery] = useState("");
+    const replacePageParameter = useReplacePageParameter();
 
     const onFormSubmit = (event) => {
         event.preventDefault();
+        replacePageParameter([
+            {
+                key: "search",
+                value: query,
+            },
+            {
+                key: "page",
+                value: 1,
+            }
+        ]);
     };
 
     return (
@@ -14,8 +26,8 @@ export const Search = () => {
                 <SearchImage />
             </SearchBoxButton>
             <SearchBoxInput
-                value={movieTitle}
-                onChange={event => setMovieTitle(event.target.value)}
+                value={query}
+                onChange={({ target }) => setQuery(target.value)}
                 placeholder="Search for movies..."
             />
         </SearchBox>
