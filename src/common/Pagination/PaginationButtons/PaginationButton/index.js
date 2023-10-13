@@ -1,6 +1,7 @@
-import { useDispatch, useSelector } from "react-redux";
-import { selectNumberOfPages, selectPage, setPage } from "../../../../listSlice";
-import { useReplacePageParameter } from "../../../../pageParameters";
+import { useSelector } from "react-redux";
+import { selectNumberOfPages } from "../../../../listSlice";
+import { usePageParameter, useReplacePageParameter } from "../../../../pageParameters";
+import { checkPageUrlNumber } from "../../../checkPageUrlNumber";
 import {
     DesktopPaginationButtonsContainer,
     LeftArrow,
@@ -12,14 +13,13 @@ import {
 } from "./styled";
 
 export const PaginationButton = ({ first, previous, next, last }) => {
-    const dispatch = useDispatch();
-    const page = useSelector(selectPage);
+    const urlPageNumber = +usePageParameter("page");
+    const page = checkPageUrlNumber(urlPageNumber);
     const numberOfPages = useSelector(selectNumberOfPages);
     const replacePageParameter = useReplacePageParameter();
 
     const onHandleClick = (pageNumber) => {
         replacePageParameter("page", pageNumber);
-        dispatch(setPage(pageNumber));
     };
 
     if (first) {
