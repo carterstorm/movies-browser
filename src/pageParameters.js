@@ -14,13 +14,15 @@ export const useReplacePageParameter = () => {
 
     const searchParams = new URLSearchParams(location.search);
 
-    const replacePageParameter = (key, value) => {
-        if (!value === "") {
-            searchParams.delete(key);
-        } else {
-            searchParams.set(key, value);
-        }
-        history.replace(`${location.pathname}?${searchParams.toString()}`);
+    const replacePageParameter = (params) => {
+        params.forEach(({ key, value }) => {
+            if (!value === "") {
+                searchParams.delete(key);
+            } else {
+                searchParams.set(key, value);
+            }
+            history.replace(`${location.pathname}?${searchParams.toString()}`);
+        })
     };
 
     return replacePageParameter;
