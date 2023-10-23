@@ -21,6 +21,8 @@ export const Search = () => {
                 value: 1,
             }
         ]);
+
+        setQuery("");
     };
 
     return (

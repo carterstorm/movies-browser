@@ -1,7 +1,5 @@
 import { useSelector } from "react-redux";
-import {
-    selectNumberOfPages,
-} from "../../../listSlice";
+import { selectMaxPageNumber } from "../../../listSlice";
 import { usePageParameter } from "../../../pageParameters";
 import {
     PageInfoContainer,
@@ -12,8 +10,7 @@ import { checkPageUrlNumber } from "../../commonFunction";
 export const PagesInfo = () => {
     const urlPageNumber = +usePageParameter("page");
     const page = checkPageUrlNumber(urlPageNumber);
-    const numberOfPages = useSelector(selectNumberOfPages)
-
+    const maxPageNumber = useSelector(selectMaxPageNumber);
     return (
         <PageInfoContainer>
             <PageText>
@@ -26,7 +23,7 @@ export const PagesInfo = () => {
                 of
             </PageText>
             <PageNumber>
-                {numberOfPages}
+                {maxPageNumber}
             </PageNumber>
         </PageInfoContainer>
     );

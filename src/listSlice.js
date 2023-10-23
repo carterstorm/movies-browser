@@ -6,7 +6,7 @@ const listSlice = createSlice({
         list: [],
         loading: true,
         error: false,
-        numberOfPages: 500,
+        maxPageNumber: undefined,
     },
     reducers: {
         fetchList: state => {
@@ -16,6 +16,7 @@ const listSlice = createSlice({
             state.list = list.results;
             state.loading = false;
             state.error = false;
+            state.maxPageNumber = list.total_pages;
         },
         fetchListError: state => {
             state.loading = false;
@@ -43,5 +44,6 @@ export const selectAreListLoading = state => selectListState(state).loading;
 export const selectAreListError = state => selectListState(state).error;
 export const selectPage = state => selectListState(state).page;
 export const selectNumberOfPages = state => selectListState(state).numberOfPages;
+export const selectMaxPageNumber = state => selectListState(state).maxPageNumber;
 
 export default listSlice.reducer;

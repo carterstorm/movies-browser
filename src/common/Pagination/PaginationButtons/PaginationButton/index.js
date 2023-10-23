@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { selectNumberOfPages } from "../../../../listSlice";
+import { selectMaxPageNumber } from "../../../../listSlice";
 import { usePageParameter, useReplacePageParameter } from "../../../../pageParameters";
 import { checkPageUrlNumber } from "../../../commonFunction";
 import {
@@ -15,7 +15,7 @@ import {
 export const PaginationButton = ({ first, previous, next, last }) => {
     const urlPageNumber = +usePageParameter("page");
     const page = checkPageUrlNumber(urlPageNumber);
-    const numberOfPages = useSelector(selectNumberOfPages);
+    const maxPageNumber = useSelector(selectMaxPageNumber);
     const replacePageParameter = useReplacePageParameter();
 
     const onHandleClick = (pageNumber) => {
@@ -66,7 +66,7 @@ export const PaginationButton = ({ first, previous, next, last }) => {
         return (
             <PaginationButtonElement
                 onClick={() => onHandleClick(page + 1)}
-                disabled={page === numberOfPages}
+                disabled={page === maxPageNumber}
             >
                 <DesktopPaginationButtonsContainer>
                     <NextButtonText>
@@ -82,8 +82,8 @@ export const PaginationButton = ({ first, previous, next, last }) => {
     } else if (last) {
         return (
             <PaginationButtonElement
-                onClick={() => onHandleClick(numberOfPages)}
-                disabled={page === numberOfPages}
+                onClick={() => onHandleClick(maxPageNumber)}
+                disabled={page === maxPageNumber}
             >
                 <DesktopPaginationButtonsContainer>
                     <NextButtonText>
