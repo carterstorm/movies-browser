@@ -7,8 +7,15 @@ import { Heading } from "../../../common/Heading";
 import { Pagination } from "../../../common/Pagination";
 import { TilesSection } from "../../../common/tiles/TilesSection";
 import { PeopleTiles } from "../../../common/tiles/PeopleTiles";
-import { fetchList, resetListState, selectAreListError, selectAreListLoading } from "../../../listSlice";
 import { checkPageUrlNumber } from "../../../common/commonFunction";
+import {
+    fetchList,
+    resetListState,
+    selectAreListError,
+    selectAreListLoading,
+    selectListState,
+    selectTotalResults
+} from "../../../listSlice";
 
 export const PeoplePage = () => {
     const dispatch = useDispatch();
@@ -17,6 +24,9 @@ export const PeoplePage = () => {
     const urlPageNumber = +usePageParameter("page");
     const urlQuery = usePageParameter("search");
     const page = checkPageUrlNumber(urlPageNumber);
+    const searchResults = useSelector(selectListState);
+    const totalResults = useSelector(selectTotalResults);
+
     useEffect(() => {
         dispatch(fetchList({ urlQuery, page, type: "people" }));
         return () => {
@@ -29,16 +39,25 @@ export const PeoplePage = () => {
             areLoading={areLoading}
             areError={areError}
         >
-            <Main>
-                <Heading
-                    title="Popular people"
-                />
-                <TilesSection
-                    children={<PeopleTiles />}
-                    people
-                />
-            </Main>
-            <Pagination />
-        </Checker>
+
+            {!searchResults.list.length ?
+                (<>No results</>)
+                :
+                (<>
+                    <Main>
+                        <Heading
+                            title={urlQuery
+                                ? `Search results for "${urlQuery}" (${totalResults})`
+                                : "Popular People"}
+                        />
+                        <TilesSection
+                            children={<PeopleTiles />}
+                            people
+                        />
+                    </Main>
+                    <Pagination />
+                </>)
+            }
+        </Checker >
     );
 };
