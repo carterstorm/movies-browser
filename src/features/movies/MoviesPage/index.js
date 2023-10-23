@@ -17,9 +17,6 @@ export const MoviesPage = () => {
     const areLoading = useSelector(selectAreListLoading);
     const areError = useSelector(selectAreListError);
     const urlPageNumber = +usePageParameter("page");
-    const urlQuery = usePageParameter("search");
-    console.log(urlQuery);
-    console.log(urlPageNumber);
 
     useEffect(() => {
         dispatch(setPath(`${apiBaseLink}movie/popular?api_key=${apiKey}&language=${apiLanguage}S&page=
