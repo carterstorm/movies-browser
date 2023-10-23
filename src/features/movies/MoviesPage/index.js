@@ -8,8 +8,7 @@ import { TilesSection } from "../../../common/tiles/TilesSection";
 import { MoviesTiles } from "../../../common/tiles/MoviesTiles";
 import { Main } from "../../../common/Main";
 import { fetchGenres } from "../../../genresSlice";
-import { resetListState, selectAreListError, selectAreListLoading, setPath } from "../../../listSlice";
-import { apiBaseLink, apiKey, apiLanguage } from "../../../common/commonValues";
+import { fetchList, resetListState, selectAreListError, selectAreListLoading } from "../../../listSlice";
 import { checkPageUrlNumber } from "../../../common/commonFunction";
 
 export const MoviesPage = () => {
@@ -17,15 +16,15 @@ export const MoviesPage = () => {
     const areLoading = useSelector(selectAreListLoading);
     const areError = useSelector(selectAreListError);
     const urlPageNumber = +usePageParameter("page");
+    const urlQuery = usePageParameter("search");
+    const page = checkPageUrlNumber(urlPageNumber);
 
     useEffect(() => {
-        dispatch(setPath(`${apiBaseLink}movie/popular?api_key=${apiKey}&language=${apiLanguage}S&page=
-        ${checkPageUrlNumber(urlPageNumber)}`));
-
+        dispatch(fetchList({ urlQuery, page, type: "movies" }));
         return () => {
             dispatch(resetListState());
         };
-    }, [dispatch, urlPageNumber]);
+    }, [dispatch, page, urlQuery]);
 
     useEffect(() => {
         dispatch(fetchGenres())

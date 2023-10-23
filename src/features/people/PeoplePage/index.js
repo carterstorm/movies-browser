@@ -7,8 +7,7 @@ import { Heading } from "../../../common/Heading";
 import { Pagination } from "../../../common/Pagination";
 import { TilesSection } from "../../../common/tiles/TilesSection";
 import { PeopleTiles } from "../../../common/tiles/PeopleTiles";
-import { resetListState, selectAreListError, selectAreListLoading, setPath } from "../../../listSlice";
-import { apiBaseLink, apiKey, apiLanguage } from "../../../common/commonValues";
+import { fetchList, resetListState, selectAreListError, selectAreListLoading } from "../../../listSlice";
 import { checkPageUrlNumber } from "../../../common/commonFunction";
 
 export const PeoplePage = () => {
@@ -16,15 +15,14 @@ export const PeoplePage = () => {
     const areLoading = useSelector(selectAreListLoading);
     const areError = useSelector(selectAreListError);
     const urlPageNumber = +usePageParameter("page");
-
+    const urlQuery = usePageParameter("search");
+    const page = checkPageUrlNumber(urlPageNumber);
     useEffect(() => {
-        dispatch(setPath(`${apiBaseLink}person/popular?api_key=${apiKey}&language=${apiLanguage}&page=
-        ${checkPageUrlNumber(urlPageNumber)}`));
-
+        dispatch(fetchList({ urlQuery, page, type: "people" }));
         return () => {
             dispatch(resetListState());
         };
-    }, [dispatch, urlPageNumber]);
+    }, [dispatch, urlQuery, page]);
 
     return (
         <Checker
