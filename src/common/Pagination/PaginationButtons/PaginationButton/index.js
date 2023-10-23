@@ -22,7 +22,7 @@ export const PaginationButton = ({ first, previous, next, last }) => {
         replacePageParameter([
             {
                 key: "page",
-                value: page,
+                value: pageNumber,
             }
         ]);
     };
