@@ -12,7 +12,6 @@ function* fetchListHandler({ payload: { page, urlQuery, type } }) {
         type === "movies"
             ? urlQuery
                 ? `${apiBaseLink}search/movie?api_key=${apiKey}&language=${apiLanguage}&query=${urlQuery}&page=${page}`
-
                 : `${apiBaseLink}discover/movie?api_key=${apiKey}&language=${apiLanguage}&sort_by=popularity.desc&page=${page}`
             : urlQuery
                 ? `${apiBaseLink}search/person?api_key=${apiKey}&language=${apiLanguage}&query=${urlQuery}&page=${page}`
