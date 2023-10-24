@@ -1,6 +1,10 @@
+import { changeDateToLocal } from "../../../../changeDateToEn";
 import { Info, MorePersonInfoDescription, MorePersonInfoElement, MorePersonInfoElementTitle } from "./styled";
 
 export const PersonInfo = ({ birthday, place_of_birth, deathday }) => {
+    const birthDate = changeDateToLocal(birthday, "en");
+    const deathDate = changeDateToLocal(deathday, "en");
+
     return (
         <Info>
             {birthday && (
@@ -9,7 +13,7 @@ export const PersonInfo = ({ birthday, place_of_birth, deathday }) => {
                         Date of birth:
                     </MorePersonInfoElementTitle>
                     <MorePersonInfoDescription>
-                        {birthday}
+                        {birthDate}
                     </MorePersonInfoDescription>
                 </MorePersonInfoElement>
             )}
@@ -29,7 +33,7 @@ export const PersonInfo = ({ birthday, place_of_birth, deathday }) => {
                         Date of death:
                     </MorePersonInfoElementTitle>
                     <MorePersonInfoDescription>
-                        {deathday}
+                        {deathDate}
                     </MorePersonInfoDescription>
                 </MorePersonInfoElement>
             )}

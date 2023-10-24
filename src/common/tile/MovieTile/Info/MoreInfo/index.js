@@ -1,3 +1,4 @@
+import { changeDateToLocal } from "../../../../../changeDateToEn";
 import {
     More,
     MoreInfoDataMobileContainer,
@@ -8,9 +9,8 @@ import {
 } from "./styled";
 
 export const MoreInfo = ({ budget, production_countries, releaseDate, original_language, runtime }) => {
-    const date = new Date(releaseDate);
-    const enDate = date.toLocaleDateString("en");
-    const localDate = date.toLocaleDateString();
+    const enDate = changeDateToLocal(releaseDate, "en");
+    const localDate = changeDateToLocal(releaseDate);
 
     return (
         <More>
