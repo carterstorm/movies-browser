@@ -7,13 +7,15 @@ export const MovieCastAndCrewTiles = ({ data }) => (
             name,
             job,
             profile_path,
-            credit_id
+            credit_id,
+            character
         }) => (
             <PersonTile
                 key={credit_id}
                 id={id}
                 name={name}
                 job={job}
+                character={character}
                 profile_path={profile_path}
             />
         ))}
