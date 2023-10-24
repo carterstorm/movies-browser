@@ -8,8 +8,17 @@ import { TilesSection } from "../../../common/tiles/TilesSection";
 import { MoviesTiles } from "../../../common/tiles/MoviesTiles";
 import { Main } from "../../../common/Main";
 import { fetchGenres } from "../../../genresSlice";
-import { fetchList, resetListState, selectAreListError, selectAreListLoading } from "../../../listSlice";
 import { checkPageUrlNumber } from "../../../common/commonFunction";
+import { NoResults } from "../../../common/NoResults";
+import {
+    fetchList,
+    resetListState,
+    selectAreListError,
+    selectAreListLoading,
+    selectListState,
+    selectTotalResults
+} from "../../../listSlice";
+
 
 export const MoviesPage = () => {
     const dispatch = useDispatch();
@@ -18,6 +27,8 @@ export const MoviesPage = () => {
     const urlPageNumber = +usePageParameter("page");
     const urlQuery = usePageParameter("search");
     const page = checkPageUrlNumber(urlPageNumber);
+    const results = useSelector(selectListState);
+    const totalResults = useSelector(selectTotalResults);
 
     useEffect(() => {
         dispatch(fetchList({ urlQuery, page, type: "movies" }));
@@ -35,15 +46,25 @@ export const MoviesPage = () => {
             areLoading={areLoading}
             areError={areError}
         >
-            <Main>
-                <Heading
-                    title="Popular movies"
-                />
-                <TilesSection
-                    children={<MoviesTiles />}
-                />
-            </Main>
-            <Pagination />
+            {!results.list.length ?
+                (<NoResults
+                    urlQuery={urlQuery}
+                />)
+                :
+                (<>
+                    <Main>
+                        <Heading
+                            title={urlQuery
+                                ? `Search results for "${urlQuery}" (${totalResults})`
+                                : "Popular movies"}
+                        />
+                        <TilesSection
+                            children={<MoviesTiles />}
+                        />
+                    </Main>
+                    <Pagination />
+                </>)
+            }
         </Checker>
     )
 };
