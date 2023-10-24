@@ -1,5 +1,6 @@
 import { MoreInfo } from "./MoreInfo";
 import {
+    CharacterJob,
     Container,
     Name,
     Year
@@ -12,21 +13,30 @@ export const Info = ({
     runtime,
     budget,
     production_countries,
-    page
+    page,
+    character,
+    job
 }) => (
     <Container page={page}>
-        {title ?
-            (<Name page={page}>
-                {title}
-            </Name>)
-            : null
-        }
-        {releaseDate ?
-            (<Year page={page}>
-                {releaseDate.substring(0, 4)}
-            </Year>)
-            : null
-        }
+        <div>
+            {title ?
+                (<Name page={page}>
+                    {title}
+                </Name>)
+                : null
+            }
+            {releaseDate ?
+                (<Year page={page}>
+                    {releaseDate ? releaseDate.substring(0, 4) : null}
+                </Year>)
+                : null
+            }
+        </div>
+        {character || job ?
+            <CharacterJob>
+                {character ? `Character: ${character}` : null}
+                {job ? `Work as: ${job}` : null}
+            </CharacterJob> : null}
         {page ?
             (<MoreInfo
                 budget={budget}

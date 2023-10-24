@@ -19,7 +19,6 @@ import {
     selectTotalResults
 } from "../../../listSlice";
 
-
 export const MoviesPage = () => {
     const dispatch = useDispatch();
     const areLoading = useSelector(selectAreListLoading);

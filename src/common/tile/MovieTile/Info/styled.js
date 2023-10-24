@@ -68,3 +68,7 @@ export const Year = styled.span`
         color: ${({ theme }) => theme.colors.waterloo};
     };
 `;
+
+export const CharacterJob = styled(Year)`
+
+`;

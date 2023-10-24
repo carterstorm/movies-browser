@@ -30,6 +30,8 @@ export const MovieTile = ({
     budget,
     production_countries,
     overview,
+    character,
+    job
 }) => {
     return (
         <MovieTileElement
@@ -58,6 +60,8 @@ export const MovieTile = ({
                                 runtime={runtime}
                                 budget={budget}
                                 production_countries={production_countries}
+                                character={character}
+                                job={job}
                             />
                             <GenreTags genre={genre_ids} />
                         </MovieDescription>

@@ -11,6 +11,8 @@ export const PersonCastAndCrewTiles = ({ data }) => (
             release_date,
             vote_average,
             vote_count,
+            character,
+            job
         }) => (
             <MovieTile
                 key={credit_id}
@@ -21,6 +23,8 @@ export const PersonCastAndCrewTiles = ({ data }) => (
                 release_date={release_date}
                 vote_average={vote_average}
                 vote_count={vote_count}
+                character={character}
+                job={job}
             />
         ))}
     </>
