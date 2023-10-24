@@ -24,7 +24,7 @@ export const PeoplePage = () => {
     const urlPageNumber = +usePageParameter("page");
     const urlQuery = usePageParameter("search");
     const page = checkPageUrlNumber(urlPageNumber);
-    const searchResults = useSelector(selectListState);
+    const results = useSelector(selectListState);
     const totalResults = useSelector(selectTotalResults);
 
     useEffect(() => {
@@ -40,7 +40,7 @@ export const PeoplePage = () => {
             areError={areError}
         >
 
-            {!searchResults.list.length ?
+            {!results.list.length ?
                 (<>No results</>)
                 :
                 (<>
