@@ -20,8 +20,8 @@ export const useReplacePageParameter = () => {
                 searchParams.delete(key);
             } else {
                 searchParams.set(key, value);
-            }
-            history.replace(`${location.pathname}?${searchParams.toString()}`);
+            };
+            history.replace(`${location.pathname.includes("movie") ? "/movies" : "/people"}?${searchParams.toString()}`);
         })
     };
 
