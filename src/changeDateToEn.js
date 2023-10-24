@@ -1,3 +1,3 @@
-export const changeDateToEn = (date) => {
-    return new Date(date).toLocaleDateString("en");
+export const changeDateToLocal = (date, location) => {
+    return new Date(date).toLocaleDateString(location);
 };
