@@ -7,7 +7,6 @@ export const usePageParameter = paramName => {
     return urlParam;
 };
 
-
 export const useReplacePageParameter = () => {
     const history = useHistory();
     const location = useLocation();
