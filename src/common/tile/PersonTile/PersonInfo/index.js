@@ -1,4 +1,4 @@
-import { changeDateToLocal } from "../../../../changeDateToEn";
+import { changeDateToLocal } from "../../../../changeDateToLocal";
 import { Info, MorePersonInfoDescription, MorePersonInfoElement, MorePersonInfoElementTitle } from "./styled";
 
 export const PersonInfo = ({ birthday, place_of_birth, deathday }) => {

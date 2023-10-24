@@ -1,4 +1,4 @@
-import { changeDateToLocal } from "../../../../../changeDateToEn";
+import { changeDateToLocal } from "../../../../../changeDateToLocal";
 import {
     More,
     MoreInfoDataMobileContainer,
