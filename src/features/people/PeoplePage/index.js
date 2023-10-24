@@ -16,6 +16,7 @@ import {
     selectListState,
     selectTotalResults
 } from "../../../listSlice";
+import { NoResults } from "../../../common/NoResults";
 
 export const PeoplePage = () => {
     const dispatch = useDispatch();
@@ -41,7 +42,9 @@ export const PeoplePage = () => {
         >
 
             {!results.list.length ?
-                (<>No results</>)
+                (<NoResults
+                    urlQuery={urlQuery}
+                />)
                 :
                 (<>
                     <Main>

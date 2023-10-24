@@ -5,6 +5,7 @@ export const HeadingElement = styled.h2`
     font-weight: 600px;
     margin: 0;
     padding: 56px 16px 24px;
+    line-height: 1.5;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
         font-size: 24px;
