@@ -33,13 +33,16 @@ export const StyledNavLink = styled(NavLink)`
     align-items: center;
     padding: 0 24px;
     height: 48px;
-    border: 1px solid ${({ theme }) => theme.colors.white};
     border-radius: 24px;
     text-transform: uppercase;
     color: ${({ theme }) => theme.colors.white};
     text-decoration: none;
     font-weight: 600;
     font-size: 14px;
+
+    &.active {
+        border: 1px solid ${({ theme }) => theme.colors.white};
+    }
 
     @media(max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
         font-size: 12px;

@@ -11,6 +11,7 @@ export const NavigationList = () => {
             {navigationListData.map(({ id, path, text }) => (
                 <ListItem key={id}>
                     <StyledNavLink
+                        activeClassName="active"
                         to={path}>
                         {text}
                     </StyledNavLink>
